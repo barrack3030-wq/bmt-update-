@@ -1,0 +1,4231 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Koperasi BMT Al Muhajirin — Lembaga Keuangan Syariah Toili</title>
+  <meta name="description" content="Lembaga keuangan syariah dari Toili, Kabupaten Banggai, Sulawesi Tengah yang tenang, tepercaya, dan modern — tempat umat tumbuh bersama tanpa riba." />
+  <meta property="og:title" content="Koperasi BMT Al Muhajirin — Toili, Kab. Banggai" />
+  <meta property="og:description" content="Berjuang Bersama Ummat Keluar Dari Riba. Layanan simpanan, pembiayaan produktif, dan pendampingan ekonomi syariah di Toili, Luwuk, dan Bunta." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0F4D2E" />
+
+  <!-- Fonts: Fraunces (Heading) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" />
+
+  <!-- GSAP, ScrollTrigger & Lenis (async/defer with graceful fallback) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <style>
+    :root {
+      --font-heading: 'Fraunces', serif;
+      --font-body: 'Inter', sans-serif;
+
+      /* Disciplined 65 / 25 / 10 Palette */
+      --bg-white: #FFFFFF;
+      --bg-soft: #F7F9F7;
+      --green-soft: #E9F5EB;
+      --emerald: #0F4D2E;
+      --emerald-deep: #0A3820;
+      --emerald-ink: #072616;
+      --gold: #D6AD50;
+      --gold-text: #8C6919; /* WCAG AA on white */
+      --gold-on-dark: #E6C572;
+      --charcoal: #111827;
+      --muted: #4B5563;
+      --on-dark: #F3F6F3;
+      --on-dark-muted: rgba(243, 246, 243, 0.76);
+
+      /* Hairlines & Layered Shadows */
+      --line-subtle: rgba(15, 77, 46, 0.08);
+      --line-strong: rgba(15, 77, 46, 0.16);
+      --line-on-dark: rgba(214, 173, 80, 0.22);
+      --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 32px -12px rgba(15, 77, 46, 0.12);
+      --shadow-hover: 0 4px 10px rgba(0, 0, 0, 0.05), 0 24px 48px -14px rgba(15, 77, 46, 0.18);
+
+      --radius-card: 20px;
+      --radius-btn: 12px;
+      --container-max: 1240px;
+
+      /* Button Design Tokens (Unified) */
+      --btn-font: var(--font-body);
+      --btn-font-size: 13px;
+      --btn-font-weight: 600;
+      --btn-letter-spacing: 0.08em;
+
+      /* Typographic Scale (3 Heading Sizes) */
+      --text-h1: clamp(2.5rem, 5.5vw, 5rem);
+      --text-h2: clamp(2rem, 3.6vw, 3.25rem);
+      --text-h3: 1.25rem;
+      --text-body: 1.0625rem;
+
+      /* Motion */
+      --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+      --dur-reveal: 1000ms;
+      --dur-hover: 300ms;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    /* Emerald Thin Scrollbar & Gold Selection */
+    html {
+      font-size: 16px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--emerald) var(--bg-soft);
+      scroll-behavior: smooth;
+    }
+    html.lenis, html.lenis body {
+      height: auto;
+    }
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-soft);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--emerald);
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--emerald-deep);
+    }
+    ::selection {
+      background: rgba(214, 173, 80, 0.28);
+      color: var(--emerald-ink);
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      line-height: 1.7;
+      color: var(--charcoal);
+      background-color: var(--bg-white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: clip;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-heading);
+      color: var(--charcoal);
+      margin: 0;
+      text-wrap: balance;
+    }
+
+    h1 {
+      font-size: var(--text-h1);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+    }
+
+    h2 {
+      font-size: var(--text-h2);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      font-size: var(--text-h3);
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      margin: 0;
+      max-width: 62ch;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font-family: var(--font-body);
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Skip Link */
+    .skip-link {
+      position: fixed;
+      top: -120px;
+      left: 20px;
+      z-index: 3000;
+      background: var(--emerald);
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.875rem;
+      padding: 12px 20px;
+      border-radius: 8px;
+      transition: top 200ms var(--ease-lux);
+    }
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    /* Container & 12-Col Grid System */
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: 24px;
+    }
+
+    .grid-12 {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 32px;
+    }
+
+    .section-pad {
+      position: relative;
+      padding-block: clamp(120px, 10vw, 156px);
+    }
+
+    /* Smooth Section Blend Buffers */
+    .blend-to-soft {
+      background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-white) calc(100% - 140px), var(--bg-soft) 100%);
+    }
+    .blend-to-white {
+      background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-soft) calc(100% - 140px), var(--bg-white) 100%);
+    }
+    .blend-to-emerald {
+      position: relative;
+      padding-bottom: clamp(148px, 12vw, 188px);
+    }
+    .blend-to-emerald::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 140px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(15, 77, 46, 0.08) 100%);
+      pointer-events: none;
+    }
+    .blend-to-footer {
+      position: relative;
+      padding-bottom: clamp(148px, 12vw, 188px);
+    }
+    .blend-to-footer::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 150px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(7, 38, 22, 0.09) 100%);
+      pointer-events: none;
+    }
+
+    /* Unified Single Card Token */
+    .card-surface {
+      background: var(--bg-white);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line-subtle);
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* Small Uppercase Label */
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--emerald);
+      margin-bottom: 18px;
+    }
+    .kicker::before {
+      content: "";
+      width: 24px;
+      height: 1.5px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .kicker--light {
+      color: var(--gold-on-dark);
+    }
+
+    .section-intro {
+      margin-bottom: 64px;
+    }
+    .section-intro--center {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .section-intro--center .kicker {
+      justify-content: center;
+    }
+    .section-intro p {
+      margin-top: 18px;
+      color: var(--muted);
+    }
+
+    /* Subtle Islamic Geometric Pattern (5% opacity) + Grain Overlay (3.5%) */
+    .emerald-band {
+      position: relative;
+      background: linear-gradient(145deg, var(--emerald) 0%, var(--emerald-deep) 100%);
+      color: var(--on-dark);
+      overflow: hidden;
+    }
+    .emerald-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%23D6AD50' stroke-width='1'%3E%3Cpath d='M48 4L60 36L92 48L60 60L48 92L36 60L4 48L36 36Z'/%3E%3Crect x='24' y='24' width='48' height='48' transform='rotate(45 48 48)'/%3E%3Ccircle cx='48' cy='48' r='12'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 96px 96px;
+    }
+
+    .grain-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      z-index: 1;
+    }
+
+
+    /* Precision Unified Button System (.btn) */
+    .btn {
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 160px;
+      border-radius: var(--radius-btn);
+      font-family: var(--btn-font);
+      font-size: var(--btn-font-size);
+      font-weight: var(--btn-font-weight);
+      letter-spacing: var(--btn-letter-spacing);
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
+      border: 1.5px solid transparent;
+      transition: color var(--dur-hover) var(--ease-lux),
+                  border-color var(--dur-hover) var(--ease-lux),
+                  background-color var(--dur-hover) var(--ease-lux),
+                  box-shadow var(--dur-hover) var(--ease-lux);
+    }
+    .btn > * {
+      position: relative;
+      z-index: 1;
+    }
+    .btn .arrow-icon {
+      width: 16px;
+      height: 16px;
+      stroke-width: 1.75;
+      flex-shrink: 0;
+      transition: transform var(--dur-hover) var(--ease-lux);
+    }
+    .btn:hover .arrow-icon {
+      transform: translateX(3px);
+    }
+
+    /* Strictly 3 Button Size Variants */
+    .btn--lg {
+      height: 56px;
+      padding-inline: 32px;
+    }
+    .btn--md {
+      height: 48px;
+      padding-inline: 28px;
+    }
+    .btn--sm {
+      height: 40px;
+      padding-inline: 20px;
+      min-width: 120px;
+    }
+    .btn--sm::after {
+      content: "";
+      position: absolute;
+      inset: -4px -2px;
+    }
+
+    .btn-pair {
+      display: inline-grid;
+      grid-template-columns: repeat(2, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    /* Button Color Variants */
+    .btn--primary {
+      background: var(--emerald);
+      color: #FFFFFF;
+      border-color: var(--emerald);
+      box-shadow: var(--shadow-soft);
+    }
+    .btn--primary::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 300ms var(--ease-lux);
+      z-index: 0;
+    }
+    .btn--primary:hover::before {
+      transform: scaleX(1);
+    }
+    .btn--primary:hover {
+      color: var(--emerald-ink);
+      border-color: var(--gold);
+      box-shadow: var(--shadow-hover);
+    }
+    .hero .btn--primary {
+      border-color: rgba(214, 173, 80, 0.65);
+    }
+
+    .btn--secondary {
+      background: transparent;
+      color: var(--emerald);
+      border-color: var(--gold);
+    }
+    .btn--secondary::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(214, 173, 80, 0.16);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 300ms var(--ease-lux);
+      z-index: 0;
+    }
+    .btn--secondary:hover::before {
+      transform: scaleX(1);
+    }
+    .btn--secondary:hover {
+      color: var(--emerald-ink);
+    }
+
+    .btn--ghost {
+      background: transparent;
+      color: var(--emerald);
+      border-color: transparent;
+      padding-inline: 12px;
+      min-width: 120px;
+    }
+    .btn--ghost span {
+      text-decoration: underline;
+      text-decoration-color: var(--gold);
+      text-underline-offset: 5px;
+      text-decoration-thickness: 1.5px;
+    }
+    .btn--ghost:hover {
+      background: rgba(15, 77, 46, 0.06);
+    }
+    .btn--ghost-on-dark {
+      color: #FFFFFF;
+    }
+    .btn--ghost-on-dark:hover {
+      color: var(--gold-on-dark);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Non-CTA Utility Link */
+    .utility-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--emerald);
+      text-decoration: underline;
+      text-decoration-color: var(--gold);
+      text-underline-offset: 4px;
+    }
+    .utility-link:hover {
+      color: var(--emerald-deep);
+    }
+
+    /* 1. TOP BAR */
+    .top-bar {
+      background: var(--emerald-ink);
+      color: var(--on-dark);
+      font-size: 0.8125rem;
+      border-bottom: 1px solid rgba(214, 173, 80, 0.2);
+      position: relative;
+      z-index: 1001;
+    }
+    .top-bar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 38px;
+      padding-block: 6px;
+    }
+    .top-bar__left {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(243, 246, 243, 0.85);
+    }
+    .top-bar__right {
+      color: var(--gold-on-dark);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    /* 2. HEADER (Transparent over hero -> Frosted Blur -> Auto-hide down / show up) */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(247, 249, 247, 0.35);
+      border-bottom: 1px solid rgba(15, 77, 46, 0.08);
+      transition: transform 360ms var(--ease-lux),
+                  background-color 320ms var(--ease-lux),
+                  box-shadow 320ms var(--ease-lux),
+                  backdrop-filter 320ms var(--ease-lux);
+      will-change: transform;
+    }
+    .site-header.is-scrolled {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 8px 28px -12px rgba(15, 77, 46, 0.14);
+    }
+    .site-header.is-hidden {
+      transform: translateY(-105%);
+    }
+
+    .header-meta-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-block: 10px;
+      border-bottom: 1px solid rgba(15, 77, 46, 0.06);
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+    .header-meta-items {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .header-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+    .header-meta-item svg {
+      color: var(--emerald);
+      flex-shrink: 0;
+    }
+    .header-meta-item strong {
+      font-family: var(--font-heading);
+      color: var(--charcoal);
+      font-weight: 700;
+      font-size: 0.875rem;
+      letter-spacing: -0.01em;
+    }
+
+    .header-main-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      min-height: 68px;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .brand-logo__mark {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+    }
+    .brand-logo__text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .brand-logo__name {
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      font-weight: 800;
+      color: var(--emerald);
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    .brand-logo__sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+    }
+    .nav-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+    .nav-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .nav-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      padding-block: 22px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: color 240ms var(--ease-lux);
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 14px;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 280ms var(--ease-lux);
+    }
+    .nav-item:hover > .nav-link,
+    .nav-item:focus-within > .nav-link,
+    .nav-item.is-active > .nav-link {
+      color: var(--emerald);
+    }
+    .nav-item:hover > .nav-link::after,
+    .nav-item:focus-within > .nav-link::after,
+    .nav-item.is-active > .nav-link::after {
+      transform: scaleX(1);
+    }
+    .nav-caret {
+      width: 12px;
+      height: 12px;
+      opacity: 0.65;
+      transition: transform 260ms var(--ease-lux), opacity 220ms ease;
+    }
+    .nav-item:hover > .nav-link .nav-caret,
+    .nav-item:focus-within > .nav-link .nav-caret,
+    .nav-item.is-open > .nav-link .nav-caret {
+      transform: rotate(180deg);
+      opacity: 1;
+    }
+
+    /* Dropdown Sub-Menu Panel (Bizan-Inspired Slide & Full-Row Fill Sweep) */
+    .nav-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 248px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background: #FFFFFF;
+      border-top: 2px solid var(--emerald);
+      box-shadow: 0 20px 44px -12px rgba(7, 38, 22, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(12px) scaleY(0.96);
+      transform-origin: top center;
+      transition: opacity 280ms var(--ease-lux),
+                  transform 320ms var(--ease-lux),
+                  visibility 280ms;
+      z-index: 1200;
+    }
+    .nav-item:hover > .nav-dropdown,
+    .nav-item:focus-within > .nav-dropdown,
+    .nav-item.is-open > .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0) scaleY(1);
+    }
+    .nav-dropdown li {
+      border-bottom: 1px solid rgba(15, 77, 46, 0.08);
+    }
+    .nav-dropdown li:last-child {
+      border-bottom: none;
+    }
+    .nav-dropdown a {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 24px;
+      font-family: var(--font-body);
+      font-size: 0.78125rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      background: #FFFFFF;
+      transition: color 240ms var(--ease-lux), padding-left 260ms var(--ease-lux);
+    }
+    .nav-dropdown a::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--emerald);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 280ms var(--ease-lux);
+      z-index: 0;
+    }
+    .nav-dropdown a > span {
+      position: relative;
+      z-index: 1;
+    }
+    .nav-dropdown a:hover,
+    .nav-dropdown a:focus-visible,
+    .nav-dropdown:not(:hover) a.is-default-active {
+      color: #FFFFFF;
+      padding-left: 28px;
+    }
+    .nav-dropdown a:hover::before,
+    .nav-dropdown a:focus-visible::before,
+    .nav-dropdown:not(:hover) a.is-default-active::before {
+      transform: scaleX(1);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .hamburger-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: 1px solid var(--line-strong);
+      background: var(--bg-white);
+      color: var(--emerald);
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      pointer-events: none;
+      visibility: hidden;
+    }
+    .mobile-drawer.is-open {
+      pointer-events: auto;
+      visibility: visible;
+    }
+    .mobile-drawer__backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(7, 38, 22, 0.56);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      transition: opacity 320ms var(--ease-lux);
+    }
+    .mobile-drawer.is-open .mobile-drawer__backdrop {
+      opacity: 1;
+    }
+    .mobile-drawer__panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(340px, 88vw);
+      background: var(--bg-white);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transform: translateX(100%);
+      opacity: 0;
+      transition: transform 380ms var(--ease-lux), opacity 320ms var(--ease-lux);
+      box-shadow: -20px 0 48px rgba(0, 0, 0, 0.16);
+      overflow-y: auto;
+    }
+    .mobile-drawer.is-open .mobile-drawer__panel {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    .mobile-drawer__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line-subtle);
+    }
+    .mobile-drawer__nav {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .mobile-drawer__nav a {
+      padding: 12px 10px;
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+    .mobile-drawer__nav a:hover {
+      background: var(--green-soft);
+      color: var(--emerald);
+    }
+    .mobile-submenu {
+      border-radius: 10px;
+    }
+    .mobile-submenu summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 12px 10px;
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--charcoal);
+    }
+    .mobile-submenu summary::-webkit-details-marker {
+      display: none;
+    }
+    .mobile-submenu summary:hover {
+      background: var(--green-soft);
+      color: var(--emerald);
+    }
+    .mobile-submenu[open] summary svg {
+      transform: rotate(180deg);
+    }
+    .mobile-submenu summary svg {
+      transition: transform 240ms var(--ease-lux);
+    }
+    .mobile-submenu__links {
+      display: flex;
+      flex-direction: column;
+      padding: 2px 0 6px 14px;
+      margin-left: 10px;
+      border-left: 1.5px solid var(--line-strong);
+      gap: 2px;
+    }
+    .mobile-submenu__links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted);
+      min-height: 40px;
+      padding: 8px 10px;
+    }
+    .mobile-drawer__meta {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--line-subtle);
+      font-size: 0.875rem;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* 3. HERO CINEMATIC — 4-SLIDE BACKGROUND PHOTO SLIDER */
+    .hero {
+      position: relative;
+      min-height: clamp(580px, 84vh, 780px);
+      display: flex;
+      align-items: center;
+      background: var(--emerald-ink);
+      color: #FFFFFF;
+      padding-top: clamp(72px, 8vw, 112px);
+      padding-bottom: clamp(118px, 12vw, 168px);
+      overflow: hidden;
+    }
+    .hero__slides {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .hero__slide {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      opacity: 0;
+      transform: scale(1.06);
+      transition: opacity 1100ms var(--ease-lux), transform 6200ms var(--ease-lux);
+      will-change: opacity, transform;
+    }
+    .hero__slide.is-active {
+      opacity: 1;
+      transform: scale(1);
+      z-index: 1;
+    }
+    .hero__slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero__scrim {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(100deg, rgba(7, 38, 22, 0.90) 0%, rgba(10, 56, 32, 0.72) 55%, rgba(7, 38, 22, 0.48) 100%);
+    }
+    .hero__inner {
+      position: relative;
+      z-index: 3;
+      align-items: end;
+    }
+    .hero__content {
+      grid-column: span 8;
+    }
+    .hero__title {
+      color: #FFFFFF;
+      margin-bottom: 24px;
+    }
+    .line-mask {
+      display: block;
+      overflow: hidden;
+      padding-bottom: 0.08em;
+      margin-bottom: -0.08em;
+    }
+    .line-inner {
+      display: block;
+    }
+    .line-inner--gold {
+      color: var(--gold-on-dark);
+    }
+    .hero__sub {
+      color: rgba(243, 246, 243, 0.88);
+      margin-bottom: 36px;
+    }
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+    .hero__trust-line {
+      margin-top: 40px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 32px;
+      font-size: 0.875rem;
+      color: rgba(243, 246, 243, 0.82);
+    }
+    .hero__trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero__trust-item svg {
+      color: var(--gold-on-dark);
+    }
+
+    /* 4-Slide Background Controls */
+    .hero__slider-hud {
+      grid-column: 9 / span 4;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 18px;
+    }
+    .hero__slide-meta {
+      text-align: right;
+      background: rgba(7, 38, 22, 0.56);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(214, 173, 80, 0.35);
+      border-radius: 16px;
+      padding: 18px 22px;
+      max-width: 340px;
+    }
+    .hero__slide-index {
+      font-family: var(--font-heading);
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--gold-on-dark);
+      margin-bottom: 4px;
+    }
+    .hero__slide-caption {
+      font-size: 0.9375rem;
+      color: rgba(255, 255, 255, 0.92);
+      line-height: 1.5;
+    }
+    .hero__slider-controls {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .hero__slide-dots {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero__slide-dot {
+      width: 28px;
+      height: 4px;
+      border-radius: 999px;
+      border: none;
+      padding: 0;
+      background: rgba(255, 255, 255, 0.28);
+      transition: width 320ms var(--ease-lux), background-color 280ms ease;
+    }
+    .hero__slide-dot.is-active {
+      width: 44px;
+      background: var(--gold);
+    }
+    .hero__arrow-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(214, 173, 80, 0.45);
+      background: rgba(7, 38, 22, 0.55);
+      color: #FFFFFF;
+      display: grid;
+      place-items: center;
+      transition: background-color 220ms ease, border-color 220ms ease, transform 220ms var(--ease-lux);
+    }
+    .hero__arrow-btn:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--emerald-ink);
+      transform: translateY(-2px);
+    }
+
+    /* Gold Signature Wave */
+    .hero__gold-wave {
+      position: relative;
+      z-index: 3;
+      margin-top: 40px;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .hero__gold-wave svg {
+      width: 210px;
+      height: 22px;
+      overflow: visible;
+    }
+    .hero__gold-wave path {
+      stroke: var(--gold);
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Gentle Seamless Wave Section Separators */
+    .wave-sep {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 56px;
+      overflow: hidden;
+      line-height: 0;
+      pointer-events: none;
+      z-index: 2;
+      margin-top: -1px;
+      margin-bottom: -1px;
+    }
+    .wave-sep--bottom {
+      bottom: -1px;
+    }
+    .wave-sep--top {
+      top: -1px;
+      transform: scaleY(-1);
+    }
+    .wave-sep svg {
+      width: 106%;
+      max-width: none;
+      height: 100%;
+      display: block;
+      margin-left: -3%;
+      animation: waveDrift 18s ease-in-out infinite alternate;
+    }
+    @keyframes waveDrift {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-2.5%); }
+    }
+
+    /* 4. TENTANG KAMI (12-Col Asymmetric + Hairline Principles) */
+    .about-sec {
+      background: var(--bg-white);
+    }
+    .about-media-col {
+      grid-column: span 5;
+      position: relative;
+      padding: 0 0 28px 28px;
+    }
+    .about-backdrop {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 82%;
+      height: 82%;
+      background: var(--emerald);
+      border-radius: var(--radius-card);
+    }
+    .about-photo-frame {
+      position: relative;
+      z-index: 2;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      aspect-ratio: 4 / 4.2;
+      border: 6px solid #FFFFFF;
+      box-shadow: var(--shadow-soft);
+      background: var(--bg-soft);
+    }
+    .about-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about-copy-col {
+      grid-column: 7 / span 6;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .about-copy-col > p {
+      margin-top: 20px;
+      color: var(--muted);
+    }
+    .about-pillars {
+      margin-block: 36px;
+      border-top: 1px solid var(--line-subtle);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      padding-top: 28px;
+    }
+    .about-pillar__icon {
+      color: var(--emerald);
+      margin-bottom: 12px;
+    }
+    .about-pillar h3 {
+      margin-bottom: 6px;
+    }
+    .about-pillar p {
+      font-size: 0.9375rem;
+      color: var(--muted);
+    }
+
+    /* 5. BAND NILAI / ANGKA (No heavy boxes — Editorial Numerals & Vertical Hairlines) */
+    .values-sec {
+      padding-block: clamp(92px, 11vw, 152px);
+    }
+    .values-ledger {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .value-pillar {
+      padding: 12px 28px;
+      border-left: 1px solid var(--line-on-dark);
+    }
+    .value-pillar:first-child {
+      padding-left: 0;
+      border-left: none;
+    }
+    .value-pillar__num {
+      font-family: var(--font-heading);
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 18px;
+      letter-spacing: -0.03em;
+    }
+    .value-pillar__head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+    }
+    .value-pillar__head svg {
+      color: var(--gold-on-dark);
+      flex-shrink: 0;
+    }
+    .value-pillar__head h3 {
+      color: #FFFFFF;
+    }
+    .value-pillar p {
+      font-size: 0.9375rem;
+      color: var(--on-dark-muted);
+    }
+
+    /* 6. PRODUK & LAYANAN (Asymmetric 12-Col Editorial Ledger, Clickable Cards) */
+    .products-sec {
+      background: var(--bg-soft);
+    }
+    .products-sticky-col {
+      grid-column: span 5;
+      align-self: start;
+      position: sticky;
+      top: 112px;
+    }
+    .products-sticky-col p {
+      margin-top: 18px;
+      color: var(--muted);
+    }
+    .products-list-col {
+      grid-column: 7 / span 6;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .product-row {
+      position: relative;
+      cursor: pointer;
+      padding: 32px 28px;
+      background: var(--bg-white);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line-subtle);
+      box-shadow: var(--shadow-soft);
+      transition: transform var(--dur-hover) var(--ease-lux),
+                  box-shadow var(--dur-hover) var(--ease-lux),
+                  border-color var(--dur-hover) var(--ease-lux);
+    }
+    .product-row:hover {
+      border-color: rgba(15, 77, 46, 0.16);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+    .product-row__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    .product-row__index {
+      font-family: var(--font-heading);
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--gold-text);
+    }
+    .product-row__right-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .product-row__icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--green-soft);
+      color: var(--emerald);
+      display: grid;
+      place-items: center;
+      transition: background-color 260ms ease, color 260ms ease;
+    }
+    .product-row:hover .product-row__icon {
+      background: var(--emerald);
+      color: #FFFFFF;
+    }
+    .card-corner-arrow {
+      width: 16px;
+      height: 16px;
+      color: var(--emerald);
+      opacity: 0.65;
+      flex-shrink: 0;
+      transition: transform 260ms var(--ease-lux), opacity 220ms ease;
+    }
+    .product-row:hover .card-corner-arrow,
+    .article-lead:hover .card-corner-arrow,
+    .article-item:hover .card-corner-arrow {
+      transform: translate(3px, -3px);
+      opacity: 1;
+      color: var(--gold-text);
+    }
+    .product-row h3 {
+      margin-bottom: 10px;
+    }
+    .product-row > p {
+      color: var(--muted);
+      font-size: 0.96875rem;
+      margin-bottom: 18px;
+    }
+    .product-row__items {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      font-size: 0.875rem;
+      color: var(--charcoal);
+    }
+    .product-row__items li {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .product-row__items li::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* 7. KALKULATOR SIMULASI PEMBIAYAAN */
+    .calc-sec {
+      background: var(--bg-white);
+    }
+    .calc-sheet {
+      background: var(--bg-white);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line-subtle);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+    .calc-inputs {
+      grid-column: span 7;
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .calc-field-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .calc-field-head label {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.9375rem;
+    }
+    .calc-field-val {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--emerald);
+    }
+    .range-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(to right, var(--emerald) 0%, var(--emerald) var(--pct, 30%), #E4EBE5 var(--pct, 30%), #E4EBE5 100%);
+      outline: none;
+      cursor: pointer;
+    }
+    .range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 2.5px solid var(--emerald);
+      box-shadow: 0 2px 8px rgba(15, 77, 46, 0.25);
+      transition: transform 180ms var(--ease-lux);
+    }
+    .range-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.12);
+    }
+    .range-slider::-moz-range-thumb {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 2.5px solid var(--emerald);
+      box-shadow: 0 2px 8px rgba(15, 77, 46, 0.25);
+    }
+    .calc-ticks {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .calc-num-input {
+      width: 100%;
+      min-height: 46px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--line-strong);
+      background: var(--bg-soft);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-top: 12px;
+      transition: border-color 200ms ease, background-color 200ms ease;
+    }
+    .calc-num-input:focus {
+      outline: none;
+      background: #FFFFFF;
+      border-color: var(--gold);
+    }
+    .tenor-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .tenor-btn {
+      padding: 8px 16px;
+      min-height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--line-strong);
+      background: var(--bg-white);
+      color: var(--charcoal);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+    }
+    .tenor-btn.is-active {
+      background: var(--emerald);
+      color: #FFFFFF;
+      border-color: var(--emerald);
+    }
+
+    .calc-summary {
+      grid-column: 8 / span 5;
+      background: linear-gradient(155deg, var(--emerald) 0%, var(--emerald-deep) 100%);
+      color: #FFFFFF;
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .calc-summary__label {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-on-dark);
+      margin-bottom: 10px;
+    }
+    .calc-summary__amount {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 3.2vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      color: #FFFFFF;
+    }
+    .calc-breakdown {
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      padding-block: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 0.9375rem;
+    }
+    .calc-breakdown__row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--on-dark-muted);
+    }
+    .calc-breakdown__row strong {
+      color: #FFFFFF;
+    }
+    .calc-note {
+      font-size: 0.8125rem;
+      line-height: 1.55;
+      color: var(--on-dark-muted);
+      padding-left: 14px;
+      border-left: 2px solid var(--gold);
+    }
+
+    /* 8. MENGAPA MEMILIH KAMI (Light Soft-Green Architectural Canvas) */
+    .why-sec {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--bg-white) 0%, var(--green-soft) 22%, var(--green-soft) 100%);
+      padding-bottom: clamp(148px, 12vw, 188px);
+    }
+    .why-backdrop {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .why-backdrop img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.12;
+    }
+    .why-panel {
+      grid-column: 6 / span 7;
+      position: relative;
+      z-index: 3;
+      background: #FFFFFF;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line-subtle);
+      box-shadow: var(--shadow-soft);
+      padding: 52px;
+    }
+    .tabs-bar {
+      position: relative;
+      display: inline-flex;
+      border-bottom: 1px solid var(--line-subtle);
+      gap: 8px;
+      margin-block: 26px;
+    }
+    .tab-indicator {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: transform 320ms var(--ease-lux), width 320ms var(--ease-lux);
+      pointer-events: none;
+    }
+    .tab-btn {
+      border: none;
+      background: transparent;
+      padding: 10px 18px;
+      min-height: 44px;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--muted);
+      transition: color 220ms ease;
+    }
+    .tab-btn[aria-selected="true"] {
+      color: var(--emerald);
+    }
+    .tab-panel {
+      display: none;
+    }
+    .tab-panel.is-active {
+      display: block;
+      animation: tabFadeSlide 380ms var(--ease-lux) forwards;
+    }
+    @keyframes tabFadeSlide {
+      from { opacity: 0; transform: translateX(12px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .tab-panel p {
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .principle-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+    .principle-bar__head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .principle-bar__track {
+      height: 4px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      overflow: hidden;
+    }
+    .principle-bar__fill {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(90deg, var(--emerald) 0%, var(--gold) 100%);
+      transform: scaleX(var(--fill, 1));
+      transform-origin: left;
+    }
+
+    /* 9. PENGURUS & PENGAWAS */
+    .team-sec {
+      padding-block: clamp(92px, 11vw, 152px);
+    }
+    .team-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .team-card {
+      position: relative;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      background: var(--emerald-ink);
+      border: 1px solid var(--line-on-dark);
+    }
+    .team-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 420ms var(--ease-lux);
+    }
+    .team-card:hover img {
+      transform: scale(1.06);
+    }
+    .team-card__overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 28px 20px 20px;
+      background: linear-gradient(to top, rgba(7, 38, 22, 0.96) 0%, rgba(15, 77, 46, 0.82) 65%, transparent 100%);
+      transform: translateY(14px);
+      transition: transform 320ms var(--ease-lux);
+    }
+    .team-card:hover .team-card__overlay,
+    .team-card:focus-within .team-card__overlay {
+      transform: translateY(0);
+    }
+    .team-card__name {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.0625rem;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+    .team-card__role {
+      font-size: 0.8125rem;
+      color: var(--gold-on-dark);
+    }
+
+    /* 10. PROGRAM & KEGIATAN CAROUSEL (Minimalist Framed Media, No Heavy Cards) */
+    .program-sec {
+      background: var(--bg-white);
+    }
+    .program-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .carousel-controls {
+      display: flex;
+      gap: 12px;
+    }
+    .circle-arrow-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid var(--line-strong);
+      background: #FFFFFF;
+      color: var(--emerald);
+      display: grid;
+      place-items: center;
+      transition: background-color 240ms ease, color 240ms ease, border-color 240ms ease, transform 240ms var(--ease-lux);
+    }
+    .circle-arrow-btn:hover {
+      background: var(--emerald);
+      color: #FFFFFF;
+      border-color: var(--emerald);
+      transform: translateY(-2px);
+    }
+    .carousel-viewport {
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      gap: 32px;
+      transition: transform 520ms var(--ease-lux);
+      touch-action: pan-y;
+    }
+    .program-slide {
+      flex: 0 0 calc(50% - 16px);
+    }
+    .program-slide__media {
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      background: var(--bg-soft);
+      border: 1px solid var(--line-subtle);
+      margin-bottom: 20px;
+    }
+    .program-slide__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 480ms var(--ease-lux);
+    }
+    .program-slide:hover .program-slide__media img {
+      transform: scale(1.06);
+    }
+    .program-slide__meta {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-text);
+      margin-bottom: 8px;
+    }
+    .program-slide h3 {
+      margin-bottom: 8px;
+    }
+    .program-slide p {
+      font-size: 0.9375rem;
+      color: var(--muted);
+    }
+
+    /* 11. TESTIMONI ANGGOTA (Editorial Hairline Spread, No Cloned Boxes) */
+    .testi-sec {
+      background: var(--bg-soft);
+    }
+    .testi-viewport {
+      overflow: hidden;
+    }
+    .testi-track {
+      display: flex;
+      transition: transform 500ms var(--ease-lux);
+    }
+    .testi-page {
+      flex: 0 0 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .testi-item {
+      padding: 44px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .testi-item:first-child {
+      padding-left: 0;
+      border-right: 1px solid var(--line-strong);
+    }
+    .testi-item:last-child {
+      padding-right: 0;
+    }
+    .testi-quote-mark {
+      color: var(--gold);
+      opacity: 0.8;
+    }
+    .testi-item blockquote {
+      margin: 0;
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--charcoal);
+    }
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .testi-author__avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--line-strong);
+    }
+    .testi-author__name {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.9375rem;
+    }
+    .testi-author__role {
+      font-size: 0.8125rem;
+      color: var(--emerald);
+    }
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 36px;
+    }
+    .slider-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: none;
+      padding: 0;
+      background: rgba(15, 77, 46, 0.22);
+      transition: transform 300ms var(--ease-lux), background-color 300ms ease;
+    }
+    .slider-dot.is-active {
+      background: var(--emerald);
+      transform: scaleX(2.4);
+    }
+
+    /* 12. ARTIKEL TERBARU (Editorial Magazine Split: Clickable Cards) */
+    .articles-sec {
+      background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-white) calc(100% - 140px), var(--bg-soft) 100%);
+    }
+    .article-lead {
+      grid-column: span 6;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 20px;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line-subtle);
+      background: var(--bg-white);
+      box-shadow: var(--shadow-soft);
+      transition: transform var(--dur-hover) var(--ease-lux), box-shadow var(--dur-hover) var(--ease-lux);
+    }
+    .article-lead:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    .article-lead__img-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10.5;
+      border: 1px solid var(--line-subtle);
+      margin-bottom: 22px;
+      background: var(--bg-soft);
+    }
+    .article-lead__img-wrap img,
+    .article-item__thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 480ms var(--ease-lux);
+    }
+    .article-lead:hover .article-lead__img-wrap img,
+    .article-item:hover .article-item__thumb img {
+      transform: scale(1.06);
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 0.8125rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .article-meta__text {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .article-lead h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      transition: color 220ms ease;
+    }
+    .article-lead:hover h3,
+    .article-item:hover h3 {
+      color: var(--emerald);
+    }
+    .article-lead p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .articles-stack {
+      grid-column: 7 / span 6;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .article-item {
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: 184px 1fr;
+      gap: 22px;
+      align-items: center;
+      padding: 20px;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line-subtle);
+      background: var(--bg-white);
+      box-shadow: var(--shadow-soft);
+      transition: transform var(--dur-hover) var(--ease-lux), box-shadow var(--dur-hover) var(--ease-lux);
+    }
+    .article-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    .article-item__thumb {
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      border: 1px solid var(--line-subtle);
+      background: var(--bg-soft);
+    }
+    .article-item h3 {
+      margin-bottom: 0;
+      transition: color 220ms ease;
+    }
+
+    /* 13. KONSULTASI */
+    .consult-sec {
+      background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-soft) calc(100% - 140px), var(--bg-white) 100%);
+    }
+    .consult-form-col {
+      grid-column: span 6;
+    }
+    .consult-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line-subtle);
+      box-shadow: var(--shadow-soft);
+      padding: 44px;
+    }
+    .consult-card h2 {
+      font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+      margin-bottom: 10px;
+    }
+    .consult-card > p {
+      color: var(--muted);
+      font-size: 0.96875rem;
+      margin-bottom: 28px;
+    }
+    .consult-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .float-field {
+      position: relative;
+    }
+    .float-field input,
+    .float-field select {
+      width: 100%;
+      height: 48px;
+      min-height: 48px;
+      padding: 18px 14px 4px;
+      border: 1px solid var(--line-strong);
+      border-radius: 10px;
+      background: var(--bg-soft);
+      font-size: 0.9375rem;
+      color: var(--charcoal);
+      transition: border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+    }
+    .float-field textarea {
+      width: 100%;
+      padding: 22px 14px 8px;
+      min-height: 108px;
+      resize: vertical;
+      border: 1px solid var(--line-strong);
+      border-radius: 10px;
+      background: var(--bg-soft);
+      font-size: 0.9375rem;
+      color: var(--charcoal);
+      transition: border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+    }
+    .float-field label {
+      position: absolute;
+      left: 14px;
+      top: 13px;
+      font-size: 0.9375rem;
+      color: var(--muted);
+      pointer-events: none;
+      transform-origin: left top;
+      transition: transform 220ms var(--ease-lux), color 220ms ease;
+    }
+    .float-field input:focus,
+    .float-field select:focus,
+    .float-field textarea:focus {
+      outline: none;
+      background: #FFFFFF;
+      border-color: var(--gold);
+      box-shadow: 0 2px 0 0 var(--gold);
+    }
+    .float-field input:focus + label,
+    .float-field input:not(:placeholder-shown) + label,
+    .float-field textarea:focus + label,
+    .float-field textarea:not(:placeholder-shown) + label,
+    .float-field select + label {
+      transform: translateY(-9px) scale(0.75);
+      color: var(--emerald);
+      font-weight: 600;
+    }
+    .form-status {
+      font-size: 0.875rem;
+      padding: 12px 14px;
+      border-radius: 10px;
+      display: none;
+    }
+    .form-status.is-shown { display: block; }
+    .form-status--success {
+      background: var(--green-soft);
+      color: var(--emerald-deep);
+      border: 1px solid var(--line-strong);
+    }
+    .form-status--error {
+      background: #FEF2F2;
+      color: #991B1B;
+      border: 1px solid #FECACA;
+    }
+
+    .consult-photo-col {
+      grid-column: 8 / span 5;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      border: 1px solid var(--line-subtle);
+      box-shadow: var(--shadow-soft);
+      min-height: 460px;
+      background: var(--emerald-deep);
+    }
+    .consult-photo-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* 14. LOKASI KANTOR */
+    .office-sec {
+      background: var(--bg-white);
+    }
+    .office-list-col {
+      grid-column: span 5;
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--line-strong);
+    }
+    .office-item {
+      text-align: left;
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--line-strong);
+      padding: 22px 18px;
+      border-radius: 0;
+      transition: background-color 240ms ease, padding-left 240ms var(--ease-lux);
+    }
+    .office-item:hover {
+      background: var(--bg-soft);
+    }
+    .office-item.is-active {
+      background: var(--green-soft);
+      padding-left: 24px;
+      box-shadow: inset 3px 0 0 0 var(--emerald);
+    }
+    .office-item__type {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-text);
+      margin-bottom: 4px;
+    }
+    .office-item h3 {
+      margin-bottom: 4px;
+    }
+    .office-item p {
+      font-size: 0.9375rem;
+      color: var(--muted);
+    }
+    .office-hours {
+      margin-top: 24px;
+      padding: 22px 24px;
+      border-radius: 16px;
+      background: var(--bg-soft);
+      border: 1px solid var(--line-subtle);
+      font-size: 0.9375rem;
+    }
+    .office-hours strong {
+      display: block;
+      font-family: var(--font-heading);
+      color: var(--emerald);
+      margin-bottom: 4px;
+    }
+
+    .office-map-col {
+      grid-column: 6 / span 7;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      border: 1px solid var(--line-subtle);
+      box-shadow: var(--shadow-soft);
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-soft);
+    }
+    .office-map-col iframe {
+      width: 100%;
+      flex-grow: 1;
+      min-height: 376px;
+      border: 0;
+    }
+    .map-bar {
+      padding: 14px 20px;
+      background: #FFFFFF;
+      border-top: 1px solid var(--line-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.875rem;
+    }
+
+    /* 15. FOOTER */
+    .site-footer {
+      position: relative;
+      background: var(--emerald-ink);
+      color: var(--on-dark);
+      padding-top: 120px;
+    }
+    .footer-brand {
+      grid-column: span 4;
+    }
+    .footer-brand p {
+      color: var(--on-dark-muted);
+      font-size: 0.9375rem;
+      margin-block: 18px 20px;
+    }
+    .footer-social {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold-on-dark);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+    .footer-col-1 { grid-column: 6 / span 2; }
+    .footer-col-2 { grid-column: 8 / span 2; }
+    .footer-col-3 { grid-column: 10 / span 3; }
+
+    .site-footer h3 {
+      color: #FFFFFF;
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: var(--on-dark-muted);
+      font-size: 0.9375rem;
+      display: inline-block;
+      transition: color 200ms ease, transform 220ms var(--ease-lux);
+    }
+    .footer-links a:hover {
+      color: var(--gold-on-dark);
+      transform: translateX(4px);
+    }
+    .footer-contact-note {
+      font-size: 0.875rem;
+      color: var(--on-dark-muted);
+      margin-bottom: 18px;
+    }
+    .footer-bottom {
+      margin-top: 64px;
+      padding-block: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.875rem;
+      color: var(--on-dark-muted);
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 900;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      background: var(--emerald);
+      color: #FFFFFF;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow-hover);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(16px);
+      transition: opacity 280ms var(--ease-lux), transform 280ms var(--ease-lux);
+    }
+    .back-to-top.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    /* Mobile Floating WhatsApp Bar */
+    .mobile-wa-bar {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 950;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--line-subtle);
+      padding: 8px 16px;
+      transform: translateY(100%);
+      transition: transform 300ms var(--ease-lux);
+    }
+    .mobile-wa-bar.is-visible {
+      transform: translateY(0);
+    }
+    .mobile-wa-bar .btn {
+      width: 100%;
+      height: 52px;
+    }
+
+    /* Accessible Detail Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 2500;
+      background: rgba(7, 38, 22, 0.64);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-backdrop.is-open { display: flex; }
+    .modal-dialog {
+      background: #FFFFFF;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--line-subtle);
+      max-width: 600px;
+      width: 100%;
+      padding: 36px;
+      box-shadow: var(--shadow-hover);
+      max-height: 86vh;
+      overflow-y: auto;
+    }
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .modal-close {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      border: 1px solid var(--line-strong);
+      background: var(--bg-soft);
+      color: var(--charcoal);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    /* RESPONSIVE: 1024px / 768px / 360px */
+    @media (max-width: 1024px) {
+      .header-meta-strip { display: none; }
+      .hero__content { grid-column: span 12; }
+      .hero__slider-hud { grid-column: span 12; align-items: flex-start; }
+      .hero__slide-meta { text-align: left; }
+      .about-media-col { grid-column: span 12; max-width: 520px; }
+      .about-copy-col { grid-column: span 12; }
+      .values-ledger { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+      .value-pillar { padding: 12px 0 12px 24px; }
+      .value-pillar:nth-child(odd) { border-left: none; padding-left: 0; }
+      .products-sticky-col { grid-column: span 12; position: static; }
+      .products-list-col { grid-column: span 12; }
+      .calc-inputs, .calc-summary { grid-column: span 12; }
+      .why-panel { grid-column: span 12; padding: 36px 28px; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .article-lead, .articles-stack { grid-column: span 12; }
+      .consult-form-col, .consult-photo-col { grid-column: span 12; }
+      .office-list-col, .office-map-col { grid-column: span 12; }
+      .footer-brand, .footer-col-1, .footer-col-2, .footer-col-3 { grid-column: span 6; }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --dur-reveal: 700ms;
+        --dur-hover: 220ms;
+      }
+      .section-pad { padding-block: clamp(72px, 10vw, 96px); }
+      .blend-to-emerald, .blend-to-footer, .why-sec { padding-bottom: 112px; }
+      .grid-12 { gap: 24px; }
+      .top-bar__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+      }
+      .header-main-row { min-height: 56px; }
+      .brand-logo__mark { width: 34px; height: 34px; }
+      .main-nav, .header-actions .btn { display: none; }
+      .hamburger-btn { display: inline-flex; width: 44px; height: 44px; }
+      .hero { min-height: auto; padding-top: 44px; padding-bottom: 92px; }
+      .hero__actions .btn,
+      .btn-pair .btn,
+      #consultSubmitBtn { width: 100%; height: 52px; }
+      .btn-pair { grid-template-columns: 1fr; width: 100%; }
+      .about-pillars,
+      .values-ledger,
+      .team-grid,
+      .testi-page { grid-template-columns: 1fr; }
+      .value-pillar { border-left: none; border-top: 1px solid var(--line-on-dark); padding: 20px 0 0; }
+      .value-pillar:first-child { border-top: none; padding-top: 0; }
+      .program-head { flex-direction: column; align-items: flex-start; }
+      .program-slide { flex: 0 0 100%; }
+      .testi-item { padding: 28px 0 !important; border-right: none !important; }
+      .testi-item:first-child { border-bottom: 1px solid var(--line-strong); }
+      .article-item { grid-template-columns: 1fr; gap: 16px; }
+      .calc-inputs, .calc-summary, .consult-card { padding: 28px 20px; }
+      .footer-brand, .footer-col-1, .footer-col-2, .footer-col-3 { grid-column: span 12; }
+      .mobile-wa-bar { display: block; }
+      .back-to-top { bottom: 72px; right: 16px; }
+      body { padding-bottom: 68px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .wave-sep svg, .tab-panel.is-active {
+        animation: none !important;
+      }
+      * {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
+
+  <!-- 1. TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar__inner">
+      <div class="top-bar__left">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E6C572" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>Jam Layanan: [ISI]</span>
+      </div>
+      <div class="top-bar__right">Berjuang Bersama Ummat Keluar Dari Riba</div>
+    </div>
+  </div>
+
+  <!-- 2. HEADER STICKY -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <div class="header-meta-strip">
+        <div class="header-meta-items">
+          <span class="header-meta-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>Telepon: <strong>[ISI]</strong></span>
+          </span>
+          <span class="header-meta-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span>Email: <strong>[ISI]</strong></span>
+          </span>
+        </div>
+        <span class="header-meta-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Kantor Toili: <strong>[ISI]</strong></span>
+        </span>
+      </div>
+
+      <div class="header-main-row">
+        <!-- Ganti SVG mark jika mengimpor berkas logo PNG/SVG resmi dari situs lama -->
+        <a href="#beranda" class="brand-logo" aria-label="Beranda Koperasi BMT Al Muhajirin" data-cursor="expand">
+          <svg class="brand-logo__mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="48" height="48" rx="12" fill="#0F4D2E"/>
+            <path d="M24 9L36 18V37H12V18L24 9Z" stroke="#D6AD50" stroke-width="1.75"/>
+            <path d="M18.5 37V25.5C18.5 22.46 20.96 20 24 20C27.04 20 29.5 22.46 29.5 25.5V37" stroke="#FFFFFF" stroke-width="1.75"/>
+            <circle cx="24" cy="14.5" r="2" fill="#D6AD50"/>
+          </svg>
+          <span class="brand-logo__text">
+            <span class="brand-logo__name">BMT Al Muhajirin</span>
+            <span class="brand-logo__sub">Koperasi Syariah · Toili</span>
+          </span>
+        </a>
+
+        <nav class="main-nav" aria-label="Navigasi Utama">
+          <ul class="nav-list">
+            <li class="nav-item is-active">
+              <a href="#beranda" class="nav-link" data-cursor="expand">Beranda</a>
+            </li>
+
+            <li class="nav-item has-dropdown">
+              <a href="#tentang" class="nav-link" aria-haspopup="true" aria-expanded="false" data-cursor="expand">
+                <span>Tentang</span>
+                <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </a>
+              <ul class="nav-dropdown" aria-label="Submenu Tentang">
+                <li><a href="#tentang" class="is-default-active"><span>Profil BMT Toili</span></a></li>
+                <li><a href="#nilai-utama"><span>Nilai Utama</span></a></li>
+                <li><a href="#mengapa"><span>Visi &amp; Misi</span></a></li>
+                <li><a href="#pengurus"><span>Pengurus &amp; Pengawas</span></a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item has-dropdown">
+              <a href="#produk" class="nav-link" aria-haspopup="true" aria-expanded="false" data-cursor="expand">
+                <span>Produk</span>
+                <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </a>
+              <ul class="nav-dropdown" aria-label="Submenu Produk dan Layanan">
+                <li><a href="#produk-simpanan" class="is-default-active"><span>Simpanan Syariah</span></a></li>
+                <li><a href="#produk-pembiayaan"><span>Pembiayaan Produktif</span></a></li>
+                <li><a href="#produk-lainnya"><span>Layanan &amp; Baitul Maal</span></a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a href="#kalkulator" class="nav-link" data-cursor="expand">Kalkulator</a>
+            </li>
+
+            <li class="nav-item has-dropdown">
+              <a href="#artikel" class="nav-link" aria-haspopup="true" aria-expanded="false" data-cursor="expand">
+                <span>Artikel</span>
+                <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </a>
+              <ul class="nav-dropdown" aria-label="Submenu Artikel dan Kegiatan">
+                <li><a href="#artikel" class="is-default-active"><span>Artikel &amp; Edukasi</span></a></li>
+                <li><a href="#program"><span>Program &amp; Kegiatan</span></a></li>
+                <li><a href="#testimoni"><span>Testimoni Anggota</span></a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item has-dropdown">
+              <a href="#lokasi" class="nav-link" aria-haspopup="true" aria-expanded="false" data-cursor="expand">
+                <span>Kontak</span>
+                <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </a>
+              <ul class="nav-dropdown" aria-label="Submenu Kontak dan Lokasi">
+                <li><a href="#konsultasi" class="is-default-active"><span>Konsultasi WhatsApp</span></a></li>
+                <li><a href="#lokasi"><span>Kantor Toili, Luwuk &amp; Bunta</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#konsultasi" class="btn btn--primary btn--sm">
+            <span>Konsultasi via WhatsApp</span>
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <button type="button" class="hamburger-btn" id="menuOpenBtn" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileDrawer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer__backdrop" id="menuBackdrop"></div>
+    <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="Menu Navigasi">
+      <div class="mobile-drawer__head">
+        <span style="font-family:var(--font-heading); font-weight:700; color:var(--emerald);">BMT Al Muhajirin</span>
+        <button type="button" class="modal-close" id="menuCloseBtn" aria-label="Tutup menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <nav class="mobile-drawer__nav" aria-label="Navigasi Seluler">
+        <a href="#beranda">Beranda</a>
+
+        <details class="mobile-submenu">
+          <summary>
+            <span>Tentang</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="mobile-submenu__links">
+            <a href="#tentang">Profil BMT Toili</a>
+            <a href="#nilai-utama">Nilai Utama</a>
+            <a href="#mengapa">Visi &amp; Misi</a>
+            <a href="#pengurus">Pengurus &amp; Pengawas</a>
+          </div>
+        </details>
+
+        <details class="mobile-submenu">
+          <summary>
+            <span>Produk &amp; Layanan</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="mobile-submenu__links">
+            <a href="#produk-simpanan">Simpanan Syariah</a>
+            <a href="#produk-pembiayaan">Pembiayaan Produktif</a>
+            <a href="#produk-lainnya">Layanan &amp; Baitul Maal</a>
+          </div>
+        </details>
+
+        <a href="#kalkulator">Kalkulator</a>
+
+        <details class="mobile-submenu">
+          <summary>
+            <span>Artikel &amp; Kegiatan</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="mobile-submenu__links">
+            <a href="#artikel">Artikel &amp; Edukasi</a>
+            <a href="#program">Program &amp; Kegiatan</a>
+            <a href="#testimoni">Testimoni Anggota</a>
+          </div>
+        </details>
+
+        <details class="mobile-submenu">
+          <summary>
+            <span>Kontak &amp; Lokasi</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="mobile-submenu__links">
+            <a href="#konsultasi">Konsultasi WhatsApp</a>
+            <a href="#lokasi">Kantor Toili, Luwuk &amp; Bunta</a>
+          </div>
+        </details>
+
+        <a href="#konsultasi">Hubungi Tim Toili</a>
+      </nav>
+      <div class="mobile-drawer__meta">
+        <div><strong>Jam Layanan:</strong> [ISI]</div>
+        <div><strong>Telepon:</strong> [ISI]</div>
+        <div><strong>Email:</strong> [ISI]</div>
+        <div><strong>Kantor Toili:</strong> [ISI]</div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- 3. HERO CINEMATIC — 4-SLIDE BACKGROUND SLIDER -->
+    <section class="hero" id="beranda" aria-roledescription="carousel" aria-label="Sorotan Foto Koperasi BMT Al Muhajirin">
+      <div class="hero__slides js-hero-slides" id="heroSlides">
+        <figure class="hero__slide is-active">
+          <img
+            width="1600"
+            height="900"
+            fetchpriority="high"
+            alt="[ISI] Foto slide 1 pelayanan hangat Koperasi BMT Al Muhajirin Kantor Pusat Toili"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='s1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%230B3F25'/%3E%3Cstop offset='55%25' stop-color='%230F4D2E'/%3E%3Cstop offset='100%25' stop-color='%23072616'/%3E%3C/linearGradient%3E%3CradialGradient id='g1' cx='72%25' cy='42%25' r='45%25'%3E%3Cstop offset='0%25' stop-color='%23D6AD50' stop-opacity='0.28'/%3E%3Cstop offset='100%25' stop-color='%230F4D2E' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23s1)'/%3E%3Crect width='1600' height='900' fill='url(%23g1)'/%3E%3Cg stroke='%23D6AD50' stroke-opacity='0.22' fill='none' stroke-width='1.2'%3E%3Cpath d='M920 900 V420 C920 260 1040 160 1180 160 C1320 160 1440 260 1440 420 V900'/%3E%3Ccircle cx='1180' cy='380' r='160'/%3E%3C/g%3E%3Ctext x='1180' y='465' text-anchor='middle' fill='%23E6C572' fill-opacity='0.75' font-family='sans-serif' font-size='16' font-weight='600' letter-spacing='3'%3E[ISI] FOTO LATAR SLIDE 1 · KANTOR TOILI%3C/text%3E%3C/svg%3E"
+          />
+        </figure>
+        <figure class="hero__slide">
+          <img
+            width="1600"
+            height="900"
+            loading="lazy"
+            alt="[ISI] Foto slide 2 pendampingan pelaku usaha mikro dan pedagang di Kabupaten Banggai"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='s2' x1='0.1' y1='0' x2='0.9' y2='1'%3E%3Cstop offset='0%25' stop-color='%23134E31'/%3E%3Cstop offset='100%25' stop-color='%23082918'/%3E%3C/linearGradient%3E%3CradialGradient id='g2' cx='68%25' cy='48%25' r='48%25'%3E%3Cstop offset='0%25' stop-color='%23E6C572' stop-opacity='0.24'/%3E%3Cstop offset='100%25' stop-color='%23082918' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23s2)'/%3E%3Crect width='1600' height='900' fill='url(%23g2)'/%3E%3Cg stroke='%23D6AD50' stroke-opacity='0.2' fill='none' stroke-width='1.2'%3E%3Crect x='930' y='210' width='480' height='480' rx='24'/%3E%3Crect x='980' y='260' width='380' height='380' rx='18' transform='rotate(12 1170 450)'/%3E%3C/g%3E%3Ctext x='1170' y='455' text-anchor='middle' fill='%23E6C572' fill-opacity='0.75' font-family='sans-serif' font-size='16' font-weight='600' letter-spacing='3'%3E[ISI] FOTO LATAR SLIDE 2 · PENDAMPINGAN UMKM%3C/text%3E%3C/svg%3E"
+          />
+        </figure>
+        <figure class="hero__slide">
+          <img
+            width="1600"
+            height="900"
+            loading="lazy"
+            alt="[ISI] Foto slide 3 suasana akad syariah transparan tanpa riba di BMT Al Muhajirin"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='s3' x1='0' y1='0.2' x2='1' y2='0.8'%3E%3Cstop offset='0%25' stop-color='%230A3A22'/%3E%3Cstop offset='100%25' stop-color='%23165B38'/%3E%3C/linearGradient%3E%3CradialGradient id='g3' cx='74%25' cy='38%25' r='44%25'%3E%3Cstop offset='0%25' stop-color='%23D6AD50' stop-opacity='0.26'/%3E%3Cstop offset='100%25' stop-color='%230A3A22' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23s3)'/%3E%3Crect width='1600' height='900' fill='url(%23g3)'/%3E%3Cg stroke='%23D6AD50' stroke-opacity='0.22' fill='none' stroke-width='1.2'%3E%3Ccircle cx='1180' cy='430' r='220'/%3E%3Ccircle cx='1180' cy='430' r='140'/%3E%3C/g%3E%3Ctext x='1180' y='436' text-anchor='middle' fill='%23E6C572' fill-opacity='0.75' font-family='sans-serif' font-size='16' font-weight='600' letter-spacing='3'%3E[ISI] FOTO LATAR SLIDE 3 · AKAD SYARIAH%3C/text%3E%3C/svg%3E"
+          />
+        </figure>
+        <figure class="hero__slide">
+          <img
+            width="1600"
+            height="900"
+            loading="lazy"
+            alt="[ISI] Foto slide 4 kebersamaan anggota dan program sosial umat di Toili, Luwuk, dan Bunta"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='s4' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23072817'/%3E%3Cstop offset='50%25' stop-color='%230F4D2E'/%3E%3Cstop offset='100%25' stop-color='%23175736'/%3E%3C/linearGradient%3E%3CradialGradient id='g4' cx='70%25' cy='45%25' r='46%25'%3E%3Cstop offset='0%25' stop-color='%23E6C572' stop-opacity='0.25'/%3E%3Cstop offset='100%25' stop-color='%23072817' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='url(%23s4)'/%3E%3Crect width='1600' height='900' fill='url(%23g4)'/%3E%3Cg stroke='%23D6AD50' stroke-opacity='0.22' fill='none' stroke-width='1.2'%3E%3Cpath d='M950 670 L1180 210 L1410 670 Z'/%3E%3Ccircle cx='1180' cy='490' r='120'/%3E%3C/g%3E%3Ctext x='1180' y='496' text-anchor='middle' fill='%23E6C572' fill-opacity='0.75' font-family='sans-serif' font-size='16' font-weight='600' letter-spacing='3'%3E[ISI] FOTO LATAR SLIDE 4 · PROGRAM ANGGOTA%3C/text%3E%3C/svg%3E"
+          />
+        </figure>
+      </div>
+
+      <div class="hero__scrim" aria-hidden="true"></div>
+      <div class="grain-layer" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="grid-12 hero__inner">
+          <div class="hero__content">
+            <span class="kicker kicker--light js-hero-fade">Koperasi Syariah · Toili, Banggai</span>
+            <h1 class="hero__title" id="heroTitle" aria-label="Ekonomi Umat Tumbuh Bersama Prinsip Syariah">
+              <span class="line-mask"><span class="line-inner js-hero-line">Ekonomi Umat</span></span>
+              <span class="line-mask"><span class="line-inner line-inner--gold js-hero-line">Tumbuh Bersama</span></span>
+              <span class="line-mask"><span class="line-inner js-hero-line">Prinsip Syariah</span></span>
+            </h1>
+            <p class="hero__sub js-hero-fade">
+              Lembaga keuangan syariah dari Toili yang hadir dengan ketenangan, amanah, dan pelayanan modern untuk mendampingi kesejahteraan anggota tanpa riba.
+            </p>
+            <div class="hero__actions js-hero-fade">
+              <a href="#kalkulator" class="btn btn--primary btn--lg">
+                <span>Hitung Simulasi Pembiayaan</span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+            </div>
+
+            <div class="hero__trust-line js-hero-fade">
+              <span class="hero__trust-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>Akad Syariah Jelas</span>
+              </span>
+              <span class="hero__trust-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Toili · Luwuk · Bunta</span>
+              </span>
+              <span class="hero__trust-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                <span>Badan Hukum Koperasi: [ISI]</span>
+              </span>
+            </div>
+
+            <div class="hero__gold-wave" aria-hidden="true">
+              <svg viewBox="0 0 210 22">
+                <path class="js-gold-wave" d="M4 14 Q 22 2, 40 14 T 76 14 T 112 14 T 148 14 T 184 14 L 204 8" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="hero__slider-hud js-hero-fade">
+            <div class="hero__slide-meta">
+              <div class="hero__slide-index tabular-nums" id="heroSlideIndex">01 / 04</div>
+              <p class="hero__slide-caption" id="heroSlideCaption">Pelayanan Kantor Pusat Toili yang tenang, hangat, dan kekeluargaan bagi seluruh anggota.</p>
+            </div>
+            <div class="hero__slider-controls">
+              <div class="hero__slide-dots" role="tablist" aria-label="Pilih slide latar belakang beranda">
+                <button type="button" class="hero__slide-dot is-active" data-hero-slide="0" aria-label="Slide 1: Kantor Pusat Toili" aria-selected="true"></button>
+                <button type="button" class="hero__slide-dot" data-hero-slide="1" aria-label="Slide 2: Pendampingan Usaha" aria-selected="false"></button>
+                <button type="button" class="hero__slide-dot" data-hero-slide="2" aria-label="Slide 3: Akad Syariah" aria-selected="false"></button>
+                <button type="button" class="hero__slide-dot" data-hero-slide="3" aria-label="Slide 4: Kegiatan Sosial" aria-selected="false"></button>
+              </div>
+              <button type="button" class="hero__arrow-btn" id="heroSlidePrev" aria-label="Slide sebelumnya">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="hero__arrow-btn" id="heroSlideNext" aria-label="Slide berikutnya">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wave-sep wave-sep--bottom" aria-hidden="true">
+        <svg viewBox="0 0 1440 52" preserveAspectRatio="none">
+          <path d="M0,26 C360,54 720,0 1080,26 C1260,39 1360,16 1440,26 L1440,52 L0,52 Z" fill="#FFFFFF"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 4. TENTANG KAMI -->
+    <section class="section-pad about-sec blend-to-emerald" id="tentang">
+      <div class="container">
+        <div class="grid-12">
+          <div class="about-media-col js-reveal-left">
+            <div class="about-backdrop js-about-backdrop" aria-hidden="true"></div>
+            <div class="about-photo-frame js-clip-reveal">
+              <img
+                class="js-about-img"
+                width="520"
+                height="546"
+                loading="lazy"
+                alt="Placeholder foto interaksi hangat bersama anggota Koperasi BMT Al Muhajirin di Toili [ISI]"
+                src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 546'%3E%3Cdefs%3E%3ClinearGradient id='ab' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23E9F5EB'/%3E%3Cstop offset='100%25' stop-color='%23D5E3D8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='520' height='546' fill='url(%23ab)'/%3E%3Cg stroke='%230F4D2E' stroke-opacity='0.14' fill='none' stroke-width='1'%3E%3Crect x='48' y='48' width='424' height='450' rx='16'/%3E%3Cpath d='M130 498 V270 C130 190 188 138 260 138 C332 138 390 190 390 270 V498'/%3E%3C/g%3E%3Ctext x='260' y='275' text-anchor='middle' fill='%230F4D2E' font-family='sans-serif' font-size='12' font-weight='600' letter-spacing='2'%3E[ISI] FOTO PELAYANAN TOILI%3C/text%3E%3C/svg%3E"
+              />
+            </div>
+          </div>
+
+          <div class="about-copy-col">
+            <span class="kicker js-reveal-fade">Tentang Kami</span>
+            <h2 class="js-line-reveal">Dari Toili Tumbuh Bersama Masyarakat</h2>
+            <p class="js-reveal-fade">
+              Koperasi BMT Al Muhajirin berdiri untuk menghadirkan akses keuangan yang menenteramkan bagi warga Toili dan Kabupaten Banggai. Kami mendampingi pedagang pasar, petani, hingga keluarga dalam mengelola simpanan dan permodalan produktif secara adil tanpa riba.
+            </p>
+
+            <div class="about-pillars">
+              <div class="about-pillar js-reveal-fade">
+                <div class="about-pillar__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <h3>Prinsip Syariah</h3>
+                <p>Akad disepakati terbuka sejak awal, bebas bunga dan denda berbunga.</p>
+              </div>
+
+              <div class="about-pillar js-reveal-fade">
+                <div class="about-pillar__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h3>Dekat dengan Anggota</h3>
+                <p>Pelayanan kekeluargaan dengan pendampingan usaha secara langsung.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. BAND NILAI UTAMA (Pengganti angka karena data statistik resmi belum tersedia; script siap counter bila diisi angka asli) -->
+    <section class="emerald-band values-sec" id="nilai-utama" aria-label="Empat Nilai Utama Koperasi BMT Al Muhajirin">
+      <div class="grain-layer" aria-hidden="true"></div>
+      <div class="wave-sep wave-sep--top" aria-hidden="true">
+        <svg viewBox="0 0 1440 52" preserveAspectRatio="none">
+          <path d="M0,26 C360,54 720,0 1080,26 C1260,39 1360,16 1440,26 L1440,52 L0,52 Z" fill="#FFFFFF"/>
+        </svg>
+      </div>
+
+      <div class="container">
+        <div class="values-ledger">
+          <div class="value-pillar js-stagger-item">
+            <div class="value-pillar__num tabular-nums">01</div>
+            <div class="value-pillar__head">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <h3>Amanah</h3>
+            </div>
+            <p>Menjaga titipan dan kepercayaan anggota dalam setiap pengelolaan dana umat.</p>
+          </div>
+
+          <div class="value-pillar js-stagger-item">
+            <div class="value-pillar__num tabular-nums">02</div>
+            <div class="value-pillar__head">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              <h3>Transparan</h3>
+            </div>
+            <p>Ketentuan akad, hak, dan kewajiban dijelaskan lugas sebelum kesepakatan dibuat.</p>
+          </div>
+
+          <div class="value-pillar js-stagger-item">
+            <div class="value-pillar__num tabular-nums">03</div>
+            <div class="value-pillar__head">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/></svg>
+              <h3>Adil</h3>
+            </div>
+            <p>Bagi hasil dan kemitraan usaha dijalankan atas dasar keadilan bersama.</p>
+          </div>
+
+          <div class="value-pillar js-stagger-item">
+            <div class="value-pillar__num tabular-nums">04</div>
+            <div class="value-pillar__head">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+              <h3>Berkah</h3>
+            </div>
+            <p>Mendorong kemandirian ekonomi keluarga yang halal dan menumbuhkan kebaikan.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wave-sep wave-sep--bottom" aria-hidden="true">
+        <svg viewBox="0 0 1440 52" preserveAspectRatio="none">
+          <path d="M0,26 C360,54 720,0 1080,26 C1260,39 1360,16 1440,26 L1440,52 L0,52 Z" fill="#F7F9F7"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 6. PRODUK & LAYANAN (Asymmetric 12-Col Editorial Ledger, Clickable Cards) -->
+    <section class="section-pad products-sec blend-to-white" id="produk">
+      <div class="container">
+        <div class="grid-12">
+          <div class="products-sticky-col">
+            <span class="kicker js-reveal-fade">Produk &amp; Layanan</span>
+            <h2 class="js-line-reveal">Solusi Keuangan Syariah untuk Anggota</h2>
+            <p class="js-reveal-fade">
+              Setiap produk dirancang agar mudah dipahami dan sesuai prinsip muamalah Islam, tanpa bunga maupun ketentuan tersembunyi. Pilih salah satu layanan untuk melihat rincian akadnya.
+            </p>
+          </div>
+
+          <div class="products-list-col">
+            <article class="product-row js-reveal-right open-detail-card" id="produk-simpanan" role="button" tabindex="0" data-detail-type="product" data-detail-id="simpanan" aria-label="Buka rincian produk Simpanan Syariah">
+              <div class="product-row__top">
+                <span class="product-row__index tabular-nums">01 / SIMPANAN</span>
+                <div class="product-row__right-meta">
+                  <div class="product-row__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2"/><path d="M2 9v1c0 1.1.9 2 2 2h1"/></svg>
+                  </div>
+                  <svg class="card-corner-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                </div>
+              </div>
+              <h3>Simpanan Syariah</h3>
+              <p>Titipan dan investasi dana anggota yang dikelola secara amanah dengan akad syariah yang jelas tanpa bunga.</p>
+              <ul class="product-row__items">
+                <li>Simpanan Harian / Sukarela [ISI]</li>
+                <li>Simpanan Pendidikan &amp; Qurban [ISI]</li>
+                <li>Simpanan Berjangka / Mudharabah [ISI]</li>
+              </ul>
+            </article>
+
+            <article class="product-row js-reveal-right open-detail-card" id="produk-pembiayaan" role="button" tabindex="0" data-detail-type="product" data-detail-id="pembiayaan" aria-label="Buka rincian produk Pembiayaan Produktif">
+              <div class="product-row__top">
+                <span class="product-row__index tabular-nums">02 / PEMBIAYAAN</span>
+                <div class="product-row__right-meta">
+                  <div class="product-row__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                  </div>
+                  <svg class="card-corner-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                </div>
+              </div>
+              <h3>Pembiayaan Produktif</h3>
+              <p>Dukungan permodalan usaha perdagangan, pertanian, maupun pengadaan barang dengan akad jual beli atau bagi hasil.</p>
+              <ul class="product-row__items">
+                <li>Pembiayaan Murabahah [ISI]</li>
+                <li>Pembiayaan Modal Kerja / Bagi Hasil [ISI]</li>
+                <li>Ketentuan margin/nisbah sesuai akad [ISI]</li>
+              </ul>
+            </article>
+
+            <article class="product-row js-reveal-right open-detail-card" id="produk-lainnya" role="button" tabindex="0" data-detail-type="product" data-detail-id="lainnya" aria-label="Buka rincian Layanan Lainnya dan Baitul Maal">
+              <div class="product-row__top">
+                <span class="product-row__index tabular-nums">03 / LAYANAN LAINNYA</span>
+                <div class="product-row__right-meta">
+                  <div class="product-row__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  </div>
+                  <svg class="card-corner-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                </div>
+              </div>
+              <h3>Layanan Lainnya &amp; Baitul Maal</h3>
+              <p>Pelayanan sosial umat dan kemudahan transaksi harian bagi anggota di wilayah kerja Toili, Luwuk, dan Bunta.</p>
+              <ul class="product-row__items">
+                <li>Penyaluran ZISWAF (Baitul Maal) [ISI]</li>
+                <li>Jemput Setoran Anggota [ISI]</li>
+                <li>Layanan Transaksi Harian [ISI]</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. KALKULATOR SIMULASI PEMBIAYAAN -->
+    <section class="section-pad calc-sec" id="kalkulator">
+      <div class="container">
+        <div class="section-intro section-intro--center">
+          <span class="kicker js-reveal-fade">Kalkulator Pembiayaan</span>
+          <h2 class="js-line-reveal">Simulasi Perkiraan Angsuran</h2>
+          <p class="js-reveal-fade">Hitung gambaran awal kebutuhan pembiayaan secara mandiri sebelum berkonsultasi mengenai akad resmi di kantor kami.</p>
+        </div>
+
+        <div class="calc-sheet grid-12 js-reveal-fade" style="gap:0;">
+          <div class="calc-inputs">
+            <div>
+              <div class="calc-field-head">
+                <label for="plafonRange">Nilai Pembiayaan (Plafon)</label>
+                <span class="calc-field-val tabular-nums" id="plafonDisplay">Rp 15.000.000</span>
+              </div>
+              <input type="range" id="plafonRange" class="range-slider" min="1000000" max="100000000" step="500000" value="15000000" />
+              <div class="calc-ticks">
+                <span>Rp 1 Juta</span>
+                <span>Rp 50 Juta</span>
+                <span>Rp 100 Juta</span>
+              </div>
+              <input type="number" id="plafonInput" class="calc-num-input tabular-nums" min="1000000" max="100000000" step="500000" value="15000000" aria-label="Masukkan nilai plafon dalam Rupiah" />
+            </div>
+
+            <div>
+              <div class="calc-field-head">
+                <label for="tenorRange">Jangka Waktu (Tenor)</label>
+                <span class="calc-field-val tabular-nums" id="tenorDisplay">12 Bulan</span>
+              </div>
+              <input type="range" id="tenorRange" class="range-slider" min="3" max="36" step="1" value="12" />
+              <div class="tenor-group" role="group" aria-label="Pilihan cepat tenor">
+                <button type="button" class="tenor-btn" data-tenor="6">6 Bln</button>
+                <button type="button" class="tenor-btn is-active" data-tenor="12">12 Bln</button>
+                <button type="button" class="tenor-btn" data-tenor="18">18 Bln</button>
+                <button type="button" class="tenor-btn" data-tenor="24">24 Bln</button>
+                <button type="button" class="tenor-btn" data-tenor="36">36 Bln</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="calc-field-head">
+                <label for="rateInput">Asumsi Margin Simulasi / Bulan (%) — Opsional</label>
+                <span class="calc-field-val tabular-nums" id="rateDisplay">0.0%</span>
+              </div>
+              <input type="range" id="rateInput" class="range-slider" min="0" max="2.5" step="0.1" value="0" />
+              <div class="calc-ticks">
+                <span>0% (Pokok saja)</span>
+                <span>Angka simulasi yang Anda atur sendiri</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-summary">
+            <div>
+              <div class="calc-summary__label">Perkiraan Angsuran Bulanan</div>
+              <div class="calc-summary__amount tabular-nums" id="monthlyResult">Rp 1.250.000</div>
+            </div>
+
+            <div class="calc-breakdown">
+              <div class="calc-breakdown__row">
+                <span>Pokok Pembiayaan</span>
+                <strong class="tabular-nums" id="summaryPlafon">Rp 15.000.000</strong>
+              </div>
+              <div class="calc-breakdown__row">
+                <span>Jangka Waktu</span>
+                <strong class="tabular-nums" id="summaryTenor">12 Bulan</strong>
+              </div>
+              <div class="calc-breakdown__row">
+                <span>Pokok per Bulan</span>
+                <strong class="tabular-nums" id="summaryPokok">Rp 1.250.000</strong>
+              </div>
+            </div>
+
+            <div class="calc-note">
+              <strong>Catatan:</strong> Angka di atas hanyalah <em>simulasi perkiraan, bukan penawaran resmi</em>. Ketentuan margin/nisbah dan akad resmi disepakati langsung di BMT Al Muhajirin.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. MENGAPA MEMILIH KAMI -->
+    <section class="section-pad why-sec" id="mengapa">
+      <div class="why-backdrop" aria-hidden="true">
+        <img
+          width="1440"
+          height="760"
+          loading="lazy"
+          alt="Placeholder foto suasana pelayanan kantor Koperasi BMT Al Muhajirin [ISI]"
+          src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 760'%3E%3Cdefs%3E%3ClinearGradient id='wb' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23D6E8DB'/%3E%3Cstop offset='100%25' stop-color='%23E9F5EB'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1440' height='760' fill='url(%23wb)'/%3E%3Cg stroke='%230F4D2E' stroke-opacity='0.28' fill='none' stroke-width='1.5'%3E%3Cpath d='M160 760 V360 C160 220 260 130 380 130 C500 130 600 220 600 360 V760'/%3E%3Ccircle cx='380' cy='320' r='160'/%3E%3C/g%3E%3C/svg%3E"
+        />
+      </div>
+
+      <div class="container">
+        <div class="grid-12">
+          <div class="why-panel js-reveal-fade" id="whyPanel">
+            <span class="kicker">Mengapa Memilih Kami</span>
+            <h2 class="js-line-reveal">Ketenangan Bermuamalah di Tengah Masyarakat</h2>
+
+            <div class="tabs-bar" role="tablist" aria-label="Profil dan Komitmen BMT Al Muhajirin">
+              <div class="tab-indicator" id="tabIndicator" aria-hidden="true"></div>
+              <button type="button" class="tab-btn" role="tab" id="tab-tentang" aria-selected="true" aria-controls="panel-tentang">Tentang</button>
+              <button type="button" class="tab-btn" role="tab" id="tab-misi" aria-selected="false" aria-controls="panel-misi">Misi</button>
+              <button type="button" class="tab-btn" role="tab" id="tab-visi" aria-selected="false" aria-controls="panel-visi">Visi</button>
+            </div>
+
+            <div class="tab-panel is-active" id="panel-tentang" role="tabpanel" aria-labelledby="tab-tentang">
+              <p>Koperasi BMT Al Muhajirin berakar di Toili, Kabupaten Banggai, dengan fokus melayani masyarakat melalui pengelolaan dana syariah yang menumbuhkan semangat tolong-menolong.</p>
+            </div>
+
+            <div class="tab-panel" id="panel-misi" role="tabpanel" aria-labelledby="tab-misi">
+              <p>Menyelenggarakan layanan simpanan dan pembiayaan bebas riba, memasyarakatkan muamalah syariah yang bersih, serta mendampingi perkembangan usaha mikro anggota.</p>
+            </div>
+
+            <div class="tab-panel" id="panel-visi" role="tabpanel" aria-labelledby="tab-visi">
+              <p>Menjadi lembaga keuangan syariah yang terpercaya di Kabupaten Banggai dalam membangun kemandirian ekonomi umat yang penuh berkah.</p>
+            </div>
+
+            <div class="principle-bars" style="margin-bottom:0;">
+              <div>
+                <div class="principle-bar__head">
+                  <span>Kepatuhan Prinsip Syariah</span>
+                  <span style="color:var(--emerald);">Landasan Utama</span>
+                </div>
+                <div class="principle-bar__track">
+                  <div class="principle-bar__fill js-bar-fill" style="--fill: 1;"></div>
+                </div>
+              </div>
+              <div>
+                <div class="principle-bar__head">
+                  <span>Pelayanan Kekeluargaan &amp; Pendampingan</span>
+                  <span style="color:var(--emerald);">Fokus Anggota</span>
+                </div>
+                <div class="principle-bar__track">
+                  <div class="principle-bar__fill js-bar-fill" style="--fill: 0.92;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. PENGURUS & PENGAWAS -->
+    <section class="emerald-band team-sec" id="pengurus">
+      <div class="grain-layer" aria-hidden="true"></div>
+      <div class="wave-sep wave-sep--top" aria-hidden="true">
+        <svg viewBox="0 0 1440 52" preserveAspectRatio="none">
+          <path d="M0,26 C360,54 720,0 1080,26 C1260,39 1360,16 1440,26 L1440,52 L0,52 Z" fill="#E9F5EB"/>
+        </svg>
+      </div>
+
+      <div class="container">
+        <div class="section-intro section-intro--center">
+          <span class="kicker kicker--light js-reveal-fade">Pengurus &amp; Pengawas</span>
+          <h2 class="js-line-reveal" style="color:#FFFFFF;">Amanah Tata Kelola Koperasi</h2>
+          <p class="js-reveal-fade" style="color:var(--on-dark-muted);">Dikelola oleh pengurus dan pengawas yang menjaga kepatuhan syariah serta kepentingan seluruh anggota.</p>
+        </div>
+
+        <div class="team-grid">
+          <article class="team-card js-stagger-item js-clip-reveal" tabindex="0">
+            <img width="300" height="400" loading="lazy" alt="Placeholder foto pengurus 1 [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Cdefs%3E%3ClinearGradient id='t1' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23185A38'/%3E%3Cstop offset='100%25' stop-color='%230A3820'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='400' fill='url(%23t1)'/%3E%3Ccircle cx='150' cy='155' r='44' stroke='%23D6AD50' stroke-opacity='0.35' fill='none'/%3E%3Ctext x='150' y='198' text-anchor='middle' fill='%23E6C572' font-family='sans-serif' font-size='11' font-weight='600' letter-spacing='1.8'%3E[ISI] FOTO PENGURUS 1%3C/text%3E%3C/svg%3E" />
+            <div class="team-card__overlay">
+              <div class="team-card__name">[ISI] Nama Pengurus 1</div>
+              <div class="team-card__role">[ISI] Jabatan Pengurus</div>
+            </div>
+          </article>
+
+          <article class="team-card js-stagger-item js-clip-reveal" tabindex="0">
+            <img width="300" height="400" loading="lazy" alt="Placeholder foto pengurus 2 [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Cdefs%3E%3ClinearGradient id='t2' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23144F31'/%3E%3Cstop offset='100%25' stop-color='%23072616'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='400' fill='url(%23t2)'/%3E%3Ccircle cx='150' cy='155' r='44' stroke='%23D6AD50' stroke-opacity='0.35' fill='none'/%3E%3Ctext x='150' y='198' text-anchor='middle' fill='%23E6C572' font-family='sans-serif' font-size='11' font-weight='600' letter-spacing='1.8'%3E[ISI] FOTO PENGURUS 2%3C/text%3E%3C/svg%3E" />
+            <div class="team-card__overlay">
+              <div class="team-card__name">[ISI] Nama Pengurus 2</div>
+              <div class="team-card__role">[ISI] Jabatan Pengurus</div>
+            </div>
+          </article>
+
+          <article class="team-card js-stagger-item js-clip-reveal" tabindex="0">
+            <img width="300" height="400" loading="lazy" alt="Placeholder foto pengawas 1 [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Cdefs%3E%3ClinearGradient id='t3' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23185A38'/%3E%3Cstop offset='100%25' stop-color='%230A3820'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='400' fill='url(%23t3)'/%3E%3Ccircle cx='150' cy='155' r='44' stroke='%23D6AD50' stroke-opacity='0.35' fill='none'/%3E%3Ctext x='150' y='198' text-anchor='middle' fill='%23E6C572' font-family='sans-serif' font-size='11' font-weight='600' letter-spacing='1.8'%3E[ISI] FOTO PENGAWAS 1%3C/text%3E%3C/svg%3E" />
+            <div class="team-card__overlay">
+              <div class="team-card__name">[ISI] Nama Pengawas 1</div>
+              <div class="team-card__role">[ISI] Jabatan Pengawas</div>
+            </div>
+          </article>
+
+          <article class="team-card js-stagger-item js-clip-reveal" tabindex="0">
+            <img width="300" height="400" loading="lazy" alt="Placeholder foto dewan pengawas syariah [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Cdefs%3E%3ClinearGradient id='t4' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23144F31'/%3E%3Cstop offset='100%25' stop-color='%23072616'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='400' fill='url(%23t4)'/%3E%3Ccircle cx='150' cy='155' r='44' stroke='%23D6AD50' stroke-opacity='0.35' fill='none'/%3E%3Ctext x='150' y='198' text-anchor='middle' fill='%23E6C572' font-family='sans-serif' font-size='11' font-weight='600' letter-spacing='1.8'%3E[ISI] FOTO PENGAWAS SYARIAH%3C/text%3E%3C/svg%3E" />
+            <div class="team-card__overlay">
+              <div class="team-card__name">[ISI] Nama Pengawas Syariah</div>
+              <div class="team-card__role">[ISI] Dewan Pengawas Syariah</div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="wave-sep wave-sep--bottom" aria-hidden="true">
+        <svg viewBox="0 0 1440 52" preserveAspectRatio="none">
+          <path d="M0,26 C360,54 720,0 1080,26 C1260,39 1360,16 1440,26 L1440,52 L0,52 Z" fill="#FFFFFF"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 10. PROGRAM & KEGIATAN CAROUSEL -->
+    <section class="section-pad program-sec blend-to-soft" id="program">
+      <div class="container">
+        <div class="program-head">
+          <div>
+            <span class="kicker js-reveal-fade">Program &amp; Kegiatan</span>
+            <h2 class="js-line-reveal">Kebersamaan di Tengah Masyarakat</h2>
+          </div>
+          <div class="carousel-controls">
+            <button type="button" class="circle-arrow-btn" id="progPrev" aria-label="Kegiatan sebelumnya">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button type="button" class="circle-arrow-btn" id="progNext" aria-label="Kegiatan berikutnya">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="programTrack">
+            <article class="program-slide">
+              <div class="program-slide__media js-clip-reveal">
+                <img width="600" height="375" loading="lazy" alt="Dokumentasi pendampingan usaha mikro anggota [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 375'%3E%3Cdefs%3E%3ClinearGradient id='p1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23E9F5EB'/%3E%3Cstop offset='100%25' stop-color='%23D2DFD4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='375' fill='url(%23p1)'/%3E%3Crect x='32' y='32' width='536' height='311' rx='14' fill='none' stroke='%230F4D2E' stroke-opacity='0.18'/%3E%3Ctext x='300' y='190' text-anchor='middle' fill='%230F4D2E' font-family='sans-serif' font-size='12' font-weight='600' letter-spacing='2'%3E[ISI] FOTO KEGIATAN 1 · PENDAMPINGAN UMKM%3C/text%3E%3C/svg%3E" />
+              </div>
+              <div class="program-slide__meta">Pemberdayaan · [ISI] Tanggal</div>
+              <h3>Pendampingan Usaha Mikro Anggota</h3>
+              <p>Silaturahmi rutin dan pemantauan kebutuhan permodalan anggota secara kekeluargaan di lapangan.</p>
+            </article>
+
+            <article class="program-slide">
+              <div class="program-slide__media js-clip-reveal">
+                <img width="600" height="375" loading="lazy" alt="Dokumentasi program sosial dan ZISWAF Baitul Maal [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 375'%3E%3Cdefs%3E%3ClinearGradient id='p2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23F1F4F1'/%3E%3Cstop offset='100%25' stop-color='%23DCE5DD'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='375' fill='url(%23p2)'/%3E%3Crect x='32' y='32' width='536' height='311' rx='14' fill='none' stroke='%230F4D2E' stroke-opacity='0.18'/%3E%3Ctext x='300' y='190' text-anchor='middle' fill='%230F4D2E' font-family='sans-serif' font-size='12' font-weight='600' letter-spacing='2'%3E[ISI] FOTO KEGIATAN 2 · PROGRAM BAITUL MAAL%3C/text%3E%3C/svg%3E" />
+              </div>
+              <div class="program-slide__meta">Sosial Umat · [ISI] Tanggal</div>
+              <h3>Penyaluran Amanah ZISWAF &amp; Santunan</h3>
+              <p>Penghimpunan serta penyaluran dana sosial kemasyarakatan kepada warga yang membutuhkan di sekitar Toili.</p>
+            </article>
+
+            <article class="program-slide">
+              <div class="program-slide__media js-clip-reveal">
+                <img width="600" height="375" loading="lazy" alt="Dokumentasi Rapat Anggota Tahunan dan edukasi syariah [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 375'%3E%3Cdefs%3E%3ClinearGradient id='p3' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23E9F5EB'/%3E%3Cstop offset='100%25' stop-color='%23D2DFD4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='600' height='375' fill='url(%23p3)'/%3E%3Crect x='32' y='32' width='536' height='311' rx='14' fill='none' stroke='%230F4D2E' stroke-opacity='0.18'/%3E%3Ctext x='300' y='190' text-anchor='middle' fill='%230F4D2E' font-family='sans-serif' font-size='12' font-weight='600' letter-spacing='2'%3E[ISI] FOTO KEGIATAN 3 · PERTEMUAN ANGGOTA%3C/text%3E%3C/svg%3E" />
+              </div>
+              <div class="program-slide__meta">Tata Kelola · [ISI] Tanggal</div>
+              <h3>Edukasi Muamalah &amp; Pertemuan Anggota</h3>
+              <p>Forum keterbukaan perkembangan koperasi serta penguatan literasi keuangan bebas riba bagi anggota.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. TESTIMONI ANGGOTA -->
+    <section class="section-pad testi-sec blend-to-white" id="testimoni">
+      <div class="container">
+        <div class="section-intro section-intro--center">
+          <span class="kicker js-reveal-fade">Testimoni Anggota</span>
+          <h2 class="js-line-reveal">Suara Anggota BMT Al Muhajirin</h2>
+          <p class="js-reveal-fade">Kami menjaga keaslian informasi dan hanya menampilkan pengalaman nyata dari anggota terverifikasi.</p>
+        </div>
+
+        <div class="testi-viewport" aria-roledescription="carousel" aria-label="Testimoni anggota">
+          <div class="testi-track" id="testiTrack">
+            <div class="testi-page">
+              <article class="testi-item">
+                <svg class="testi-quote-mark" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 7H6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2H5v2h1a4 4 0 0 0 4-4V7Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2h-1v2h1a4 4 0 0 0 4-4V7Z"/></svg>
+                <blockquote>"[Testimoni asli menyusul]"</blockquote>
+                <div class="testi-author">
+                  <img class="testi-author__avatar" width="52" height="52" loading="lazy" alt="Avatar anggota 1 [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'%3E%3Crect width='52' height='52' fill='%23E9F5EB'/%3E%3Ctext x='26' y='30' text-anchor='middle' fill='%230F4D2E' font-family='sans-serif' font-size='11' font-weight='700'%3E[ISI]%3C/text%3E%3C/svg%3E" />
+                  <div>
+                    <div class="testi-author__name">[ISI] Nama Anggota 1</div>
+                    <div class="testi-author__role">[ISI] Bidang Usaha / Wilayah</div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="testi-item">
+                <svg class="testi-quote-mark" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 7H6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2H5v2h1a4 4 0 0 0 4-4V7Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2h-1v2h1a4 4 0 0 0 4-4V7Z"/></svg>
+                <blockquote>"[Testimoni asli menyusul]"</blockquote>
+                <div class="testi-author">
+                  <img class="testi-author__avatar" width="52" height="52" loading="lazy" alt="Avatar anggota 2 [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'%3E%3Crect width='52' height='52' fill='%23E9F5EB'/%3E%3Ctext x='26' y='30' text-anchor='middle' fill='%230F4D2E' font-family='sans-serif' font-size='11' font-weight='700'%3E[ISI]%3C/text%3E%3C/svg%3E" />
+                  <div>
+                    <div class="testi-author__name">[ISI] Nama Anggota 2</div>
+                    <div class="testi-author__role">[ISI] Bidang Usaha / Wilayah</div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="testi-page">
+              <article class="testi-item">
+                <svg class="testi-quote-mark" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 7H6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2H5v2h1a4 4 0 0 0 4-4V7Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2h-1v2h1a4 4 0 0 0 4-4V7Z"/></svg>
+                <blockquote>"[Testimoni asli menyusul]"</blockquote>
+                <div class="testi-author">
+                  <img class="testi-author__avatar" width="52" height="52" loading="lazy" alt="Avatar anggota 3 [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'%3E%3Crect width='52' height='52' fill='%23E9F5EB'/%3E%3Ctext x='26' y='30' text-anchor='middle' fill='%230F4D2E' font-family='sans-serif' font-size='11' font-weight='700'%3E[ISI]%3C/text%3E%3C/svg%3E" />
+                  <div>
+                    <div class="testi-author__name">[ISI] Nama Anggota 3</div>
+                    <div class="testi-author__role">[ISI] Bidang Usaha / Wilayah</div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="testi-item">
+                <svg class="testi-quote-mark" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 7H6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2H5v2h1a4 4 0 0 0 4-4V7Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2h-1v2h1a4 4 0 0 0 4-4V7Z"/></svg>
+                <blockquote>"[Testimoni asli menyusul]"</blockquote>
+                <div class="testi-author">
+                  <img class="testi-author__avatar" width="52" height="52" loading="lazy" alt="Avatar anggota 4 [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'%3E%3Crect width='52' height='52' fill='%23E9F5EB'/%3E%3Ctext x='26' y='30' text-anchor='middle' fill='%230F4D2E' font-family='sans-serif' font-size='11' font-weight='700'%3E[ISI]%3C/text%3E%3C/svg%3E" />
+                  <div>
+                    <div class="testi-author__name">[ISI] Nama Anggota 4</div>
+                    <div class="testi-author__role">[ISI] Bidang Usaha / Wilayah</div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-dots" role="tablist" aria-label="Pilih halaman testimoni">
+          <button type="button" class="slider-dot is-active" data-testi-page="0" aria-label="Halaman testimoni 1" aria-selected="true"></button>
+          <button type="button" class="slider-dot" data-testi-page="1" aria-label="Halaman testimoni 2" aria-selected="false"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. ARTIKEL TERBARU (Editorial Asymmetric Feature + Stacked Rows) -->
+    <section class="section-pad articles-sec" id="artikel">
+      <div class="container">
+        <div class="section-intro">
+          <span class="kicker js-reveal-fade">Artikel &amp; Edukasi</span>
+          <h2 class="js-line-reveal">Wawasan Ekonomi Syariah</h2>
+        </div>
+
+        <div class="grid-12">
+          <article class="article-lead js-reveal-left open-detail-card" role="button" tabindex="0" data-detail-type="article" data-detail-id="art1" aria-label="Baca artikel Memahami Perbedaan Pembiayaan Syariah dan Utang Berbunga">
+            <div class="article-lead__img-wrap js-clip-reveal">
+              <img width="580" height="380" loading="lazy" alt="Ilustrasi artikel mengenal pembiayaan syariah bebas riba [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 580 380'%3E%3Cdefs%3E%3ClinearGradient id='a1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23E9F5EB'/%3E%3Cstop offset='100%25' stop-color='%23D5E1D7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='580' height='380' fill='url(%23a1)'/%3E%3Cpath d='M190 380 V180 C190 120 235 80 290 80 C345 80 390 120 390 180 V380' fill='none' stroke='%230F4D2E' stroke-opacity='0.2'/%3E%3Ctext x='290' y='198' text-anchor='middle' fill='%230F4D2E' font-family='sans-serif' font-size='12' font-weight='600' letter-spacing='2'%3E[ISI] FOTO ARTIKEL UTAMA%3C/text%3E%3C/svg%3E" />
+            </div>
+            <div class="article-meta">
+              <span class="article-meta__text">
+                <span>[ISI] Tanggal</span>
+                <span aria-hidden="true">·</span>
+                <span>Edukasi Syariah</span>
+              </span>
+              <svg class="card-corner-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </div>
+            <h3>Memahami Perbedaan Pembiayaan Syariah dan Utang Berbunga</h3>
+            <p>Mengenal prinsip jual beli dan bagi hasil yang transparan sejak awal akad agar usaha berjalan lebih tenteram dan terukur.</p>
+          </article>
+
+          <div class="articles-stack">
+            <article class="article-item js-reveal-right open-detail-card" role="button" tabindex="0" data-detail-type="article" data-detail-id="art2" aria-label="Baca artikel Cara Sederhana Memisahkan Kas Keluarga dan Modal Usaha Harian">
+              <div class="article-item__thumb js-clip-reveal">
+                <img width="240" height="180" loading="lazy" alt="Ilustrasi artikel pengelolaan kas usaha mikro [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 180'%3E%3Crect width='240' height='180' fill='%23EEF3EF'/%3E%3Ccircle cx='120' cy='90' r='44' fill='none' stroke='%230F4D2E' stroke-opacity='0.2'/%3E%3Ctext x='120' y='94' text-anchor='middle' fill='%230F4D2E' font-family='sans-serif' font-size='10' font-weight='600' letter-spacing='1.5'%3E[ISI] FOTO%3C/text%3E%3C/svg%3E" />
+              </div>
+              <div>
+                <div class="article-meta">
+                  <span class="article-meta__text">
+                    <span>[ISI] Tanggal</span>
+                    <span aria-hidden="true">·</span>
+                    <span>Pengelolaan Usaha</span>
+                  </span>
+                  <svg class="card-corner-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                </div>
+                <h3>Cara Sederhana Memisahkan Kas Keluarga dan Modal Usaha Harian</h3>
+              </div>
+            </article>
+
+            <article class="article-item js-reveal-right open-detail-card" role="button" tabindex="0" data-detail-type="article" data-detail-id="art3" aria-label="Baca artikel Peran Koperasi Syariah Menguatkan Ketahanan Ekonomi Warga">
+              <div class="article-item__thumb js-clip-reveal">
+                <img width="240" height="180" loading="lazy" alt="Ilustrasi artikel peran koperasi syariah di Toili [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 180'%3E%3Crect width='240' height='180' fill='%23E9F5EB'/%3E%3Ccircle cx='120' cy='90' r='44' fill='none' stroke='%230F4D2E' stroke-opacity='0.2'/%3E%3Ctext x='120' y='94' text-anchor='middle' fill='%230F4D2E' font-family='sans-serif' font-size='10' font-weight='600' letter-spacing='1.5'%3E[ISI] FOTO%3C/text%3E%3C/svg%3E" />
+              </div>
+              <div>
+                <div class="article-meta">
+                  <span class="article-meta__text">
+                    <span>[ISI] Tanggal</span>
+                    <span aria-hidden="true">·</span>
+                    <span>Komunitas Toili</span>
+                  </span>
+                  <svg class="card-corner-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                </div>
+                <h3>Peran Koperasi Syariah Menguatkan Ketahanan Ekonomi Warga</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. KONSULTASI -->
+    <section class="section-pad consult-sec" id="konsultasi">
+      <div class="container">
+        <div class="grid-12" style="align-items:stretch;">
+          <div class="consult-form-col js-reveal-left">
+            <div class="consult-card">
+              <span class="kicker">Konsultasi Resmi</span>
+              <h2>Hubungi Tim Layanan Kami</h2>
+              <p>Kirimkan pertanyaan atau kebutuhan Anda; pesan akan otomatis terformat untuk terhubung ke WhatsApp BMT Al Muhajirin.</p>
+
+              <form class="consult-form" id="consultForm" novalidate>
+                <div class="float-field">
+                  <input type="text" id="cName" name="nama" placeholder=" " required autocomplete="name" />
+                  <label for="cName">Nama Lengkap</label>
+                </div>
+
+                <div class="float-field">
+                  <input type="tel" id="cPhone" name="hp" placeholder=" " required autocomplete="tel" />
+                  <label for="cPhone">Nomor HP / WhatsApp</label>
+                </div>
+
+                <div class="float-field">
+                  <select id="cTopic" name="topik">
+                    <option value="Simpanan Syariah">Simpanan Syariah</option>
+                    <option value="Pembiayaan Usaha">Pembiayaan Usaha</option>
+                    <option value="Layanan Lainnya & ZISWAF">Layanan Lainnya &amp; ZISWAF</option>
+                    <option value="Keanggotaan & Informasi Umum">Keanggotaan &amp; Informasi Umum</option>
+                  </select>
+                  <label for="cTopic">Topik Konsultasi</label>
+                </div>
+
+                <div class="float-field">
+                  <textarea id="cMsg" name="pesan" placeholder=" " required></textarea>
+                  <label for="cMsg">Pesan atau Pertanyaan Anda</label>
+                </div>
+
+                <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+
+                <button type="submit" class="btn btn--primary btn--md" id="consultSubmitBtn" style="width:100%;">
+                  <span id="consultBtnLabel">Kirim Pesan ke WhatsApp</span>
+                  <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="consult-photo-col js-clip-reveal">
+            <img
+              width="520"
+              height="600"
+              loading="lazy"
+              alt="Placeholder foto petugas layanan konsultasi Koperasi BMT Al Muhajirin [ISI]"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 520 600'%3E%3Cdefs%3E%3ClinearGradient id='cp' x1='0' y1='0' x2='0.8' y2='1'%3E%3Cstop offset='0%25' stop-color='%23164B30'/%3E%3Cstop offset='100%25' stop-color='%23072616'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='520' height='600' fill='url(%23cp)'/%3E%3Cg stroke='%23D6AD50' stroke-opacity='0.24' fill='none' stroke-width='1'%3E%3Cpath d='M90 600 V240 C90 140 165 76 260 76 C355 76 430 140 430 240 V600'/%3E%3Ccircle cx='260' cy='240' r='84'/%3E%3C/g%3E%3Ctext x='260' y='310' text-anchor='middle' fill='%23E6C572' font-family='sans-serif' font-size='12' font-weight='600' letter-spacing='2'%3E[ISI] FOTO LAYANAN ANGGOTA%3C/text%3E%3Ctext x='260' y='336' text-anchor='middle' fill='%23F3F6F3' fill-opacity='0.72' font-family='sans-serif' font-size='12'%3ENo. WhatsApp Resmi: [ISI]%3C/text%3E%3C/svg%3E"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. LOKASI KANTOR -->
+    <section class="section-pad office-sec blend-to-footer" id="lokasi">
+      <div class="container">
+        <div class="section-intro section-intro--center">
+          <span class="kicker js-reveal-fade">Lokasi Kantor</span>
+          <h2 class="js-line-reveal">Jaringan Layanan di Kabupaten Banggai</h2>
+          <p class="js-reveal-fade">Silakan pilih kantor layanan di bawah untuk melihat lokasi peta wilayah Toili, Luwuk, dan Bunta.</p>
+        </div>
+
+        <div class="grid-12" style="align-items:stretch;">
+          <div class="office-list-col js-reveal-left">
+            <button type="button" class="office-item is-active" data-office="toili">
+              <div class="office-item__type">Kantor Pusat</div>
+              <h3>Kantor Pusat Toili</h3>
+              <p>Alamat: [ISI] Kecamatan Toili, Kab. Banggai, Sulawesi Tengah</p>
+            </button>
+
+            <button type="button" class="office-item" data-office="luwuk">
+              <div class="office-item__type">Kantor Cabang</div>
+              <h3>Kantor Cabang Luwuk</h3>
+              <p>Alamat: [ISI] Kota Luwuk, Kab. Banggai, Sulawesi Tengah</p>
+            </button>
+
+            <button type="button" class="office-item" data-office="bunta">
+              <div class="office-item__type">Kantor Cabang</div>
+              <h3>Kantor Cabang Bunta</h3>
+              <p>Alamat: [ISI] Kecamatan Bunta, Kab. Banggai, Sulawesi Tengah</p>
+            </button>
+
+            <div class="office-hours">
+              <strong>Jam Layanan Kantor</strong>
+              <span>[ISI] (Contoh: Senin – Jumat, pukul operasional resmi BMT)</span>
+            </div>
+          </div>
+
+          <div class="office-map-col js-reveal-right">
+            <iframe
+              id="officeMapFrame"
+              title="Peta lokasi Kantor Koperasi BMT Al Muhajirin Toili"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=122.25%2C-1.45%2C122.45%2C-1.25&amp;layer=mapnik&amp;marker=-1.35%2C122.35"
+            ></iframe>
+            <div class="map-bar">
+              <span id="mapCaption">Wilayah Kantor Pusat Toili, Kab. Banggai (Koordinat [ISI])</span>
+              <a id="mapExternalLink" class="utility-link" href="https://www.openstreetmap.org/?mlat=-1.35&amp;mlon=122.35#map=13/-1.35/122.35" target="_blank" rel="noopener noreferrer">
+                <span>Buka Peta</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 15. FOOTER -->
+  <footer class="site-footer">
+    <div class="wave-sep wave-sep--top" aria-hidden="true">
+      <svg viewBox="0 0 1440 52" preserveAspectRatio="none">
+        <path d="M0,26 C360,54 720,0 1080,26 C1260,39 1360,16 1440,26 L1440,52 L0,52 Z" fill="#FFFFFF"/>
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="grid-12">
+        <div class="footer-brand js-stagger-item">
+          <a href="#beranda" class="brand-logo" aria-label="BMT Al Muhajirin">
+            <svg class="brand-logo__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <rect width="48" height="48" rx="12" fill="#0F4D2E"/>
+              <path d="M24 9L36 18V37H12V18L24 9Z" stroke="#D6AD50" stroke-width="1.75"/>
+              <path d="M18.5 37V25.5C18.5 22.46 20.96 20 24 20C27.04 20 29.5 22.46 29.5 25.5V37" stroke="#FFFFFF" stroke-width="1.75"/>
+              <circle cx="24" cy="14.5" r="2" fill="#D6AD50"/>
+            </svg>
+            <span class="brand-logo__text">
+              <span class="brand-logo__name" style="color:#FFFFFF;">BMT Al Muhajirin</span>
+              <span class="brand-logo__sub" style="color:#E6C572;">Toili · Kab. Banggai</span>
+            </span>
+          </a>
+          <p>
+            Kantor Pusat: [ISI] Toili, Kabupaten Banggai, Sulawesi Tengah.<br />
+            No. Badan Hukum / Legalitas: [ISI]
+          </p>
+          <a href="https://instagram.com/bmtalmuhajirin_official" target="_blank" rel="noopener noreferrer" class="footer-social">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <span>@bmtalmuhajirin_official</span>
+          </a>
+        </div>
+
+        <div class="footer-col-1 js-stagger-item">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang Kami</a></li>
+            <li><a href="#produk">Produk &amp; Layanan</a></li>
+            <li><a href="#kalkulator">Kalkulator</a></li>
+            <li><a href="#pengurus">Pengurus</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-2 js-stagger-item">
+          <h3>Informasi</h3>
+          <ul class="footer-links">
+            <li><a href="#program">Program &amp; Kegiatan</a></li>
+            <li><a href="#testimoni">Testimoni</a></li>
+            <li><a href="#artikel">Artikel</a></li>
+            <li><a href="#lokasi">Lokasi Kantor</a></li>
+            <li><a href="#konsultasi">Konsultasi</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-3 js-stagger-item">
+          <h3>Kantor Layanan</h3>
+          <p class="footer-contact-note">
+            Telepon: [ISI]<br />
+            Email: [ISI]<br />
+            Jam Layanan: [ISI]
+          </p>
+          <a href="#lokasi" class="btn btn--ghost btn--ghost-on-dark btn--sm">
+            <span>Kunjungi Kantor Toili</span>
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Koperasi BMT Al Muhajirin Toili. Seluruh hak cipta dilindungi.</span>
+        <span>Berjuang Bersama Ummat Keluar Dari Riba</span>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Kembali ke atas halaman">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <div class="mobile-wa-bar" id="mobileWaBar">
+    <a href="#konsultasi" class="btn btn--primary btn--md">
+      <span>Konsultasi via WhatsApp</span>
+      <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <!-- Detail Modal -->
+  <div class="modal-backdrop" id="detailModal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <div>
+          <div id="modalKicker" class="kicker" style="margin-bottom:6px;"></div>
+          <h2 id="modalTitle" style="font-size:1.5rem;"></h2>
+        </div>
+        <button type="button" class="modal-close" id="modalCloseBtn" aria-label="Tutup jendela detail">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <div id="modalBody" style="color:var(--muted); font-size:0.96875rem; display:flex; flex-direction:column; gap:12px;"></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      // Nomor WhatsApp Resmi BMT [ISI] — format internasional tanpa +, mis. 62812xxxxxxxx
+      var WA_NUMBER = '[ISI]';
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // 1. Hero 4-Slide Background Slider
+
+      var heroSlides = document.querySelectorAll('.hero__slide');
+      var heroSlideDots = document.querySelectorAll('.hero__slide-dot');
+      var heroSlidePrev = document.getElementById('heroSlidePrev');
+      var heroSlideNext = document.getElementById('heroSlideNext');
+      var heroSlideIndexEl = document.getElementById('heroSlideIndex');
+      var heroSlideCaptionEl = document.getElementById('heroSlideCaption');
+      var heroSlideCaptions = [
+        'Pelayanan Kantor Pusat Toili yang tenang, hangat, dan kekeluargaan bagi seluruh anggota.',
+        'Pendampingan permodalan usaha mikro, pedagang pasar, dan petani secara adil tanpa riba.',
+        'Kesepakatan akad syariah yang terbuka dan jelas sejak awal demi ketenteraman bersama.',
+        'Kebersamaan anggota serta penyaluran amanah sosial umat di Toili, Luwuk, dan Bunta.'
+      ];
+      var activeHeroSlide = 0;
+      var heroAutoTimer = null;
+
+      function setHeroSlide(idx) {
+        if (!heroSlides.length) return;
+        activeHeroSlide = ((idx % heroSlides.length) + heroSlides.length) % heroSlides.length;
+        heroSlides.forEach(function (slide, i) {
+          slide.classList.toggle('is-active', i === activeHeroSlide);
+        });
+        heroSlideDots.forEach(function (dot, i) {
+          var on = i === activeHeroSlide;
+          dot.classList.toggle('is-active', on);
+          dot.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        if (heroSlideIndexEl) heroSlideIndexEl.textContent = '0' + (activeHeroSlide + 1) + ' / 0' + heroSlides.length;
+        if (heroSlideCaptionEl) heroSlideCaptionEl.textContent = heroSlideCaptions[activeHeroSlide] || '';
+      }
+
+      function restartHeroTimer() {
+        if (heroAutoTimer) clearInterval(heroAutoTimer);
+        if (!prefersReduced && heroSlides.length > 1) {
+          heroAutoTimer = setInterval(function () {
+            setHeroSlide(activeHeroSlide + 1);
+          }, 5800);
+        }
+      }
+
+      if (heroSlides.length) {
+        heroSlideDots.forEach(function (dot) {
+          dot.addEventListener('click', function () {
+            setHeroSlide(parseInt(dot.getAttribute('data-hero-slide'), 10) || 0);
+            restartHeroTimer();
+          });
+        });
+        if (heroSlidePrev) {
+          heroSlidePrev.addEventListener('click', function () {
+            setHeroSlide(activeHeroSlide - 1);
+            restartHeroTimer();
+          });
+        }
+        if (heroSlideNext) {
+          heroSlideNext.addEventListener('click', function () {
+            setHeroSlide(activeHeroSlide + 1);
+            restartHeroTimer();
+          });
+        }
+        var heroEl = document.getElementById('beranda');
+        if (heroEl) {
+          heroEl.addEventListener('mouseenter', function () { if (heroAutoTimer) clearInterval(heroAutoTimer); });
+          heroEl.addEventListener('mouseleave', restartHeroTimer);
+          var heroTouchX = 0;
+          heroEl.addEventListener('touchstart', function (e) { heroTouchX = e.changedTouches[0].screenX; }, { passive: true });
+          heroEl.addEventListener('touchend', function (e) {
+            var dx = e.changedTouches[0].screenX - heroTouchX;
+            if (Math.abs(dx) > 48) {
+              setHeroSlide(dx < 0 ? activeHeroSlide + 1 : activeHeroSlide - 1);
+              restartHeroTimer();
+            }
+          }, { passive: true });
+        }
+        restartHeroTimer();
+      }
+
+      // 2. Smart Header (Transparent -> Frosted Blur -> Auto-hide on Scroll Down, Show on Scroll Up)
+      var header = document.getElementById('siteHeader');
+      var backToTop = document.getElementById('backToTop');
+      var mobileWaBar = document.getElementById('mobileWaBar');
+      var heroSection = document.getElementById('beranda');
+      var lastScrollY = window.scrollY || 0;
+
+      function handleScrollState(y) {
+        if (header) {
+          header.classList.toggle('is-scrolled', y > 40);
+          if (y > 160 && y > lastScrollY + 4) {
+            header.classList.add('is-hidden');
+          } else if (y < lastScrollY - 4 || y <= 80) {
+            header.classList.remove('is-hidden');
+          }
+        }
+        if (backToTop) backToTop.classList.toggle('is-visible', y > 600);
+        if (heroSection && mobileWaBar) {
+          var heroEnd = heroSection.offsetTop + heroSection.offsetHeight - 80;
+          mobileWaBar.classList.toggle('is-visible', y > heroEnd);
+        }
+        lastScrollY = y;
+      }
+
+      window.addEventListener('scroll', function () {
+        handleScrollState(window.scrollY || window.pageYOffset);
+      }, { passive: true });
+
+      // 3. Lenis Smooth Scroll + GSAP ScrollTrigger Choreography (Async Safe + Fallback)
+      var lenisInstance = null;
+      function initHeroAndSmoothScroll() {
+        if (prefersReduced) return;
+
+        // Lenis Smooth Scroll
+        if (typeof window.Lenis === 'function') {
+          lenisInstance = new window.Lenis({
+            duration: 1.15,
+            easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+            smoothWheel: true
+          });
+          if (window.gsap && window.ScrollTrigger) {
+            lenisInstance.on('scroll', window.ScrollTrigger.update);
+            window.gsap.ticker.add(function (time) {
+              lenisInstance.raf(time * 1000);
+            });
+            window.gsap.ticker.lagSmoothing(0);
+          } else {
+            (function rafLenis(time) {
+              lenisInstance.raf(time);
+              requestAnimationFrame(rafLenis);
+            })(performance.now());
+          }
+        }
+
+        // Smooth anchor links (Lenis or native)
+        document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+          anchor.addEventListener('click', function (e) {
+            var id = anchor.getAttribute('href');
+            if (!id || id === '#') return;
+            var target = document.querySelector(id);
+            if (!target) return;
+            e.preventDefault();
+            if (lenisInstance) {
+              lenisInstance.scrollTo(target, { offset: -24 });
+            } else {
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        });
+
+        if (backToTop) {
+          backToTop.addEventListener('click', function () {
+            if (lenisInstance) lenisInstance.scrollTo(0);
+            else window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+        }
+
+        // Hero Signature Moment runs immediately on DOMContentLoaded
+        if (window.gsap && window.ScrollTrigger) {
+          var gsap = window.gsap;
+          gsap.registerPlugin(window.ScrollTrigger);
+          var isMobile = window.innerWidth <= 768;
+          var durBase = isMobile ? 0.8 : 1.05;
+
+          var heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+          heroTl.from('.js-hero-line', {
+            yPercent: 115,
+            duration: durBase,
+            stagger: 0.08
+          }, 0.06);
+
+          heroTl.from('.js-hero-fade', {
+            y: 22,
+            opacity: 0,
+            duration: 0.9,
+            stagger: 0.1
+          }, 0.30);
+
+          var wavePath = document.querySelector('.js-gold-wave');
+          if (wavePath && wavePath.getTotalLength) {
+            var len = wavePath.getTotalLength();
+            gsap.set(wavePath, { strokeDasharray: len, strokeDashoffset: len });
+            heroTl.to(wavePath, { strokeDashoffset: 0, duration: 1.05, ease: 'power3.out' }, 0.60);
+          }
+
+          if (!isMobile) {
+            gsap.to('.js-hero-slides', {
+              y: 36,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: '.hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+              }
+            });
+            gsap.to('.js-about-img', {
+              y: -32,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: '#tentang',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
+              }
+            });
+          }
+
+          gsap.from('.js-about-backdrop', {
+            x: -28,
+            y: 28,
+            opacity: 0,
+            duration: durBase,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: '#tentang', start: 'top 78%', once: true }
+          });
+
+          gsap.utils.toArray('.js-reveal-left').forEach(function (el) {
+            gsap.from(el, {
+              x: isMobile ? 0 : -28,
+              y: isMobile ? 20 : 0,
+              opacity: 0,
+              duration: durBase,
+              ease: 'power3.out',
+              scrollTrigger: { trigger: el, start: 'top 82%', once: true }
+            });
+          });
+          gsap.utils.toArray('.js-reveal-right').forEach(function (el) {
+            gsap.from(el, {
+              x: isMobile ? 0 : 28,
+              y: isMobile ? 20 : 0,
+              opacity: 0,
+              duration: durBase,
+              ease: 'power3.out',
+              scrollTrigger: { trigger: el, start: 'top 82%', once: true }
+            });
+          });
+          gsap.utils.toArray('.js-reveal-fade').forEach(function (el) {
+            gsap.from(el, {
+              y: 20,
+              opacity: 0,
+              duration: 0.9,
+              ease: 'power3.out',
+              scrollTrigger: { trigger: el, start: 'top 85%', once: true }
+            });
+          });
+
+          gsap.utils.toArray('.js-clip-reveal').forEach(function (el) {
+            gsap.fromTo(el,
+              { clipPath: 'inset(18% 0% 0% 0%)', opacity: 0.4 },
+              {
+                clipPath: 'inset(0% 0% 0% 0%)',
+                opacity: 1,
+                duration: durBase,
+                ease: 'power3.out',
+                scrollTrigger: { trigger: el, start: 'top 84%', once: true }
+              }
+            );
+          });
+
+          ['.values-ledger', '.team-grid', '.site-footer'].forEach(function (containerSel) {
+            var parent = document.querySelector(containerSel);
+            if (!parent) return;
+            var items = parent.querySelectorAll('.js-stagger-item');
+            if (!items.length) return;
+            gsap.from(items, {
+              y: 26,
+              opacity: 0,
+              duration: 0.95,
+              stagger: 0.1,
+              ease: 'power3.out',
+              scrollTrigger: { trigger: parent, start: 'top 82%', once: true }
+            });
+          });
+
+          gsap.from('.js-bar-fill', {
+            scaleX: 0,
+            duration: 1.0,
+            stagger: 0.15,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: '#whyPanel', start: 'top 78%', once: true }
+          });
+
+          // Split section H2 headings per line after web fonts settle so wrapping is exact
+          function initSectionLineReveals() {
+            function splitHeadingIntoLines(el) {
+              var raw = (el.textContent || '').trim().replace(/\s+/g, ' ');
+              if (!raw) return [];
+              el.setAttribute('aria-label', raw);
+              var words = raw.split(' ');
+              el.innerHTML = words.map(function (w) {
+                return '<span class="js-word" style="display:inline-block">' + w + '</span>';
+              }).join(' ');
+              var wordEls = Array.prototype.slice.call(el.querySelectorAll('.js-word'));
+              var lines = [];
+              var currentTop = null;
+              var bucket = [];
+              wordEls.forEach(function (wEl) {
+                var top = Math.round(wEl.getBoundingClientRect().top);
+                if (currentTop === null || Math.abs(top - currentTop) <= 4) {
+                  currentTop = top;
+                  bucket.push(wEl.textContent);
+                } else {
+                  lines.push(bucket.join(' '));
+                  currentTop = top;
+                  bucket = [wEl.textContent];
+                }
+              });
+              if (bucket.length) lines.push(bucket.join(' '));
+              el.innerHTML = lines.map(function (lineText) {
+                return '<span class="line-mask" aria-hidden="true"><span class="line-inner js-sec-line">' + lineText + '</span></span>';
+              }).join('');
+              return el.querySelectorAll('.js-sec-line');
+            }
+
+            gsap.utils.toArray('.js-line-reveal').forEach(function (el) {
+              var lineTargets = splitHeadingIntoLines(el);
+              if (lineTargets.length) {
+                gsap.from(lineTargets, {
+                  yPercent: 115,
+                  duration: durBase,
+                  stagger: 0.08,
+                  ease: 'power3.out',
+                  scrollTrigger: { trigger: el, start: 'top 86%', once: true }
+                });
+              }
+            });
+            window.ScrollTrigger.refresh();
+          }
+
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(initSectionLineReveals).catch(initSectionLineReveals);
+          } else {
+            initSectionLineReveals();
+          }
+          window.addEventListener('load', function () {
+            window.ScrollTrigger.refresh();
+          });
+        }
+      }
+
+      window.addEventListener('DOMContentLoaded', initHeroAndSmoothScroll);
+      if (backToTop && prefersReduced) {
+        backToTop.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'auto' });
+        });
+      }
+
+      // 4. Desktop Nav Active Indicator + Mobile Drawer
+      var navItems = document.querySelectorAll('.nav-item');
+      navItems.forEach(function (item) {
+        var trigger = item.querySelector('.nav-link');
+        if (!trigger) return;
+        item.addEventListener('mouseenter', function () {
+          if (item.classList.contains('has-dropdown')) trigger.setAttribute('aria-expanded', 'true');
+        });
+        item.addEventListener('mouseleave', function () {
+          if (item.classList.contains('has-dropdown')) trigger.setAttribute('aria-expanded', 'false');
+        });
+        item.querySelectorAll('a').forEach(function (a) {
+          a.addEventListener('click', function () {
+            navItems.forEach(function (n) {
+              n.classList.remove('is-active', 'is-open');
+              var t = n.querySelector('.nav-link');
+              if (t && n.classList.contains('has-dropdown')) t.setAttribute('aria-expanded', 'false');
+            });
+            item.classList.add('is-active');
+          });
+        });
+      });
+
+      var drawer = document.getElementById('mobileDrawer');
+      var menuOpenBtn = document.getElementById('menuOpenBtn');
+      var menuCloseBtn = document.getElementById('menuCloseBtn');
+      var menuBackdrop = document.getElementById('menuBackdrop');
+
+      function setDrawer(open) {
+        if (!drawer) return;
+        drawer.classList.toggle('is-open', open);
+        drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+        menuOpenBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.style.overflow = open ? 'hidden' : '';
+        if (open) menuCloseBtn.focus();
+        else menuOpenBtn.focus();
+      }
+      if (menuOpenBtn) menuOpenBtn.addEventListener('click', function () { setDrawer(true); });
+      if (menuCloseBtn) menuCloseBtn.addEventListener('click', function () { setDrawer(false); });
+      if (menuBackdrop) menuBackdrop.addEventListener('click', function () { setDrawer(false); });
+      if (drawer) {
+        drawer.querySelectorAll('a').forEach(function (a) {
+          a.addEventListener('click', function () { setDrawer(false); });
+        });
+      }
+
+      // 5. Kalkulator Simulasi Pembiayaan (Format Ribuan Indonesia + Short EaseOut Transition)
+      var plafonRange = document.getElementById('plafonRange');
+      var plafonInput = document.getElementById('plafonInput');
+      var plafonDisplay = document.getElementById('plafonDisplay');
+      var tenorRange = document.getElementById('tenorRange');
+      var tenorDisplay = document.getElementById('tenorDisplay');
+      var rateInput = document.getElementById('rateInput');
+      var rateDisplay = document.getElementById('rateDisplay');
+      var monthlyResult = document.getElementById('monthlyResult');
+      var summaryPlafon = document.getElementById('summaryPlafon');
+      var summaryTenor = document.getElementById('summaryTenor');
+      var summaryPokok = document.getElementById('summaryPokok');
+      var tenorBtns = document.querySelectorAll('.tenor-btn');
+
+      var currentMonthly = 1250000;
+      var countRaf = null;
+
+      function formatIDR(num) {
+        return 'Rp ' + Math.round(num).toLocaleString('id-ID');
+      }
+      function paintSlider(el) {
+        var min = parseFloat(el.min) || 0;
+        var max = parseFloat(el.max) || 100;
+        var val = parseFloat(el.value) || 0;
+        el.style.setProperty('--pct', (((val - min) / (max - min)) * 100).toFixed(2) + '%');
+      }
+      function animateCounter(el, fromVal, toVal, formatter) {
+        if (prefersReduced) {
+          el.textContent = formatter(toVal);
+          return toVal;
+        }
+        if (countRaf) cancelAnimationFrame(countRaf);
+        var t0 = performance.now();
+        var dur = 320;
+        function tick(now) {
+          var p = Math.min(1, (now - t0) / dur);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = formatter(fromVal + (toVal - fromVal) * eased);
+          if (p < 1) countRaf = requestAnimationFrame(tick);
+        }
+        countRaf = requestAnimationFrame(tick);
+        return toVal;
+      }
+
+      function updateCalc() {
+        var plafon = Math.max(1000000, Math.min(100000000, parseInt(plafonRange.value, 10) || 15000000));
+        var tenor = Math.max(3, Math.min(36, parseInt(tenorRange.value, 10) || 12));
+        var rate = Math.max(0, Math.min(2.5, parseFloat(rateInput.value) || 0));
+
+        plafonDisplay.textContent = formatIDR(plafon);
+        tenorDisplay.textContent = tenor + ' Bulan';
+        rateDisplay.textContent = rate.toFixed(1) + '%';
+
+        var pokokBln = plafon / tenor;
+        var totalBln = pokokBln + plafon * (rate / 100);
+
+        summaryPlafon.textContent = formatIDR(plafon);
+        summaryTenor.textContent = tenor + ' Bulan';
+        summaryPokok.textContent = formatIDR(pokokBln);
+        currentMonthly = animateCounter(monthlyResult, currentMonthly, totalBln, formatIDR);
+
+        paintSlider(plafonRange);
+        paintSlider(tenorRange);
+        paintSlider(rateInput);
+        tenorBtns.forEach(function (b) {
+          b.classList.toggle('is-active', parseInt(b.getAttribute('data-tenor'), 10) === tenor);
+        });
+      }
+
+      if (plafonRange && plafonInput) {
+        plafonRange.addEventListener('input', function () {
+          plafonInput.value = plafonRange.value;
+          updateCalc();
+        });
+        plafonInput.addEventListener('change', function () {
+          var v = Math.max(1000000, Math.min(100000000, parseInt(plafonInput.value, 10) || 15000000));
+          plafonInput.value = v;
+          plafonRange.value = v;
+          updateCalc();
+        });
+        tenorRange.addEventListener('input', updateCalc);
+        rateInput.addEventListener('input', updateCalc);
+        tenorBtns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            tenorRange.value = btn.getAttribute('data-tenor');
+            updateCalc();
+          });
+        });
+        updateCalc();
+      }
+
+      // 6. Tabs Tentang / Misi / Visi
+      var tabBtns = document.querySelectorAll('.tab-btn');
+      var tabPanels = document.querySelectorAll('.tab-panel');
+      var tabIndicator = document.getElementById('tabIndicator');
+
+      function activateTab(btn) {
+        var target = btn.getAttribute('aria-controls');
+        tabBtns.forEach(function (b) { b.setAttribute('aria-selected', b === btn ? 'true' : 'false'); });
+        tabPanels.forEach(function (p) { p.classList.toggle('is-active', p.id === target); });
+        if (tabIndicator) {
+          tabIndicator.style.width = btn.offsetWidth + 'px';
+          tabIndicator.style.transform = 'translateX(' + btn.offsetLeft + 'px)';
+        }
+      }
+      tabBtns.forEach(function (btn, idx) {
+        btn.addEventListener('click', function () { activateTab(btn); });
+        btn.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowRight') {
+            var next = tabBtns[(idx + 1) % tabBtns.length];
+            next.focus();
+            activateTab(next);
+          } else if (e.key === 'ArrowLeft') {
+            var prev = tabBtns[(idx - 1 + tabBtns.length) % tabBtns.length];
+            prev.focus();
+            activateTab(prev);
+          }
+        });
+      });
+      window.addEventListener('load', function () {
+        var active = document.querySelector('.tab-btn[aria-selected="true"]');
+        if (active) activateTab(active);
+      });
+      window.addEventListener('resize', function () {
+        var active = document.querySelector('.tab-btn[aria-selected="true"]');
+        if (active) activateTab(active);
+      });
+
+      // 7. Program Carousel (No Autoplay + Swipe)
+      var progTrack = document.getElementById('programTrack');
+      var progPrev = document.getElementById('progPrev');
+      var progNext = document.getElementById('progNext');
+      var progSlides = document.querySelectorAll('.program-slide');
+      var progIdx = 0;
+
+      function updateProg() {
+        if (!progTrack || !progSlides.length) return;
+        var vis = window.innerWidth <= 768 ? 1 : 2;
+        var max = Math.max(0, progSlides.length - vis);
+        progIdx = Math.max(0, Math.min(progIdx, max));
+        var w = progSlides[0].getBoundingClientRect().width + 32;
+        progTrack.style.transform = 'translate3d(' + (-progIdx * w) + 'px, 0, 0)';
+      }
+      if (progPrev) progPrev.addEventListener('click', function () { progIdx--; updateProg(); });
+      if (progNext) progNext.addEventListener('click', function () { progIdx++; updateProg(); });
+      window.addEventListener('resize', updateProg);
+
+      var sx = 0;
+      if (progTrack) {
+        progTrack.addEventListener('touchstart', function (e) { sx = e.changedTouches[0].screenX; }, { passive: true });
+        progTrack.addEventListener('touchend', function (e) {
+          var dx = e.changedTouches[0].screenX - sx;
+          if (Math.abs(dx) > 40) {
+            if (dx < 0) progIdx++;
+            else progIdx--;
+            updateProg();
+          }
+        }, { passive: true });
+      }
+
+      // 8. Testimoni Slider
+      var testiTrack = document.getElementById('testiTrack');
+      var testiDots = document.querySelectorAll('.slider-dot');
+      testiDots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          var idx = parseInt(dot.getAttribute('data-testi-page'), 10) || 0;
+          if (testiTrack) testiTrack.style.transform = 'translate3d(' + (-idx * 100) + '%, 0, 0)';
+          testiDots.forEach(function (d, i) {
+            var active = i === idx;
+            d.classList.toggle('is-active', active);
+            d.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+        });
+      });
+
+      // 9. Detail Modal (Produk & Artikel)
+      var detailData = {
+        product: {
+          simpanan: {
+            kicker: 'Produk Simpanan Syariah',
+            title: 'Simpanan Amanah & Bebas Riba',
+            body: [
+              'Dana anggota dikelola berdasarkan prinsip syariah (seperti akad titipan Wadiah atau bagi hasil Mudharabah) tanpa sistem bunga.',
+              'Jenis simpanan dapat mencakup simpanan harian sukarela, simpanan pendidikan/qurban, dan simpanan berjangka [ISI daftar produk resmi BMT].',
+              'Hubungi petugas kami melalui formulir konsultasi untuk informasi setoran awal dan syarat keanggotaan.'
+            ]
+          },
+          pembiayaan: {
+            kicker: 'Produk Pembiayaan Syariah',
+            title: 'Pembiayaan Modal Kerja & Pengadaan Barang',
+            body: [
+              'Mendukung permodalan usaha perdagangan, pertanian, maupun pengadaan barang produktif berbasis akad syariah yang jelas sejak awal.',
+              'Besaran margin atau nisbah bagi hasil disepakati bersama saat akad di kantor tanpa denda berbunga [ISI ketentuan produk resmi].',
+              'Gunakan kalkulator simulasi untuk gambaran awal sebelum berdiskusi bersama tim kami.'
+            ]
+          },
+          lainnya: {
+            kicker: 'Layanan Anggota & Sosial',
+            title: 'Baitul Maal & Layanan Lapangan',
+            body: [
+              'Selain layanan keuangan komersial (Tamwil), BMT Al Muhajirin menjalankan fungsi sosial (Maal) dalam penyaluran ZISWAF kepada mustahik [ISI program resmi].',
+              'Tersedia kemudahan layanan lapangan bagi anggota di wilayah kerja Toili, Luwuk, dan Bunta [ISI cakupan layanan].'
+            ]
+          }
+        },
+        article: {
+          art1: {
+            kicker: 'Edukasi Syariah · [ISI] Tanggal',
+            title: 'Memahami Perbedaan Pembiayaan Syariah dan Utang Berbunga',
+            body: [
+              'Dalam muamalah Islam, transaksi pembiayaan berlandaskan jual beli barang nyata atau kerja sama usaha yang jelas objek serta kesepakatannya.',
+              'Keuntungan atau nisbah tidak bertambah berlipat karena keterlambatan waktu, sehingga menghadirkan ketenangan batin bagi kedua belah pihak.',
+              '[ISI naskah artikel lengkap BMT Al Muhajirin]'
+            ]
+          },
+          art2: {
+            kicker: 'Pengelolaan Usaha · [ISI] Tanggal',
+            title: 'Cara Sederhana Memisahkan Kas Keluarga dan Modal Usaha Harian',
+            body: [
+              'Memisahkan pemasukan toko atau lapak dari belanja rumah tangga membantu pelaku usaha mikro melihat perkembangan modal secara jujur.',
+              'Menyisihkan sebagian hasil harian ke simpanan syariah menjaga cadangan usaha tetap sehat.',
+              '[ISI naskah artikel lengkap BMT Al Muhajirin]'
+            ]
+          },
+          art3: {
+            kicker: 'Komunitas Toili · [ISI] Tanggal',
+            title: 'Peran Koperasi Syariah Menguatkan Ketahanan Ekonomi Warga',
+            body: [
+              'Koperasi syariah mempertemukan anggota yang menitipkan dana secara aman dengan pelaku usaha lokal yang membutuhkan permodalan adil.',
+              'Perputaran dana di lingkungan sendiri ikut menjaga daya beli dan kemandirian ekonomi masyarakat di Kabupaten Banggai.',
+              '[ISI naskah artikel lengkap BMT Al Muhajirin]'
+            ]
+          }
+        }
+      };
+
+      var modal = document.getElementById('detailModal');
+      var modalKicker = document.getElementById('modalKicker');
+      var modalTitle = document.getElementById('modalTitle');
+      var modalBody = document.getElementById('modalBody');
+      var modalCloseBtn = document.getElementById('modalCloseBtn');
+      var lastTrigger = null;
+
+      function openDetailFromCard(card) {
+        var type = card.getAttribute('data-detail-type');
+        var id = card.getAttribute('data-detail-id');
+        var item = detailData[type] && detailData[type][id];
+        if (!item || !modal) return;
+        lastTrigger = card;
+        modalKicker.textContent = item.kicker;
+        modalTitle.textContent = item.title;
+        modalBody.innerHTML = item.body.map(function (p) { return '<p>' + p + '</p>'; }).join('');
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        modalCloseBtn.focus();
+      }
+      function closeModal() {
+        if (!modal) return;
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lastTrigger) lastTrigger.focus();
+      }
+      document.querySelectorAll('.open-detail-card').forEach(function (card) {
+        card.addEventListener('click', function () { openDetailFromCard(card); });
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openDetailFromCard(card);
+          }
+        });
+      });
+      if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+      if (modal) modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          if (modal && modal.classList.contains('is-open')) closeModal();
+          if (drawer && drawer.classList.contains('is-open')) setDrawer(false);
+        }
+      });
+
+      // 10. Office Switcher
+      var offices = {
+        toili: {
+          src: 'https://www.openstreetmap.org/export/embed.html?bbox=122.25%2C-1.45%2C122.45%2C-1.25&layer=mapnik&marker=-1.35%2C122.35',
+          link: 'https://www.openstreetmap.org/?mlat=-1.35&mlon=122.35#map=13/-1.35/122.35',
+          caption: 'Wilayah Kantor Pusat Toili, Kab. Banggai (Koordinat [ISI])'
+        },
+        luwuk: {
+          src: 'https://www.openstreetmap.org/export/embed.html?bbox=122.72%2C-1.01%2C122.86%2C-0.89&layer=mapnik&marker=-0.95%2C122.79',
+          link: 'https://www.openstreetmap.org/?mlat=-0.95&mlon=122.79#map=13/-0.95/122.79',
+          caption: 'Wilayah Kantor Cabang Luwuk, Kab. Banggai (Koordinat [ISI])'
+        },
+        bunta: {
+          src: 'https://www.openstreetmap.org/export/embed.html?bbox=122.09%2C-0.90%2C122.23%2C-0.78&layer=mapnik&marker=-0.84%2C122.16',
+          link: 'https://www.openstreetmap.org/?mlat=-0.84&mlon=122.16#map=13/-0.84/122.16',
+          caption: 'Wilayah Kantor Cabang Bunta, Kab. Banggai (Koordinat [ISI])'
+        }
+      };
+      var officeBtns = document.querySelectorAll('.office-item');
+      var mapFrame = document.getElementById('officeMapFrame');
+      var mapCaption = document.getElementById('mapCaption');
+      var mapLink = document.getElementById('mapExternalLink');
+
+      officeBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var d = offices[btn.getAttribute('data-office')];
+          if (!d) return;
+          officeBtns.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+          if (mapFrame) mapFrame.src = d.src;
+          if (mapCaption) mapCaption.textContent = d.caption;
+          if (mapLink) mapLink.href = d.link;
+        });
+      });
+
+      // 11. WhatsApp Consultation Form
+      var consultForm = document.getElementById('consultForm');
+      var formStatus = document.getElementById('formStatus');
+      var consultSubmitBtn = document.getElementById('consultSubmitBtn');
+      var consultBtnLabel = document.getElementById('consultBtnLabel');
+
+      function buildWaUrl(msg) {
+        var clean = WA_NUMBER.replace(/[^0-9]/g, '');
+        return clean ? ('https://wa.me/' + clean + '?text=' + encodeURIComponent(msg)) : null;
+      }
+
+      if (consultForm) {
+        consultForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var nama = document.getElementById('cName').value.trim();
+          var hp = document.getElementById('cPhone').value.trim();
+          var topik = document.getElementById('cTopic').value;
+          var pesan = document.getElementById('cMsg').value.trim();
+
+          if (!nama || !hp || !pesan) {
+            formStatus.textContent = 'Mohon lengkapi Nama, Nomor HP, dan Pesan sebelum mengirim.';
+            formStatus.className = 'form-status is-shown form-status--error';
+            return;
+          }
+
+          consultSubmitBtn.disabled = true;
+          consultBtnLabel.textContent = 'Menyiapkan pesan WhatsApp...';
+          var text = 'Assalamu\'alaikum Koperasi BMT Al Muhajirin,\n\nNama: ' + nama + '\nNo. HP: ' + hp + '\nTopik: ' + topik + '\nPesan: ' + pesan;
+
+          setTimeout(function () {
+            consultSubmitBtn.disabled = false;
+            consultBtnLabel.textContent = 'Kirim Pesan ke WhatsApp';
+            var url = buildWaUrl(text);
+            if (url) {
+              formStatus.textContent = 'Mengarahkan ke WhatsApp resmi BMT Al Muhajirin.';
+              formStatus.className = 'form-status is-shown form-status--success';
+              window.location.href = url;
+            } else {
+              formStatus.textContent = 'Format pesan siap! Lengkapi WA_NUMBER ([ISI]) pada script agar otomatis membuka WhatsApp resmi.';
+              formStatus.className = 'form-status is-shown form-status--success';
+            }
+          }, 360);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

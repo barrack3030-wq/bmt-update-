@@ -1,0 +1,6 @@
+{
+  "name": "Koperasi BMT Al Muhajirin Toili",
+  "description": "Company profile resmi Koperasi BMT Al Muhajirin, lembaga keuangan syariah di Toili, Kab. Banggai, Sulawesi Tengah.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
