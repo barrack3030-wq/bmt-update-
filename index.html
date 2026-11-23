@@ -2488,6 +2488,15 @@
     .program-slide:hover img, .article-lead:hover img, .article-item:hover img { transform:scale(1.045); }
     @media (max-width:768px) { .section-pad { padding-block:68px; } .hero__scrim { background:linear-gradient(0deg,rgba(5,30,19,.82),rgba(5,30,19,.24)); } }
 
+  
+    .testi-demo-grid--three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .testi-demo-card--photo { overflow: hidden; padding: 0; display: flex; flex-direction: column; }
+    .testi-customer-photo { width: 100%; height: 250px; object-fit: cover; object-position: center 35%; }
+    .testi-demo-card__content { padding: 26px 26px 28px; display: flex; flex: 1; flex-direction: column; }
+    .testi-demo-card__content blockquote { flex: 1; }
+    .testi-demo-card--photo .testi-demo-card__author { margin-top: 24px; }
+    @media (max-width: 900px) { .testi-demo-grid--three { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 620px) { .testi-demo-grid--three { grid-template-columns: 1fr; } .testi-customer-photo { height: 280px; } }
   </style>
 </head>
 <body>
@@ -2546,61 +2555,61 @@
             </li>
 
             <li class="nav-item has-dropdown">
-              <a href="#tentang" class="nav-link" aria-haspopup="true" aria-expanded="false" data-cursor="expand">
+              <a href="informasi.html#tentang" class="nav-link" aria-haspopup="true" aria-expanded="false" data-cursor="expand">
                 <span>Tentang</span>
                 <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </a>
               <ul class="nav-dropdown" aria-label="Submenu Tentang">
-                <li><a href="#tentang" class="is-default-active"><span>Profil BMT Toili</span></a></li>
-                <li><a href="#nilai-utama"><span>Nilai Utama</span></a></li>
+                <li><a href="informasi.html#tentang" class="is-default-active"><span>Profil BMT Toili</span></a></li>
+                <li><a href="informasi.html#nilai-utama"><span>Nilai Utama</span></a></li>
                 <li><a href="#mengapa"><span>Visi &amp; Misi</span></a></li>
-                <li><a href="#pengurus"><span>Pengurus &amp; Pengawas</span></a></li>
+                <li><a href="informasi.html#pengurus"><span>Pengurus &amp; Pengawas</span></a></li>
               </ul>
             </li>
 
             <li class="nav-item has-dropdown">
-              <a href="#produk" class="nav-link" aria-haspopup="true" aria-expanded="false" data-cursor="expand">
+              <a href="informasi.html#produk" class="nav-link" aria-haspopup="true" aria-expanded="false" data-cursor="expand">
                 <span>Produk</span>
                 <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </a>
               <ul class="nav-dropdown" aria-label="Submenu Produk dan Layanan">
-                <li><a href="#produk-simpanan" class="is-default-active"><span>Simpanan Syariah</span></a></li>
-                <li><a href="#produk-pembiayaan"><span>Pembiayaan Produktif</span></a></li>
-                <li><a href="#produk-lainnya"><span>Layanan &amp; Baitul Maal</span></a></li>
+                <li><a href="informasi.html#produk-simpanan" class="is-default-active"><span>Simpanan Syariah</span></a></li>
+                <li><a href="informasi.html#produk-pembiayaan"><span>Pembiayaan Produktif</span></a></li>
+                <li><a href="informasi.html#produk-lainnya"><span>Layanan &amp; Baitul Maal</span></a></li>
               </ul>
             </li>
 
             <li class="nav-item">
-              <a href="#kalkulator" class="nav-link" data-cursor="expand">Kalkulator</a>
+              <a href="informasi.html#kalkulator" class="nav-link" data-cursor="expand">Kalkulator</a>
             </li>
 
             <li class="nav-item has-dropdown">
-              <a href="#artikel" class="nav-link" aria-haspopup="true" aria-expanded="false" data-cursor="expand">
+              <a href="informasi.html#artikel" class="nav-link" aria-haspopup="true" aria-expanded="false" data-cursor="expand">
                 <span>Artikel</span>
                 <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </a>
               <ul class="nav-dropdown" aria-label="Submenu Artikel dan Kegiatan">
-                <li><a href="#artikel" class="is-default-active"><span>Artikel &amp; Edukasi</span></a></li>
+                <li><a href="informasi.html#artikel" class="is-default-active"><span>Artikel &amp; Edukasi</span></a></li>
                 <li><a href="#program"><span>Program &amp; Kegiatan</span></a></li>
                 <li><a href="#testimoni"><span>Testimoni Anggota</span></a></li>
               </ul>
             </li>
 
             <li class="nav-item has-dropdown">
-              <a href="#lokasi" class="nav-link" aria-haspopup="true" aria-expanded="false" data-cursor="expand">
+              <a href="informasi.html#lokasi" class="nav-link" aria-haspopup="true" aria-expanded="false" data-cursor="expand">
                 <span>Kontak</span>
                 <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </a>
               <ul class="nav-dropdown" aria-label="Submenu Kontak dan Lokasi">
-                <li><a href="#konsultasi" class="is-default-active"><span>Konsultasi WhatsApp</span></a></li>
-                <li><a href="#lokasi"><span>Kantor Toili, Luwuk &amp; Bunta</span></a></li>
+                <li><a href="informasi.html#konsultasi" class="is-default-active"><span>Konsultasi WhatsApp</span></a></li>
+                <li><a href="informasi.html#lokasi"><span>Kantor Toili, Luwuk &amp; Bunta</span></a></li>
               </ul>
             </li>
           </ul>
         </nav>
 
         <div class="header-actions">
-          <a href="#konsultasi" class="btn btn--primary btn--sm">
+          <a href="informasi.html#konsultasi" class="btn btn--primary btn--sm">
             <span>Konsultasi via WhatsApp</span>
             <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
@@ -2631,10 +2640,10 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="mobile-submenu__links">
-            <a href="#tentang">Profil BMT Toili</a>
-            <a href="#nilai-utama">Nilai Utama</a>
+            <a href="informasi.html#tentang">Profil BMT Toili</a>
+            <a href="informasi.html#nilai-utama">Nilai Utama</a>
             <a href="#mengapa">Visi &amp; Misi</a>
-            <a href="#pengurus">Pengurus &amp; Pengawas</a>
+            <a href="informasi.html#pengurus">Pengurus &amp; Pengawas</a>
           </div>
         </details>
 
@@ -2644,13 +2653,13 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="mobile-submenu__links">
-            <a href="#produk-simpanan">Simpanan Syariah</a>
-            <a href="#produk-pembiayaan">Pembiayaan Produktif</a>
-            <a href="#produk-lainnya">Layanan &amp; Baitul Maal</a>
+            <a href="informasi.html#produk-simpanan">Simpanan Syariah</a>
+            <a href="informasi.html#produk-pembiayaan">Pembiayaan Produktif</a>
+            <a href="informasi.html#produk-lainnya">Layanan &amp; Baitul Maal</a>
           </div>
         </details>
 
-        <a href="#kalkulator">Kalkulator</a>
+        <a href="informasi.html#kalkulator">Kalkulator</a>
 
         <details class="mobile-submenu">
           <summary>
@@ -2658,7 +2667,7 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="mobile-submenu__links">
-            <a href="#artikel">Artikel &amp; Edukasi</a>
+            <a href="informasi.html#artikel">Artikel &amp; Edukasi</a>
             <a href="#program">Program &amp; Kegiatan</a>
             <a href="#testimoni">Testimoni Anggota</a>
           </div>
@@ -2670,12 +2679,12 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="mobile-submenu__links">
-            <a href="#konsultasi">Konsultasi WhatsApp</a>
-            <a href="#lokasi">Kantor Toili, Luwuk &amp; Bunta</a>
+            <a href="informasi.html#konsultasi">Konsultasi WhatsApp</a>
+            <a href="informasi.html#lokasi">Kantor Toili, Luwuk &amp; Bunta</a>
           </div>
         </details>
 
-        <a href="#konsultasi">Hubungi Tim Toili</a>
+        <a href="informasi.html#konsultasi">Hubungi Tim Toili</a>
       </nav>
       <div class="mobile-drawer__meta">
         <div><strong>Jam Layanan:</strong> [ISI]</div>
@@ -2744,7 +2753,7 @@
               Lembaga keuangan syariah dari Toili yang hadir dengan ketenangan, amanah, dan pelayanan modern untuk mendampingi kesejahteraan anggota tanpa riba.
             </p>
             <div class="hero__actions js-hero-fade">
-              <a href="#kalkulator" class="btn btn--primary btn--lg">
+              <a href="informasi.html#kalkulator" class="btn btn--primary btn--lg">
                 <span>Hitung Simulasi Pembiayaan</span>
                 <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a>
@@ -2802,267 +2811,60 @@
       </div>
     </section>
 
-    <!-- 4. TENTANG KAMI -->
-    <section class="section-pad about-sec blend-to-emerald" id="tentang">
-      <div class="container">
-        <div class="grid-12">
-          <div class="about-media-col js-reveal-left">
-            <div class="about-backdrop js-about-backdrop" aria-hidden="true"></div>
-            <div class="about-photo-frame js-clip-reveal">
-              <img
-                class="js-about-img"
-                width="520"
-                height="546"
-                loading="lazy"
-                alt="Placeholder foto interaksi hangat bersama anggota Koperasi BMT Al Muhajirin di Toili [ISI]"
-                src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=85"
-              />
-            </div>
-          </div>
-
-          <div class="about-copy-col">
-            <span class="kicker js-reveal-fade">Tentang Kami</span>
-            <h2 class="js-line-reveal">Dari Toili Tumbuh Bersama Masyarakat</h2>
-            <p class="js-reveal-fade">
-              Koperasi BMT Al Muhajirin berdiri untuk menghadirkan akses keuangan yang menenteramkan bagi warga Toili dan Kabupaten Banggai. Kami mendampingi pedagang pasar, petani, hingga keluarga dalam mengelola simpanan dan permodalan produktif secara adil tanpa riba.
-            </p>
-
-            <div class="about-pillars">
-              <div class="about-pillar js-reveal-fade">
-                <div class="about-pillar__icon" aria-hidden="true">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                </div>
-                <h3>Prinsip Syariah</h3>
-                <p>Akad disepakati terbuka sejak awal, bebas bunga dan denda berbunga.</p>
-              </div>
-
-              <div class="about-pillar js-reveal-fade">
-                <div class="about-pillar__icon" aria-hidden="true">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <h3>Dekat dengan Anggota</h3>
-                <p>Pelayanan kekeluargaan dengan pendampingan usaha secara langsung.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. BAND NILAI UTAMA (Pengganti angka karena data statistik resmi belum tersedia; script siap counter bila diisi angka asli) -->
-    <section class="emerald-band values-sec" id="nilai-utama" aria-label="Empat Nilai Utama Koperasi BMT Al Muhajirin">
-      <div class="grain-layer" aria-hidden="true"></div>
-      <div class="wave-sep wave-sep--top" aria-hidden="true">
-        <svg viewBox="0 0 1440 52" preserveAspectRatio="none">
-          <path d="M0,26 C360,54 720,0 1080,26 C1260,39 1360,16 1440,26 L1440,52 L0,52 Z" fill="#FFFFFF"/>
-        </svg>
-      </div>
-
-      <div class="container">
-        <div class="values-ledger">
-          <div class="value-pillar js-stagger-item">
-            <div class="value-pillar__num tabular-nums">01</div>
-            <div class="value-pillar__head">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <h3>Amanah</h3>
-            </div>
-            <p>Menjaga titipan dan kepercayaan anggota dalam setiap pengelolaan dana umat.</p>
-          </div>
-
-          <div class="value-pillar js-stagger-item">
-            <div class="value-pillar__num tabular-nums">02</div>
-            <div class="value-pillar__head">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-              <h3>Transparan</h3>
-            </div>
-            <p>Ketentuan akad, hak, dan kewajiban dijelaskan lugas sebelum kesepakatan dibuat.</p>
-          </div>
-
-          <div class="value-pillar js-stagger-item">
-            <div class="value-pillar__num tabular-nums">03</div>
-            <div class="value-pillar__head">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/></svg>
-              <h3>Adil</h3>
-            </div>
-            <p>Bagi hasil dan kemitraan usaha dijalankan atas dasar keadilan bersama.</p>
-          </div>
-
-          <div class="value-pillar js-stagger-item">
-            <div class="value-pillar__num tabular-nums">04</div>
-            <div class="value-pillar__head">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-              <h3>Berkah</h3>
-            </div>
-            <p>Mendorong kemandirian ekonomi keluarga yang halal dan menumbuhkan kebaikan.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="wave-sep wave-sep--bottom" aria-hidden="true">
-        <svg viewBox="0 0 1440 52" preserveAspectRatio="none">
-          <path d="M0,26 C360,54 720,0 1080,26 C1260,39 1360,16 1440,26 L1440,52 L0,52 Z" fill="#F7F9F7"/>
-        </svg>
-      </div>
-    </section>
-
-    <!-- 6. PRODUK & LAYANAN (Asymmetric 12-Col Editorial Ledger, Clickable Cards) -->
-    <section class="section-pad products-sec blend-to-white" id="produk">
-      <div class="container">
-        <div class="grid-12">
-          <div class="products-sticky-col">
-            <span class="kicker js-reveal-fade">Produk &amp; Layanan</span>
-            <h2 class="js-line-reveal">Solusi Keuangan Syariah untuk Anggota</h2>
-            <p class="js-reveal-fade">
-              Setiap produk dirancang agar mudah dipahami dan sesuai prinsip muamalah Islam, tanpa bunga maupun ketentuan tersembunyi. Pilih salah satu layanan untuk melihat rincian akadnya.
-            </p>
-          </div>
-
-          <div class="products-list-col">
-            <article class="product-row js-reveal-right open-detail-card" id="produk-simpanan" role="button" tabindex="0" data-detail-type="product" data-detail-id="simpanan" aria-label="Buka rincian produk Simpanan Syariah">
-              <div class="product-row__top">
-                <span class="product-row__index tabular-nums">01 / SIMPANAN</span>
-                <div class="product-row__right-meta">
-                  <div class="product-row__icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H20v15H6a3 3 0 0 1-3-3V7a.5.5 0 0 1 1-.5Z"/><path d="M3 8h14.5A2.5 2.5 0 0 1 20 10.5V13h-5a2.5 2.5 0 0 1 0-5h5"/><path d="M15.5 10.5h.01"/><path d="M7 4v2"/></svg>
-                  </div>
-                  <svg class="card-corner-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
-                </div>
-              </div>
-              <h3>Simpanan Syariah</h3>
-              <p>Titipan dan investasi dana anggota yang dikelola secara amanah dengan akad syariah yang jelas tanpa bunga.</p>
-              <ul class="product-row__items">
-                <li>Simpanan Harian / Sukarela [ISI]</li>
-                <li>Simpanan Pendidikan &amp; Qurban [ISI]</li>
-                <li>Simpanan Berjangka / Mudharabah [ISI]</li>
-              </ul>
-            </article>
-
-            <article class="product-row js-reveal-right open-detail-card" id="produk-pembiayaan" role="button" tabindex="0" data-detail-type="product" data-detail-id="pembiayaan" aria-label="Buka rincian produk Pembiayaan Produktif">
-              <div class="product-row__top">
-                <span class="product-row__index tabular-nums">02 / PEMBIAYAAN</span>
-                <div class="product-row__right-meta">
-                  <div class="product-row__icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
-                  </div>
-                  <svg class="card-corner-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
-                </div>
-              </div>
-              <h3>Pembiayaan Produktif</h3>
-              <p>Dukungan permodalan usaha perdagangan, pertanian, maupun pengadaan barang dengan akad jual beli atau bagi hasil.</p>
-              <ul class="product-row__items">
-                <li>Pembiayaan Murabahah [ISI]</li>
-                <li>Pembiayaan Modal Kerja / Bagi Hasil [ISI]</li>
-                <li>Ketentuan margin/nisbah sesuai akad [ISI]</li>
-              </ul>
-            </article>
-
-            <article class="product-row js-reveal-right open-detail-card" id="produk-lainnya" role="button" tabindex="0" data-detail-type="product" data-detail-id="lainnya" aria-label="Buka rincian Layanan Lainnya dan Baitul Maal">
-              <div class="product-row__top">
-                <span class="product-row__index tabular-nums">03 / LAYANAN LAINNYA</span>
-                <div class="product-row__right-meta">
-                  <div class="product-row__icon" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                  </div>
-                  <svg class="card-corner-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
-                </div>
-              </div>
-              <h3>Layanan Lainnya &amp; Baitul Maal</h3>
-              <p>Pelayanan sosial umat dan kemudahan transaksi harian bagi anggota di wilayah kerja Toili, Luwuk, dan Bunta.</p>
-              <ul class="product-row__items">
-                <li>Penyaluran ZISWAF (Baitul Maal) [ISI]</li>
-                <li>Jemput Setoran Anggota [ISI]</li>
-                <li>Layanan Transaksi Harian [ISI]</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. KALKULATOR SIMULASI PEMBIAYAAN -->
-    <section class="section-pad calc-sec" id="kalkulator">
+<section class="section-pad testi-sec blend-to-white" id="testimoni">
       <div class="container">
         <div class="section-intro section-intro--center">
-          <span class="kicker js-reveal-fade">Kalkulator Pembiayaan</span>
-          <h2 class="js-line-reveal">Simulasi Perkiraan Angsuran</h2>
-          <p class="js-reveal-fade">Hitung gambaran awal kebutuhan pembiayaan secara mandiri sebelum berkonsultasi mengenai akad resmi di kantor kami.</p>
+          <span class="kicker js-reveal-fade">Cerita Anggota</span>
+          <h2 class="js-line-reveal">Cerita dari Lingkungan Anggota</h2>
+          <p class="js-reveal-fade">Berikut contoh tampilan cerita anggota. Foto dan narasi pada bagian ini bersifat ilustratif, bukan dokumentasi atau kutipan nasabah sebenarnya.</p>
         </div>
 
-        <div class="calc-sheet grid-12 js-reveal-fade" style="gap:0;">
-          <div class="calc-inputs">
-            <div>
-              <div class="calc-field-head">
-                <label for="plafonRange">Nilai Pembiayaan (Plafon)</label>
-                <span class="calc-field-val tabular-nums" id="plafonDisplay">Rp 15.000.000</span>
-              </div>
-              <input type="range" id="plafonRange" class="range-slider" min="1000000" max="100000000" step="500000" value="15000000" />
-              <div class="calc-ticks">
-                <span>Rp 1 Juta</span>
-                <span>Rp 50 Juta</span>
-                <span>Rp 100 Juta</span>
-              </div>
-              <input type="number" id="plafonInput" class="calc-num-input tabular-nums" min="1000000" max="100000000" step="500000" value="15000000" aria-label="Masukkan nilai plafon dalam Rupiah" />
-            </div>
+        <div class="testi-demo-disclaimer" role="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+          <span><strong>TESTIMONI ILUSTRATIF</strong> · Foto stok dan narasi simulasi untuk pratinjau. Bukan nasabah atau pernyataan anggota sebenarnya.</span>
+        </div>
 
-            <div>
-              <div class="calc-field-head">
-                <label for="tenorRange">Jangka Waktu (Tenor)</label>
-                <span class="calc-field-val tabular-nums" id="tenorDisplay">12 Bulan</span>
-              </div>
-              <input type="range" id="tenorRange" class="range-slider" min="3" max="36" step="1" value="12" />
-              <div class="tenor-group" role="group" aria-label="Pilihan cepat tenor">
-                <button type="button" class="tenor-btn" data-tenor="6">6 Bln</button>
-                <button type="button" class="tenor-btn is-active" data-tenor="12">12 Bln</button>
-                <button type="button" class="tenor-btn" data-tenor="18">18 Bln</button>
-                <button type="button" class="tenor-btn" data-tenor="24">24 Bln</button>
-                <button type="button" class="tenor-btn" data-tenor="36">36 Bln</button>
-              </div>
+        <div class="testi-demo-grid testi-demo-grid--three">
+          <article class="testi-demo-card testi-demo-card--photo">
+            <img class="testi-customer-photo" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Foto ilustrasi seorang anggota pria" loading="lazy" width="640" height="760" />
+            <div class="testi-demo-card__content">
+              <span class="testi-demo-card__category">SIMPANAN SYARIAH</span>
+              <div class="testi-demo-card__quote" aria-hidden="true">“</div>
+              <blockquote>Memahami pilihan simpanan dan ketentuannya membantu saya mulai merencanakan keuangan dengan lebih teratur.</blockquote>
+              <div class="testi-demo-card__author"><span><strong>Ilustrasi Anggota</strong><small>Foto dan testimoni simulasi</small></span></div>
             </div>
+          </article>
+          <article class="testi-demo-card testi-demo-card--photo">
+            <img class="testi-customer-photo" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Foto ilustrasi seorang anggota perempuan" loading="lazy" width="640" height="760" />
+            <div class="testi-demo-card__content">
+              <span class="testi-demo-card__category">PEMBIAYAAN USAHA</span>
+              <div class="testi-demo-card__quote" aria-hidden="true">“</div>
+              <blockquote>Penjelasan tentang tahapan, persyaratan, dan akad membuat calon anggota lebih memahami hal yang perlu dipertimbangkan sebelum mengajukan pembiayaan.</blockquote>
+              <div class="testi-demo-card__author"><span><strong>Ilustrasi Pelaku Usaha</strong><small>Foto dan testimoni simulasi</small></span></div>
+            </div>
+          </article>
+          <article class="testi-demo-card testi-demo-card--photo">
+            <img class="testi-customer-photo" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Foto ilustrasi seorang anggota pria" loading="lazy" width="640" height="760" />
+            <div class="testi-demo-card__content">
+              <span class="testi-demo-card__category">PENDAMPINGAN USAHA</span>
+              <div class="testi-demo-card__quote" aria-hidden="true">“</div>
+              <blockquote>Belajar memisahkan uang usaha dan kebutuhan rumah tangga merupakan langkah sederhana untuk memperbaiki pencatatan dan arus kas.</blockquote>
+              <div class="testi-demo-card__author"><span><strong>Ilustrasi Anggota</strong><small>Foto dan testimoni simulasi</small></span></div>
+            </div>
+          </article>
+        </div>
 
-            <div>
-              <div class="calc-field-head">
-                <label for="rateInput">Asumsi Margin Simulasi / Bulan (%) — Opsional</label>
-                <span class="calc-field-val tabular-nums" id="rateDisplay">0.0%</span>
-              </div>
-              <input type="range" id="rateInput" class="range-slider" min="0" max="2.5" step="0.1" value="0" />
-              <div class="calc-ticks">
-                <span>0% (Pokok saja)</span>
-                <span>Angka simulasi yang Anda atur sendiri</span>
-              </div>
-            </div>
+        <div class="testi-invite-footer">
+          <div>
+            <strong>Ingin membagikan pengalaman nyata bersama BMT Al Muhajirin?</strong>
+            <span>Kami ingin mendengar cerita Anda. Testimoni nyata hanya akan dipublikasikan setelah dikonfirmasi dan mendapat persetujuan.</span>
           </div>
-
-          <div class="calc-summary">
-            <div>
-              <div class="calc-summary__label">Perkiraan Angsuran Bulanan</div>
-              <div class="calc-summary__amount tabular-nums" id="monthlyResult">Rp 1.250.000</div>
-            </div>
-
-            <div class="calc-breakdown">
-              <div class="calc-breakdown__row">
-                <span>Pokok Pembiayaan</span>
-                <strong class="tabular-nums" id="summaryPlafon">Rp 15.000.000</strong>
-              </div>
-              <div class="calc-breakdown__row">
-                <span>Jangka Waktu</span>
-                <strong class="tabular-nums" id="summaryTenor">12 Bulan</strong>
-              </div>
-              <div class="calc-breakdown__row">
-                <span>Pokok per Bulan</span>
-                <strong class="tabular-nums" id="summaryPokok">Rp 1.250.000</strong>
-              </div>
-            </div>
-
-            <div class="calc-note">
-              <strong>Catatan:</strong> Angka di atas hanyalah <em>simulasi perkiraan, bukan penawaran resmi</em>. Ketentuan margin/nisbah dan akad resmi disepakati langsung di BMT Al Muhajirin.
-            </div>
-          </div>
+          <a class="btn btn--primary" href="informasi.html#konsultasi"><span>Bagikan Cerita Anda</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </section>
 
-    <!-- 8. MENGAPA MEMILIH KAMI -->
-    <section class="section-pad why-sec" id="mengapa">
+<section class="section-pad why-sec" id="mengapa">
       <div class="why-backdrop" aria-hidden="true">
         <img
           width="1440"
@@ -3123,75 +2925,12 @@
       </div>
     </section>
 
-    <!-- 9. PENGURUS & PENGAWAS -->
-    <section class="emerald-band team-sec" id="pengurus">
-      <div class="grain-layer" aria-hidden="true"></div>
-      <div class="wave-sep wave-sep--top" aria-hidden="true">
-        <svg viewBox="0 0 1440 52" preserveAspectRatio="none">
-          <path d="M0,26 C360,54 720,0 1080,26 C1260,39 1360,16 1440,26 L1440,52 L0,52 Z" fill="#E9F5EB"/>
-        </svg>
-      </div>
-
-      <div class="container">
-        <div class="section-intro section-intro--center">
-          <span class="kicker kicker--light js-reveal-fade">Pengurus &amp; Pengawas</span>
-          <h2 class="js-line-reveal" style="color:#FFFFFF;">Amanah Tata Kelola Koperasi</h2>
-          <p class="js-reveal-fade" style="color:var(--on-dark-muted);">Dikelola oleh pengurus dan pengawas yang menjaga kepatuhan syariah serta kepentingan seluruh anggota.</p>
-        </div>
-
-        <div class="team-grid">
-          <article class="team-card js-stagger-item js-clip-reveal" tabindex="0">
-            <img width="300" height="400" loading="lazy" alt="Placeholder foto pengurus 1 [ISI]" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=85" />
-            <div class="team-card__overlay">
-              <span class="team-photo-note">Foto ilustrasi</span>
-              <div class="team-card__name">[ISI] Nama Pengurus 1</div>
-              <div class="team-card__role">[ISI] Jabatan Pengurus</div>
-            </div>
-          </article>
-
-          <article class="team-card js-stagger-item js-clip-reveal" tabindex="0">
-            <img width="300" height="400" loading="lazy" alt="Placeholder foto pengurus 2 [ISI]" src="https://cdn.digitaldesa.com/uploads/profil/61.04.08.2013/berita/47d46cc2976660c243369b6e202a21d4.png" />
-            <div class="team-card__overlay">
-              <span class="team-photo-note">Foto ilustrasi</span>
-              <div class="team-card__name">[ISI] Nama Pengurus 2</div>
-              <div class="team-card__role">[ISI] Jabatan Pengurus</div>
-            </div>
-          </article>
-
-          <article class="team-card js-stagger-item js-clip-reveal" tabindex="0">
-            <img width="300" height="400" loading="lazy" alt="Placeholder foto pengawas 1 [ISI]" src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=85" />
-            <div class="team-card__overlay">
-              <span class="team-photo-note">Foto ilustrasi</span>
-              <div class="team-card__name">[ISI] Nama Pengawas 1</div>
-              <div class="team-card__role">[ISI] Jabatan Pengawas</div>
-            </div>
-          </article>
-
-          <article class="team-card js-stagger-item js-clip-reveal" tabindex="0">
-            <img width="300" height="400" loading="lazy" alt="Placeholder foto dewan pengawas syariah [ISI]" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85" />
-            <div class="team-card__overlay">
-              <span class="team-photo-note">Foto ilustrasi</span>
-              <div class="team-card__name">[ISI] Nama Pengawas Syariah</div>
-              <div class="team-card__role">[ISI] Dewan Pengawas Syariah</div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="wave-sep wave-sep--bottom" aria-hidden="true">
-        <svg viewBox="0 0 1440 52" preserveAspectRatio="none">
-          <path d="M0,26 C360,54 720,0 1080,26 C1260,39 1360,16 1440,26 L1440,52 L0,52 Z" fill="#FFFFFF"/>
-        </svg>
-      </div>
-    </section>
-
-    <!-- 10. PROGRAM & KEGIATAN CAROUSEL -->
-    <section class="section-pad program-sec blend-to-soft" id="program">
+<section class="section-pad program-sec blend-to-soft" id="program">
       <div class="container">
         <div class="program-head">
           <div>
-            <span class="kicker js-reveal-fade">Program &amp; Kegiatan</span>
-            <h2 class="js-line-reveal">Kebersamaan di Tengah Masyarakat</h2>
+            <span class="kicker js-reveal-fade">Laporan Kegiatan</span>
+            <h2 class="js-line-reveal">Laporan Kegiatan BMT Al Muhajirin</h2>
           </div>
           <div class="carousel-controls">
             <button type="button" class="circle-arrow-btn" id="progPrev" aria-label="Kegiatan sebelumnya">
@@ -3235,249 +2974,6 @@
         </div>
       </div>
     </section>
-
-    <!-- 11. TESTIMONI ILUSTRATIF -->
-    <section class="section-pad testi-sec blend-to-white" id="testimoni">
-      <div class="container">
-        <div class="section-intro section-intro--center">
-          <span class="kicker js-reveal-fade">Cerita Anggota</span>
-          <h2 class="js-line-reveal">Mengenal pengalaman bersama BMT</h2>
-          <p class="js-reveal-fade">Contoh cerita berikut menggambarkan topik pengalaman yang dapat dibagikan anggota, bukan kutipan atau pengalaman nyata anggota tertentu.</p>
-        </div>
-
-        <div class="testi-demo-disclaimer" role="note">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
-          <span><strong>TESTIMONI ILUSTRATIF</strong> · Contoh simulasi untuk pratinjau tampilan. Bukan pernyataan anggota sebenarnya.</span>
-        </div>
-
-        <div class="testi-demo-grid">
-          <article class="testi-demo-card">
-            <span class="testi-demo-card__category">01 / SIMPANAN</span>
-            <div class="testi-demo-card__quote" aria-hidden="true">“</div>
-            <blockquote>Saya ingin lebih teratur menyisihkan uang untuk kebutuhan ke depan. Dengan memahami pilihan produk simpanan dan ketentuannya, saya bisa merencanakan kebiasaan menabung dengan lebih baik.</blockquote>
-            <div class="testi-demo-card__author">
-              <span class="testi-demo-card__avatar" aria-hidden="true">AS</span>
-              <span><strong>Anggota Simpanan</strong><small>Nama samaran · Contoh ilustratif</small></span>
-            </div>
-          </article>
-
-          <article class="testi-demo-card">
-            <span class="testi-demo-card__category">02 / PEMBIAYAAN</span>
-            <div class="testi-demo-card__quote" aria-hidden="true">“</div>
-            <blockquote>Memahami tahapan pengajuan, ketentuan, dan akad merupakan hal penting sebelum mengambil keputusan pembiayaan. Penjelasan yang jelas membantu calon anggota mengetahui hal-hal yang perlu dipersiapkan.</blockquote>
-            <div class="testi-demo-card__author">
-              <span class="testi-demo-card__avatar" aria-hidden="true">PU</span>
-              <span><strong>Pelaku Usaha</strong><small>Nama samaran · Contoh ilustratif</small></span>
-            </div>
-          </article>
-
-          <article class="testi-demo-card">
-            <span class="testi-demo-card__category">03 / PELAYANAN</span>
-            <div class="testi-demo-card__quote" aria-hidden="true">“</div>
-            <blockquote>Sebelum memilih layanan keuangan, saya perlu memahami manfaat, persyaratan, dan prosesnya. Bertanya lebih dulu membantu saya membandingkan pilihan sesuai kebutuhan.</blockquote>
-            <div class="testi-demo-card__author">
-              <span class="testi-demo-card__avatar" aria-hidden="true">AB</span>
-              <span><strong>Anggota BMT</strong><small>Nama samaran · Contoh ilustratif</small></span>
-            </div>
-          </article>
-
-          <article class="testi-demo-card">
-            <span class="testi-demo-card__category">04 / PENDAMPINGAN</span>
-            <div class="testi-demo-card__quote" aria-hidden="true">“</div>
-            <blockquote>Mengelola keuangan usaha dan rumah tangga membutuhkan perencanaan. Edukasi keuangan dapat menjadi langkah awal untuk lebih memahami pencatatan dan pengaturan arus kas.</blockquote>
-            <div class="testi-demo-card__author">
-              <span class="testi-demo-card__avatar" aria-hidden="true">UM</span>
-              <span><strong>Pelaku Usaha Mikro</strong><small>Nama samaran · Contoh ilustratif</small></span>
-            </div>
-          </article>
-        </div>
-
-        <div class="testi-invite-footer">
-          <div>
-            <strong>Punya pengalaman nyata bersama BMT Al Muhajirin?</strong>
-            <span>Kami ingin mendengar cerita Anda. Testimoni nyata hanya akan dipublikasikan setelah dikonfirmasi dan mendapat persetujuan.</span>
-          </div>
-          <a class="btn btn--primary" href="#konsultasi"><span>Bagikan Cerita Anda</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 12. ARTIKEL TERBARU (Editorial Asymmetric Feature + Stacked Rows) -->
-    <section class="section-pad articles-sec" id="artikel">
-      <div class="container">
-        <div class="section-intro">
-          <span class="kicker js-reveal-fade">Artikel &amp; Edukasi</span>
-          <h2 class="js-line-reveal">Wawasan Ekonomi Syariah</h2>
-        </div>
-
-        <div class="grid-12">
-          <article class="article-lead js-reveal-left open-detail-card" role="button" tabindex="0" data-detail-type="article" data-detail-id="art1" aria-label="Baca artikel Memahami Perbedaan Pembiayaan Syariah dan Utang Berbunga">
-            <div class="article-lead__img-wrap js-clip-reveal">
-              <img width="580" height="380" loading="lazy" alt="Ilustrasi artikel mengenal pembiayaan syariah bebas riba [ISI]" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85" />
-            </div>
-            <div class="article-meta">
-              <span class="article-meta__text">
-                <span>[ISI] Tanggal</span>
-                <span aria-hidden="true">·</span>
-                <span>Edukasi Syariah</span>
-              </span>
-              <svg class="card-corner-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
-            </div>
-            <h3>Memahami Perbedaan Pembiayaan Syariah dan Utang Berbunga</h3>
-            <p>Mengenal prinsip jual beli dan bagi hasil yang transparan sejak awal akad agar usaha berjalan lebih tenteram dan terukur.</p>
-          </article>
-
-          <div class="articles-stack">
-            <article class="article-item js-reveal-right open-detail-card" role="button" tabindex="0" data-detail-type="article" data-detail-id="art2" aria-label="Baca artikel Cara Sederhana Memisahkan Kas Keluarga dan Modal Usaha Harian">
-              <div class="article-item__thumb js-clip-reveal">
-                <img width="240" height="180" loading="lazy" alt="Ilustrasi artikel pengelolaan kas usaha mikro [ISI]" src="https://cdn1.katadata.co.id/media/images/thumb/2020/02/14/2020_02_14-14_06_04_0672f3592f621e6ac319e91273d84c88_960x640_thumb.jpg" />
-              </div>
-              <div>
-                <div class="article-meta">
-                  <span class="article-meta__text">
-                    <span>[ISI] Tanggal</span>
-                    <span aria-hidden="true">·</span>
-                    <span>Pengelolaan Usaha</span>
-                  </span>
-                  <svg class="card-corner-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
-                </div>
-                <h3>Cara Sederhana Memisahkan Kas Keluarga dan Modal Usaha Harian</h3>
-              </div>
-            </article>
-
-            <article class="article-item js-reveal-right open-detail-card" role="button" tabindex="0" data-detail-type="article" data-detail-id="art3" aria-label="Baca artikel Peran Koperasi Syariah Menguatkan Ketahanan Ekonomi Warga">
-              <div class="article-item__thumb js-clip-reveal">
-                <img width="240" height="180" loading="lazy" alt="Ilustrasi artikel peran koperasi syariah di Toili [ISI]" src="https://cdn.digitaldesa.com/uploads/profil/61.04.04.2006/berita/afaef0e4883db07aa45b52a01b717065.png" />
-              </div>
-              <div>
-                <div class="article-meta">
-                  <span class="article-meta__text">
-                    <span>[ISI] Tanggal</span>
-                    <span aria-hidden="true">·</span>
-                    <span>Komunitas Toili</span>
-                  </span>
-                  <svg class="card-corner-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
-                </div>
-                <h3>Peran Koperasi Syariah Menguatkan Ketahanan Ekonomi Warga</h3>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 13. KONSULTASI -->
-    <section class="section-pad consult-sec" id="konsultasi">
-      <div class="container">
-        <div class="grid-12" style="align-items:stretch;">
-          <div class="consult-form-col js-reveal-left">
-            <div class="consult-card">
-              <span class="kicker">Konsultasi Resmi</span>
-              <h2>Hubungi Tim Layanan Kami</h2>
-              <p>Kirimkan pertanyaan atau kebutuhan Anda; pesan akan otomatis terformat untuk terhubung ke WhatsApp BMT Al Muhajirin.</p>
-
-              <form class="consult-form" id="consultForm" novalidate>
-                <div class="float-field">
-                  <input type="text" id="cName" name="nama" placeholder=" " required autocomplete="name" />
-                  <label for="cName">Nama Lengkap</label>
-                </div>
-
-                <div class="float-field">
-                  <input type="tel" id="cPhone" name="hp" placeholder=" " required autocomplete="tel" />
-                  <label for="cPhone">Nomor HP / WhatsApp</label>
-                </div>
-
-                <div class="float-field">
-                  <select id="cTopic" name="topik">
-                    <option value="Simpanan Syariah">Simpanan Syariah</option>
-                    <option value="Pembiayaan Usaha">Pembiayaan Usaha</option>
-                    <option value="Layanan Lainnya & ZISWAF">Layanan Lainnya &amp; ZISWAF</option>
-                    <option value="Keanggotaan & Informasi Umum">Keanggotaan &amp; Informasi Umum</option>
-                  </select>
-                  <label for="cTopic">Topik Konsultasi</label>
-                </div>
-
-                <div class="float-field">
-                  <textarea id="cMsg" name="pesan" placeholder=" " required></textarea>
-                  <label for="cMsg">Pesan atau Pertanyaan Anda</label>
-                </div>
-
-                <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
-
-                <button type="submit" class="btn btn--primary btn--md" id="consultSubmitBtn" style="width:100%;">
-                  <span id="consultBtnLabel">Kirim Pesan ke WhatsApp</span>
-                  <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </button>
-              </form>
-            </div>
-          </div>
-
-          <div class="consult-photo-col js-clip-reveal">
-            <img
-              width="520"
-              height="600"
-              loading="lazy"
-              alt="Placeholder foto petugas layanan konsultasi Koperasi BMT Al Muhajirin [ISI]"
-              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2000&q=85"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 14. LOKASI KANTOR -->
-    <section class="section-pad office-sec blend-to-footer" id="lokasi">
-      <div class="container">
-        <div class="section-intro section-intro--center">
-          <span class="kicker js-reveal-fade">Lokasi Kantor</span>
-          <h2 class="js-line-reveal">Jaringan Layanan di Kabupaten Banggai</h2>
-          <p class="js-reveal-fade">Silakan pilih kantor layanan di bawah untuk melihat lokasi peta wilayah Toili, Luwuk, dan Bunta.</p>
-        </div>
-
-        <div class="grid-12" style="align-items:stretch;">
-          <div class="office-list-col js-reveal-left">
-            <button type="button" class="office-item is-active" data-office="toili">
-              <div class="office-item__type">Kantor Pusat</div>
-              <h3>Kantor Pusat Toili</h3>
-              <p>Alamat: [ISI] Kecamatan Toili, Kab. Banggai, Sulawesi Tengah</p>
-            </button>
-
-            <button type="button" class="office-item" data-office="luwuk">
-              <div class="office-item__type">Kantor Cabang</div>
-              <h3>Kantor Cabang Luwuk</h3>
-              <p>Alamat: [ISI] Kota Luwuk, Kab. Banggai, Sulawesi Tengah</p>
-            </button>
-
-            <button type="button" class="office-item" data-office="bunta">
-              <div class="office-item__type">Kantor Cabang</div>
-              <h3>Kantor Cabang Bunta</h3>
-              <p>Alamat: [ISI] Kecamatan Bunta, Kab. Banggai, Sulawesi Tengah</p>
-            </button>
-
-            <div class="office-hours">
-              <strong>Jam Layanan Kantor</strong>
-              <span>[ISI] (Contoh: Senin – Jumat, pukul operasional resmi BMT)</span>
-            </div>
-          </div>
-
-          <div class="office-map-col js-reveal-right">
-            <iframe
-              id="officeMapFrame"
-              title="Peta lokasi Kantor Koperasi BMT Al Muhajirin Toili"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=122.25%2C-1.45%2C122.45%2C-1.25&amp;layer=mapnik&amp;marker=-1.35%2C122.35"
-            ></iframe>
-            <div class="map-bar">
-              <span id="mapCaption">Wilayah Kantor Pusat Toili, Kab. Banggai (Koordinat [ISI])</span>
-              <a id="mapExternalLink" class="utility-link" href="https://www.openstreetmap.org/?mlat=-1.35&amp;mlon=122.35#map=13/-1.35/122.35" target="_blank" rel="noopener noreferrer">
-                <span>Buka Peta</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- 15. FOOTER -->
@@ -3517,10 +3013,10 @@
           <h3>Quick Links</h3>
           <ul class="footer-links">
             <li><a href="#beranda">Beranda</a></li>
-            <li><a href="#tentang">Tentang Kami</a></li>
-            <li><a href="#produk">Produk &amp; Layanan</a></li>
-            <li><a href="#kalkulator">Kalkulator</a></li>
-            <li><a href="#pengurus">Pengurus</a></li>
+            <li><a href="informasi.html#tentang">Tentang Kami</a></li>
+            <li><a href="informasi.html#produk">Produk &amp; Layanan</a></li>
+            <li><a href="informasi.html#kalkulator">Kalkulator</a></li>
+            <li><a href="informasi.html#pengurus">Pengurus</a></li>
           </ul>
         </div>
 
@@ -3529,9 +3025,9 @@
           <ul class="footer-links">
             <li><a href="#program">Program &amp; Kegiatan</a></li>
             <li><a href="#testimoni">Testimoni</a></li>
-            <li><a href="#artikel">Artikel</a></li>
-            <li><a href="#lokasi">Lokasi Kantor</a></li>
-            <li><a href="#konsultasi">Konsultasi</a></li>
+            <li><a href="informasi.html#artikel">Artikel</a></li>
+            <li><a href="informasi.html#lokasi">Lokasi Kantor</a></li>
+            <li><a href="informasi.html#konsultasi">Konsultasi</a></li>
           </ul>
         </div>
 
@@ -3542,7 +3038,7 @@
             Email: [ISI]<br />
             Jam Layanan: [ISI]
           </p>
-          <a href="#lokasi" class="btn btn--ghost btn--ghost-on-dark btn--sm">
+          <a href="informasi.html#lokasi" class="btn btn--ghost btn--ghost-on-dark btn--sm">
             <span>Kunjungi Kantor Toili</span>
             <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
@@ -3561,7 +3057,7 @@
   </button>
 
   <div class="mobile-wa-bar" id="mobileWaBar">
-    <a href="#konsultasi" class="btn btn--primary btn--md">
+    <a href="informasi.html#konsultasi" class="btn btn--primary btn--md">
       <span>Konsultasi via WhatsApp</span>
       <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
     </a>
