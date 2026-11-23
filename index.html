@@ -1748,6 +1748,83 @@
       color: var(--muted);
     }
 
+    /* Member stories: editorial invitation until verified testimonials are supplied */
+    .testi-invite-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(250px, 0.65fr);
+      align-items: end;
+      gap: clamp(28px, 6vw, 88px);
+      margin-bottom: 52px;
+    }
+    .testi-invite-heading .section-intro { margin-bottom: 0; }
+    .testi-invite-note {
+      border-left: 2px solid var(--gold);
+      padding: 8px 0 8px 22px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      color: var(--muted);
+    }
+    .testi-invite-note__mark {
+      color: var(--gold-text);
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      line-height: .8;
+    }
+    .testi-invite-note p { margin: 0; font-size: .9rem; line-height: 1.75; }
+    .testi-invite-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .testi-invite-card {
+      position: relative;
+      padding: 30px 30px 34px;
+      min-height: 270px;
+      background: rgba(255,255,255,.48);
+      transition: background-color 260ms var(--ease-lux), transform 260ms var(--ease-lux);
+    }
+    .testi-invite-card + .testi-invite-card { border-left: 1px solid var(--line-strong); }
+    .testi-invite-card:hover { background: #fff; transform: translateY(-4px); }
+    .testi-invite-card__number {
+      color: var(--gold-text);
+      font-size: .69rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+    }
+    .testi-invite-card__icon {
+      width: 48px;
+      height: 48px;
+      margin: 30px 0 18px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--emerald);
+      background: var(--bg-soft);
+    }
+    .testi-invite-card__icon svg { width: 24px; height: 24px; }
+    .testi-invite-card h3 {
+      margin: 0 0 10px;
+      color: var(--emerald-ink);
+      font-family: var(--font-heading);
+      font-size: 1.22rem;
+    }
+    .testi-invite-card p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.75; }
+    .testi-invite-footer {
+      margin-top: 34px;
+      padding: 24px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+    .testi-invite-footer > div { display: grid; gap: 6px; }
+    .testi-invite-footer strong { color: var(--emerald-ink); font-family: var(--font-heading); font-size: 1.05rem; }
+    .testi-invite-footer span { color: var(--muted); font-size: .875rem; line-height: 1.6; }
+    .testi-invite-footer .btn { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; white-space: nowrap; }
+    .testi-invite-footer .btn svg { width: 18px; height: 18px; }
+
     /* 11. TESTIMONI ANGGOTA (Editorial Hairline Spread, No Cloned Boxes) */
     .testi-sec {
       background: var(--bg-soft);
@@ -2321,6 +2398,13 @@
     }
 
     @media (max-width: 768px) {
+      .testi-invite-heading { grid-template-columns: 1fr; gap: 24px; margin-bottom: 32px; }
+      .testi-invite-grid { grid-template-columns: 1fr; }
+      .testi-invite-card { min-height: 0; padding: 24px 4px 28px; }
+      .testi-invite-card + .testi-invite-card { border-left: 0; border-top: 1px solid var(--line-strong); }
+      .testi-invite-card__icon { margin: 20px 0 14px; }
+      .testi-invite-footer { align-items: flex-start; flex-direction: column; }
+    
       :root {
         --dur-reveal: 700ms;
         --dur-hover: 220ms;
@@ -3136,74 +3220,54 @@
       </div>
     </section>
 
-    <!-- 11. TESTIMONI ANGGOTA -->
+    <!-- 11. CERITA ANGGOTA -->
     <section class="section-pad testi-sec blend-to-white" id="testimoni">
       <div class="container">
-        <div class="section-intro section-intro--center">
-          <span class="kicker js-reveal-fade">Testimoni Anggota</span>
-          <h2 class="js-line-reveal">Suara Anggota BMT Al Muhajirin</h2>
-          <p class="js-reveal-fade">Kami menjaga keaslian informasi dan hanya menampilkan pengalaman nyata dari anggota terverifikasi.</p>
-        </div>
-
-        <div class="testi-viewport" aria-roledescription="carousel" aria-label="Testimoni anggota">
-          <div class="testi-track" id="testiTrack">
-            <div class="testi-page">
-              <article class="testi-item">
-                <svg class="testi-quote-mark" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 7H6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2H5v2h1a4 4 0 0 0 4-4V7Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2h-1v2h1a4 4 0 0 0 4-4V7Z"/></svg>
-                <blockquote>"[Testimoni asli menyusul]"</blockquote>
-                <div class="testi-author">
-                  <img class="testi-author__avatar" width="52" height="52" loading="lazy" alt="Avatar anggota 1 [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 52 52%22%3E%3Crect width=%2252%22 height=%2252%22 rx=%2226%22 fill=%22%230F4D2E%22/%3E%3Ctext x=%2226%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23E6C572%22 font-family=%22Arial,sans-serif%22 font-size=%2213%22 font-weight=%22700%22%3EBMT%3C/text%3E%3C/svg%3E" />
-                  <div>
-                    <div class="testi-author__name">[ISI] Nama Anggota 1</div>
-                    <div class="testi-author__role">[ISI] Bidang Usaha / Wilayah</div>
-                  </div>
-                </div>
-              </article>
-
-              <article class="testi-item">
-                <svg class="testi-quote-mark" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 7H6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2H5v2h1a4 4 0 0 0 4-4V7Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2h-1v2h1a4 4 0 0 0 4-4V7Z"/></svg>
-                <blockquote>"[Testimoni asli menyusul]"</blockquote>
-                <div class="testi-author">
-                  <img class="testi-author__avatar" width="52" height="52" loading="lazy" alt="Avatar anggota 2 [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 52 52%22%3E%3Crect width=%2252%22 height=%2252%22 rx=%2226%22 fill=%22%230F4D2E%22/%3E%3Ctext x=%2226%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23E6C572%22 font-family=%22Arial,sans-serif%22 font-size=%2213%22 font-weight=%22700%22%3EBMT%3C/text%3E%3C/svg%3E" />
-                  <div>
-                    <div class="testi-author__name">[ISI] Nama Anggota 2</div>
-                    <div class="testi-author__role">[ISI] Bidang Usaha / Wilayah</div>
-                  </div>
-                </div>
-              </article>
-            </div>
-
-            <div class="testi-page">
-              <article class="testi-item">
-                <svg class="testi-quote-mark" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 7H6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2H5v2h1a4 4 0 0 0 4-4V7Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2h-1v2h1a4 4 0 0 0 4-4V7Z"/></svg>
-                <blockquote>"[Testimoni asli menyusul]"</blockquote>
-                <div class="testi-author">
-                  <img class="testi-author__avatar" width="52" height="52" loading="lazy" alt="Avatar anggota 3 [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 52 52%22%3E%3Crect width=%2252%22 height=%2252%22 rx=%2226%22 fill=%22%230F4D2E%22/%3E%3Ctext x=%2226%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23E6C572%22 font-family=%22Arial,sans-serif%22 font-size=%2213%22 font-weight=%22700%22%3EBMT%3C/text%3E%3C/svg%3E" />
-                  <div>
-                    <div class="testi-author__name">[ISI] Nama Anggota 3</div>
-                    <div class="testi-author__role">[ISI] Bidang Usaha / Wilayah</div>
-                  </div>
-                </div>
-              </article>
-
-              <article class="testi-item">
-                <svg class="testi-quote-mark" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 7H6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2H5v2h1a4 4 0 0 0 4-4V7Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2v2a2 2 0 0 1-2 2h-1v2h1a4 4 0 0 0 4-4V7Z"/></svg>
-                <blockquote>"[Testimoni asli menyusul]"</blockquote>
-                <div class="testi-author">
-                  <img class="testi-author__avatar" width="52" height="52" loading="lazy" alt="Avatar anggota 4 [ISI]" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 52 52%22%3E%3Crect width=%2252%22 height=%2252%22 rx=%2226%22 fill=%22%230F4D2E%22/%3E%3Ctext x=%2226%22 y=%2232%22 text-anchor=%22middle%22 fill=%22%23E6C572%22 font-family=%22Arial,sans-serif%22 font-size=%2213%22 font-weight=%22700%22%3EBMT%3C/text%3E%3C/svg%3E" />
-                  <div>
-                    <div class="testi-author__name">[ISI] Nama Anggota 4</div>
-                    <div class="testi-author__role">[ISI] Bidang Usaha / Wilayah</div>
-                  </div>
-                </div>
-              </article>
-            </div>
+        <div class="testi-invite-heading">
+          <div class="section-intro">
+            <span class="kicker js-reveal-fade">Cerita Anggota</span>
+            <h2 class="js-line-reveal">Kepercayaan tumbuh dari pengalaman nyata.</h2>
+            <p class="js-reveal-fade">Setiap perjalanan anggota punya cerita. Kami ingin mendengar pengalaman Anda bersama BMT Al Muhajirin dan membagikannya dengan izin Anda.</p>
+          </div>
+          <div class="testi-invite-note">
+            <span class="testi-invite-note__mark" aria-hidden="true">“</span>
+            <p>Testimoni hanya akan ditampilkan setelah dikonfirmasi dan mendapat persetujuan dari anggota yang bersangkutan.</p>
           </div>
         </div>
 
-        <div class="slider-dots" role="tablist" aria-label="Pilih halaman testimoni">
-          <button type="button" class="slider-dot is-active" data-testi-page="0" aria-label="Halaman testimoni 1" aria-selected="true"></button>
-          <button type="button" class="slider-dot" data-testi-page="1" aria-label="Halaman testimoni 2" aria-selected="false"></button>
+        <div class="testi-invite-grid">
+          <article class="testi-invite-card">
+            <span class="testi-invite-card__number">01 / SIMPANAN</span>
+            <div class="testi-invite-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6H20v13H5.5A2.5 2.5 0 0 1 3 16.5z"/><path d="M3 9h14"/><path d="M16 13h4"/><circle cx="16" cy="13" r=".6" fill="currentColor"/></svg>
+            </div>
+            <h3>Pengalaman menabung</h3>
+            <p>Ceritakan kemudahan, kebiasaan, atau manfaat yang Anda rasakan saat menggunakan produk simpanan.</p>
+          </article>
+          <article class="testi-invite-card">
+            <span class="testi-invite-card__number">02 / PEMBIAYAAN</span>
+            <div class="testi-invite-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20V9l7-5 7 5v11"/><path d="M9 20v-6h6v6"/><path d="M8 10h.01M16 10h.01"/></svg>
+            </div>
+            <h3>Dukungan untuk usaha</h3>
+            <p>Bagikan pengalaman Anda dalam proses pengajuan, pendampingan, atau pemanfaatan pembiayaan.</p>
+          </article>
+          <article class="testi-invite-card">
+            <span class="testi-invite-card__number">03 / PELAYANAN</span>
+            <div class="testi-invite-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H5l-1-4a7.5 7.5 0 1 1 16-3.5Z"/><path d="M8 11h8M8 14h5"/></svg>
+            </div>
+            <h3>Layanan dan pendampingan</h3>
+            <p>Ceritakan bagaimana tim BMT membantu menjawab pertanyaan atau kebutuhan Anda sebagai anggota.</p>
+          </article>
+        </div>
+
+        <div class="testi-invite-footer">
+          <div>
+            <strong>Punya pengalaman bersama BMT Al Muhajirin?</strong>
+            <span>Kirim cerita singkat Anda. Tim kami akan menghubungi untuk konfirmasi sebelum dipublikasikan.</span>
+          </div>
+          <a class="btn btn--primary" href="#konsultasi"><span>Bagikan Cerita Anda</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </section>
