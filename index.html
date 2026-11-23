@@ -2523,6 +2523,28 @@
       #program .program-slide { flex-basis: 82%; }
       #program .program-head h2 { max-width: 80%; }
     }
+  
+    /* Spacious trust and credibility layout */
+    #mengapa { padding-block: clamp(76px, 8vw, 112px); }
+    #mengapa .container { max-width: 1320px; }
+    #mengapa .grid-12 { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr); gap: clamp(28px, 4vw, 58px); align-items: stretch; }
+    #mengapa .why-panel { grid-column: auto; width: 100%; padding: clamp(30px, 3vw, 46px); }
+    #mengapa .why-trust-column { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+    #mengapa .trust-block { background: rgba(255,255,255,.97); border: 1px solid var(--line-subtle); border-radius: 16px; padding: clamp(22px, 2.5vw, 32px); box-shadow: 0 14px 40px rgba(10,45,28,.06); }
+    #mengapa .trust-block__heading { margin-bottom: 20px; }
+    #mengapa .trust-block__heading .kicker { color: var(--gold-text); font-size: .7rem; letter-spacing: .13em; }
+    #mengapa .trust-block__heading h3 { color: var(--emerald-ink); font-size: clamp(1.35rem, 1.8vw, 1.7rem); margin: 7px 0 8px; }
+    #mengapa .trust-block__heading p { color: var(--text-muted, #66736c); font-size: .88rem; line-height: 1.65; max-width: 440px; margin: 0; }
+    #mengapa .award-placeholder-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+    #mengapa .award-placeholder { min-height: 132px; padding: 16px 12px; border: 1px dashed rgba(198,164,91,.7); border-radius: 12px; background: #FBFAF6; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 7px; }
+    #mengapa .award-placeholder__icon { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: #F3EBD9; color: var(--gold-text); font-size: 1.15rem; }
+    #mengapa .award-placeholder strong { color: var(--emerald-ink); font-size: .78rem; line-height: 1.35; }
+    #mengapa .award-placeholder small { color: #78827c; font-size: .68rem; }
+    #mengapa .partner-logo-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+    #mengapa .partner-logo-placeholder { min-height: 76px; border: 1px solid #E7ECE8; border-radius: 10px; background: #fff; display: grid; place-items: center; padding: 12px; color: #9AA59E; font-size: .76rem; font-weight: 600; letter-spacing: .04em; }
+    #mengapa .why-product-cta { margin-top: 30px; }
+    @media (max-width: 1024px) { #mengapa .grid-12 { grid-template-columns: 1fr; } #mengapa .why-trust-column { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); } }
+    @media (max-width: 620px) { #mengapa { padding-block: 58px; } #mengapa .why-panel { padding: 28px 22px; } #mengapa .why-trust-column { grid-template-columns: 1fr; } #mengapa .trust-block { padding: 22px; } }
   </style>
 </head>
 <body>
@@ -2897,6 +2919,42 @@
               <a href="informasi.html#produk" class="btn btn--primary btn--md"><span>Produk Layanan</span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
           </div>
+
+          <aside class="why-trust-column" aria-label="Penghargaan dan mitra BMT Al Muhajirin">
+            <div class="trust-block trust-awards">
+              <div class="trust-block__heading">
+                <span class="kicker">Pengakuan &amp; Apresiasi</span>
+                <h3>Penghargaan</h3>
+                <p>Ruang dokumentasi pencapaian dan penghargaan resmi BMT Al Muhajirin.</p>
+              </div>
+              <div class="award-placeholder-grid">
+                <div class="award-placeholder">
+                  <span class="award-placeholder__icon" aria-hidden="true">✦</span>
+                  <strong>Dokumentasi Penghargaan</strong>
+                  <small>Foto / sertifikat resmi</small>
+                </div>
+                <div class="award-placeholder">
+                  <span class="award-placeholder__icon" aria-hidden="true">✦</span>
+                  <strong>Apresiasi &amp; Sertifikasi</strong>
+                  <small>Foto / sertifikat resmi</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="trust-block trust-partners">
+              <div class="trust-block__heading">
+                <span class="kicker">Kolaborasi</span>
+                <h3>Mitra Bisnis</h3>
+                <p>Ruang untuk menampilkan logo lembaga dan mitra kolaborasi resmi.</p>
+              </div>
+              <div class="partner-logo-grid" aria-label="Tempat logo mitra bisnis">
+                <div class="partner-logo-placeholder"><span>Logo Mitra 01</span></div>
+                <div class="partner-logo-placeholder"><span>Logo Mitra 02</span></div>
+                <div class="partner-logo-placeholder"><span>Logo Mitra 03</span></div>
+                <div class="partner-logo-placeholder"><span>Logo Mitra 04</span></div>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
