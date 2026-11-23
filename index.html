@@ -1748,69 +1748,87 @@
       color: var(--muted);
     }
 
-    /* Member stories: editorial invitation until verified testimonials are supplied */
-    .testi-invite-heading {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(250px, 0.65fr);
-      align-items: end;
-      gap: clamp(28px, 6vw, 88px);
-      margin-bottom: 52px;
-    }
-    .testi-invite-heading .section-intro { margin-bottom: 0; }
-    .testi-invite-note {
-      border-left: 2px solid var(--gold);
-      padding: 8px 0 8px 22px;
+    /* Illustrative member stories */
+    .testi-demo-disclaimer {
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 auto 34px;
+      padding: 11px 16px;
       display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      color: var(--muted);
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(174, 130, 43, .32);
+      background: rgba(214, 173, 80, .10);
+      color: var(--emerald-ink);
+      font-size: .78rem;
+      line-height: 1.55;
     }
-    .testi-invite-note__mark {
-      color: var(--gold-text);
-      font-family: var(--font-heading);
-      font-size: 3.5rem;
-      line-height: .8;
-    }
-    .testi-invite-note p { margin: 0; font-size: .9rem; line-height: 1.75; }
-    .testi-invite-grid {
+    .testi-demo-disclaimer svg { width: 18px; height: 18px; flex: 0 0 auto; color: var(--gold-text); }
+    .testi-demo-disclaimer strong { letter-spacing: .08em; font-size: .69rem; }
+    .testi-demo-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       border-top: 1px solid var(--line-strong);
-      border-bottom: 1px solid var(--line-strong);
+      border-left: 1px solid var(--line-strong);
     }
-    .testi-invite-card {
-      position: relative;
-      padding: 30px 30px 34px;
-      min-height: 270px;
-      background: rgba(255,255,255,.48);
+    .testi-demo-card {
+      min-width: 0;
+      padding: clamp(24px, 3.4vw, 42px);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-right: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+      background: rgba(255,255,255,.56);
       transition: background-color 260ms var(--ease-lux), transform 260ms var(--ease-lux);
     }
-    .testi-invite-card + .testi-invite-card { border-left: 1px solid var(--line-strong); }
-    .testi-invite-card:hover { background: #fff; transform: translateY(-4px); }
-    .testi-invite-card__number {
+    .testi-demo-card:hover { background: #fff; }
+    .testi-demo-card__category {
       color: var(--gold-text);
-      font-size: .69rem;
+      font-size: .68rem;
       font-weight: 700;
       letter-spacing: .13em;
     }
-    .testi-invite-card__icon {
-      width: 48px;
-      height: 48px;
-      margin: 30px 0 18px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      color: var(--emerald);
-      background: var(--bg-soft);
+    .testi-demo-card__quote {
+      margin-top: 24px;
+      height: 34px;
+      color: var(--gold-text);
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      line-height: 1;
     }
-    .testi-invite-card__icon svg { width: 24px; height: 24px; }
-    .testi-invite-card h3 {
-      margin: 0 0 10px;
+    .testi-demo-card blockquote {
+      margin: 14px 0 28px;
       color: var(--emerald-ink);
       font-family: var(--font-heading);
-      font-size: 1.22rem;
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      line-height: 1.75;
+      flex: 1;
     }
-    .testi-invite-card p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.75; }
+    .testi-demo-card__author {
+      width: 100%;
+      padding-top: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid var(--line-strong);
+    }
+    .testi-demo-card__avatar {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--emerald);
+      color: #fff;
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+    .testi-demo-card__author span:last-child { display: grid; gap: 3px; }
+    .testi-demo-card__author strong { color: var(--emerald-ink); font-size: .86rem; }
+    .testi-demo-card__author small { color: var(--muted); font-size: .73rem; }
     .testi-invite-footer {
       margin-top: 34px;
       padding: 24px 0 0;
@@ -2398,11 +2416,9 @@
     }
 
     @media (max-width: 768px) {
-      .testi-invite-heading { grid-template-columns: 1fr; gap: 24px; margin-bottom: 32px; }
-      .testi-invite-grid { grid-template-columns: 1fr; }
-      .testi-invite-card { min-height: 0; padding: 24px 4px 28px; }
-      .testi-invite-card + .testi-invite-card { border-left: 0; border-top: 1px solid var(--line-strong); }
-      .testi-invite-card__icon { margin: 20px 0 14px; }
+      .testi-demo-grid { grid-template-columns: 1fr; }
+      .testi-demo-card { padding: 26px 22px; }
+      .testi-demo-disclaimer { align-items: flex-start; }
       .testi-invite-footer { align-items: flex-start; flex-direction: column; }
     
       :root {
@@ -3220,52 +3236,66 @@
       </div>
     </section>
 
-    <!-- 11. CERITA ANGGOTA -->
+    <!-- 11. TESTIMONI ILUSTRATIF -->
     <section class="section-pad testi-sec blend-to-white" id="testimoni">
       <div class="container">
-        <div class="testi-invite-heading">
-          <div class="section-intro">
-            <span class="kicker js-reveal-fade">Cerita Anggota</span>
-            <h2 class="js-line-reveal">Kepercayaan tumbuh dari pengalaman nyata.</h2>
-            <p class="js-reveal-fade">Setiap perjalanan anggota punya cerita. Kami ingin mendengar pengalaman Anda bersama BMT Al Muhajirin dan membagikannya dengan izin Anda.</p>
-          </div>
-          <div class="testi-invite-note">
-            <span class="testi-invite-note__mark" aria-hidden="true">“</span>
-            <p>Testimoni hanya akan ditampilkan setelah dikonfirmasi dan mendapat persetujuan dari anggota yang bersangkutan.</p>
-          </div>
+        <div class="section-intro section-intro--center">
+          <span class="kicker js-reveal-fade">Cerita Anggota</span>
+          <h2 class="js-line-reveal">Mengenal pengalaman bersama BMT</h2>
+          <p class="js-reveal-fade">Contoh cerita berikut menggambarkan topik pengalaman yang dapat dibagikan anggota, bukan kutipan atau pengalaman nyata anggota tertentu.</p>
         </div>
 
-        <div class="testi-invite-grid">
-          <article class="testi-invite-card">
-            <span class="testi-invite-card__number">01 / SIMPANAN</span>
-            <div class="testi-invite-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6H20v13H5.5A2.5 2.5 0 0 1 3 16.5z"/><path d="M3 9h14"/><path d="M16 13h4"/><circle cx="16" cy="13" r=".6" fill="currentColor"/></svg>
+        <div class="testi-demo-disclaimer" role="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+          <span><strong>TESTIMONI ILUSTRATIF</strong> · Contoh simulasi untuk pratinjau tampilan. Bukan pernyataan anggota sebenarnya.</span>
+        </div>
+
+        <div class="testi-demo-grid">
+          <article class="testi-demo-card">
+            <span class="testi-demo-card__category">01 / SIMPANAN</span>
+            <div class="testi-demo-card__quote" aria-hidden="true">“</div>
+            <blockquote>Saya ingin lebih teratur menyisihkan uang untuk kebutuhan ke depan. Dengan memahami pilihan produk simpanan dan ketentuannya, saya bisa merencanakan kebiasaan menabung dengan lebih baik.</blockquote>
+            <div class="testi-demo-card__author">
+              <span class="testi-demo-card__avatar" aria-hidden="true">AS</span>
+              <span><strong>Anggota Simpanan</strong><small>Nama samaran · Contoh ilustratif</small></span>
             </div>
-            <h3>Pengalaman menabung</h3>
-            <p>Ceritakan kemudahan, kebiasaan, atau manfaat yang Anda rasakan saat menggunakan produk simpanan.</p>
           </article>
-          <article class="testi-invite-card">
-            <span class="testi-invite-card__number">02 / PEMBIAYAAN</span>
-            <div class="testi-invite-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20V9l7-5 7 5v11"/><path d="M9 20v-6h6v6"/><path d="M8 10h.01M16 10h.01"/></svg>
+
+          <article class="testi-demo-card">
+            <span class="testi-demo-card__category">02 / PEMBIAYAAN</span>
+            <div class="testi-demo-card__quote" aria-hidden="true">“</div>
+            <blockquote>Memahami tahapan pengajuan, ketentuan, dan akad merupakan hal penting sebelum mengambil keputusan pembiayaan. Penjelasan yang jelas membantu calon anggota mengetahui hal-hal yang perlu dipersiapkan.</blockquote>
+            <div class="testi-demo-card__author">
+              <span class="testi-demo-card__avatar" aria-hidden="true">PU</span>
+              <span><strong>Pelaku Usaha</strong><small>Nama samaran · Contoh ilustratif</small></span>
             </div>
-            <h3>Dukungan untuk usaha</h3>
-            <p>Bagikan pengalaman Anda dalam proses pengajuan, pendampingan, atau pemanfaatan pembiayaan.</p>
           </article>
-          <article class="testi-invite-card">
-            <span class="testi-invite-card__number">03 / PELAYANAN</span>
-            <div class="testi-invite-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H5l-1-4a7.5 7.5 0 1 1 16-3.5Z"/><path d="M8 11h8M8 14h5"/></svg>
+
+          <article class="testi-demo-card">
+            <span class="testi-demo-card__category">03 / PELAYANAN</span>
+            <div class="testi-demo-card__quote" aria-hidden="true">“</div>
+            <blockquote>Sebelum memilih layanan keuangan, saya perlu memahami manfaat, persyaratan, dan prosesnya. Bertanya lebih dulu membantu saya membandingkan pilihan sesuai kebutuhan.</blockquote>
+            <div class="testi-demo-card__author">
+              <span class="testi-demo-card__avatar" aria-hidden="true">AB</span>
+              <span><strong>Anggota BMT</strong><small>Nama samaran · Contoh ilustratif</small></span>
             </div>
-            <h3>Layanan dan pendampingan</h3>
-            <p>Ceritakan bagaimana tim BMT membantu menjawab pertanyaan atau kebutuhan Anda sebagai anggota.</p>
+          </article>
+
+          <article class="testi-demo-card">
+            <span class="testi-demo-card__category">04 / PENDAMPINGAN</span>
+            <div class="testi-demo-card__quote" aria-hidden="true">“</div>
+            <blockquote>Mengelola keuangan usaha dan rumah tangga membutuhkan perencanaan. Edukasi keuangan dapat menjadi langkah awal untuk lebih memahami pencatatan dan pengaturan arus kas.</blockquote>
+            <div class="testi-demo-card__author">
+              <span class="testi-demo-card__avatar" aria-hidden="true">UM</span>
+              <span><strong>Pelaku Usaha Mikro</strong><small>Nama samaran · Contoh ilustratif</small></span>
+            </div>
           </article>
         </div>
 
         <div class="testi-invite-footer">
           <div>
-            <strong>Punya pengalaman bersama BMT Al Muhajirin?</strong>
-            <span>Kirim cerita singkat Anda. Tim kami akan menghubungi untuk konfirmasi sebelum dipublikasikan.</span>
+            <strong>Punya pengalaman nyata bersama BMT Al Muhajirin?</strong>
+            <span>Kami ingin mendengar cerita Anda. Testimoni nyata hanya akan dipublikasikan setelah dikonfirmasi dan mendapat persetujuan.</span>
           </div>
           <a class="btn btn--primary" href="#konsultasi"><span>Bagikan Cerita Anda</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
