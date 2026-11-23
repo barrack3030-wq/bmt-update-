@@ -2497,6 +2497,32 @@
     .testi-demo-card--photo .testi-demo-card__author { margin-top: 24px; }
     @media (max-width: 900px) { .testi-demo-grid--three { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 620px) { .testi-demo-grid--three { grid-template-columns: 1fr; } .testi-customer-photo { height: 280px; } }
+  
+    /* Editorial home sections */
+    #mengapa .why-product-cta { margin-top: 28px; }
+    #mengapa .why-product-cta .btn { min-height: 48px; padding: 0 24px; }
+    #testimoni, #program { padding-block: clamp(64px, 7vw, 92px); }
+    #testimoni .section-intro h2, #program .program-head h2 { font-size: clamp(1.8rem, 2.6vw, 2.55rem); line-height: 1.15; }
+    #testimoni .section-intro p { max-width: 680px; margin-inline: auto; font-size: 0.96rem; line-height: 1.7; }
+    #testimoni .testi-demo-grid--three { gap: 20px; }
+    #testimoni .testi-customer-photo { height: 205px; }
+    #testimoni .testi-demo-card__content { padding: 20px 22px 22px; }
+    #testimoni .testi-demo-card__content blockquote { font-size: 0.94rem; line-height: 1.65; }
+    #program .program-head { margin-bottom: 24px; }
+    #program .carousel-track { gap: 22px; }
+    #program .program-slide { flex: 0 0 min(31%, 350px); min-width: 0; }
+    #program .program-slide__media { aspect-ratio: 16 / 10; height: auto; overflow: hidden; }
+    #program .program-slide__media img { width: 100%; height: 100%; object-fit: cover; }
+    #program .program-slide h3 { font-size: 1.12rem; line-height: 1.35; margin: 10px 0 7px; }
+    #program .program-slide p { font-size: 0.9rem; line-height: 1.6; }
+    #program .program-slide__meta { font-size: 0.72rem; letter-spacing: .08em; }
+    @media (max-width: 900px) { #program .program-slide { flex-basis: 46%; } }
+    @media (max-width: 620px) {
+      #testimoni, #program { padding-block: 56px; }
+      #testimoni .testi-customer-photo { height: 230px; }
+      #program .program-slide { flex-basis: 82%; }
+      #program .program-head h2 { max-width: 80%; }
+    }
   </style>
 </head>
 <body>
@@ -2610,7 +2636,7 @@
 
         <div class="header-actions">
           <a href="informasi.html#konsultasi" class="btn btn--primary btn--sm">
-            <span>Konsultasi via WhatsApp</span>
+            <span>Daftar Anggota</span>
             <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
           <button type="button" class="hamburger-btn" id="menuOpenBtn" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileDrawer">
@@ -2811,59 +2837,6 @@
       </div>
     </section>
 
-<section class="section-pad testi-sec blend-to-white" id="testimoni">
-      <div class="container">
-        <div class="section-intro section-intro--center">
-          <span class="kicker js-reveal-fade">Cerita Anggota</span>
-          <h2 class="js-line-reveal">Cerita dari Lingkungan Anggota</h2>
-          <p class="js-reveal-fade">Berikut contoh tampilan cerita anggota. Foto dan narasi pada bagian ini bersifat ilustratif, bukan dokumentasi atau kutipan nasabah sebenarnya.</p>
-        </div>
-
-        <div class="testi-demo-disclaimer" role="note">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
-          <span><strong>TESTIMONI ILUSTRATIF</strong> · Foto stok dan narasi simulasi untuk pratinjau. Bukan nasabah atau pernyataan anggota sebenarnya.</span>
-        </div>
-
-        <div class="testi-demo-grid testi-demo-grid--three">
-          <article class="testi-demo-card testi-demo-card--photo">
-            <img class="testi-customer-photo" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Foto ilustrasi seorang anggota pria" loading="lazy" width="640" height="760" />
-            <div class="testi-demo-card__content">
-              <span class="testi-demo-card__category">SIMPANAN SYARIAH</span>
-              <div class="testi-demo-card__quote" aria-hidden="true">“</div>
-              <blockquote>Memahami pilihan simpanan dan ketentuannya membantu saya mulai merencanakan keuangan dengan lebih teratur.</blockquote>
-              <div class="testi-demo-card__author"><span><strong>Ilustrasi Anggota</strong><small>Foto dan testimoni simulasi</small></span></div>
-            </div>
-          </article>
-          <article class="testi-demo-card testi-demo-card--photo">
-            <img class="testi-customer-photo" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Foto ilustrasi seorang anggota perempuan" loading="lazy" width="640" height="760" />
-            <div class="testi-demo-card__content">
-              <span class="testi-demo-card__category">PEMBIAYAAN USAHA</span>
-              <div class="testi-demo-card__quote" aria-hidden="true">“</div>
-              <blockquote>Penjelasan tentang tahapan, persyaratan, dan akad membuat calon anggota lebih memahami hal yang perlu dipertimbangkan sebelum mengajukan pembiayaan.</blockquote>
-              <div class="testi-demo-card__author"><span><strong>Ilustrasi Pelaku Usaha</strong><small>Foto dan testimoni simulasi</small></span></div>
-            </div>
-          </article>
-          <article class="testi-demo-card testi-demo-card--photo">
-            <img class="testi-customer-photo" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Foto ilustrasi seorang anggota pria" loading="lazy" width="640" height="760" />
-            <div class="testi-demo-card__content">
-              <span class="testi-demo-card__category">PENDAMPINGAN USAHA</span>
-              <div class="testi-demo-card__quote" aria-hidden="true">“</div>
-              <blockquote>Belajar memisahkan uang usaha dan kebutuhan rumah tangga merupakan langkah sederhana untuk memperbaiki pencatatan dan arus kas.</blockquote>
-              <div class="testi-demo-card__author"><span><strong>Ilustrasi Anggota</strong><small>Foto dan testimoni simulasi</small></span></div>
-            </div>
-          </article>
-        </div>
-
-        <div class="testi-invite-footer">
-          <div>
-            <strong>Ingin membagikan pengalaman nyata bersama BMT Al Muhajirin?</strong>
-            <span>Kami ingin mendengar cerita Anda. Testimoni nyata hanya akan dipublikasikan setelah dikonfirmasi dan mendapat persetujuan.</span>
-          </div>
-          <a class="btn btn--primary" href="informasi.html#konsultasi"><span>Bagikan Cerita Anda</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </div>
-    </section>
-
 <section class="section-pad why-sec" id="mengapa">
       <div class="why-backdrop" aria-hidden="true">
         <img
@@ -2920,7 +2893,63 @@
                 </div>
               </div>
             </div>
+            <div class="why-product-cta">
+              <a href="informasi.html#produk" class="btn btn--primary btn--md"><span>Produk Layanan</span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+<section class="section-pad testi-sec blend-to-white" id="testimoni">
+      <div class="container">
+        <div class="section-intro section-intro--center">
+          <span class="kicker js-reveal-fade">Cerita Anggota</span>
+          <h2 class="js-line-reveal">Cerita dari Lingkungan Anggota</h2>
+          <p class="js-reveal-fade">Berikut contoh tampilan cerita anggota. Foto dan narasi pada bagian ini bersifat ilustratif, bukan dokumentasi atau kutipan nasabah sebenarnya.</p>
+        </div>
+
+        <div class="testi-demo-disclaimer" role="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+          <span><strong>TESTIMONI ILUSTRATIF</strong> · Foto stok dan narasi simulasi untuk pratinjau. Bukan nasabah atau pernyataan anggota sebenarnya.</span>
+        </div>
+
+        <div class="testi-demo-grid testi-demo-grid--three">
+          <article class="testi-demo-card testi-demo-card--photo">
+            <img class="testi-customer-photo" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Foto ilustrasi seorang anggota pria" loading="lazy" width="640" height="760" />
+            <div class="testi-demo-card__content">
+              <span class="testi-demo-card__category">SIMPANAN SYARIAH</span>
+              <div class="testi-demo-card__quote" aria-hidden="true">“</div>
+              <blockquote>Memahami pilihan simpanan dan ketentuannya membantu saya mulai merencanakan keuangan dengan lebih teratur.</blockquote>
+              <div class="testi-demo-card__author"><span><strong>Ilustrasi Anggota</strong><small>Foto dan testimoni simulasi</small></span></div>
+            </div>
+          </article>
+          <article class="testi-demo-card testi-demo-card--photo">
+            <img class="testi-customer-photo" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Foto ilustrasi seorang anggota perempuan" loading="lazy" width="640" height="760" />
+            <div class="testi-demo-card__content">
+              <span class="testi-demo-card__category">PEMBIAYAAN USAHA</span>
+              <div class="testi-demo-card__quote" aria-hidden="true">“</div>
+              <blockquote>Penjelasan tentang tahapan, persyaratan, dan akad membuat calon anggota lebih memahami hal yang perlu dipertimbangkan sebelum mengajukan pembiayaan.</blockquote>
+              <div class="testi-demo-card__author"><span><strong>Ilustrasi Pelaku Usaha</strong><small>Foto dan testimoni simulasi</small></span></div>
+            </div>
+          </article>
+          <article class="testi-demo-card testi-demo-card--photo">
+            <img class="testi-customer-photo" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Foto ilustrasi seorang anggota pria" loading="lazy" width="640" height="760" />
+            <div class="testi-demo-card__content">
+              <span class="testi-demo-card__category">PENDAMPINGAN USAHA</span>
+              <div class="testi-demo-card__quote" aria-hidden="true">“</div>
+              <blockquote>Belajar memisahkan uang usaha dan kebutuhan rumah tangga merupakan langkah sederhana untuk memperbaiki pencatatan dan arus kas.</blockquote>
+              <div class="testi-demo-card__author"><span><strong>Ilustrasi Anggota</strong><small>Foto dan testimoni simulasi</small></span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="testi-invite-footer">
+          <div>
+            <strong>Ingin membagikan pengalaman nyata bersama BMT Al Muhajirin?</strong>
+            <span>Kami ingin mendengar cerita Anda. Testimoni nyata hanya akan dipublikasikan setelah dikonfirmasi dan mendapat persetujuan.</span>
+          </div>
+          <a class="btn btn--primary" href="informasi.html#konsultasi"><span>Bagikan Cerita Anda</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </section>
@@ -2929,14 +2958,14 @@
       <div class="container">
         <div class="program-head">
           <div>
-            <span class="kicker js-reveal-fade">Laporan Kegiatan</span>
-            <h2 class="js-line-reveal">Laporan Kegiatan BMT Al Muhajirin</h2>
+            <span class="kicker js-reveal-fade">Berita &amp; Program</span>
+            <h2 class="js-line-reveal">Kabar Kegiatan dan Program Kami</h2>
           </div>
           <div class="carousel-controls">
-            <button type="button" class="circle-arrow-btn" id="progPrev" aria-label="Kegiatan sebelumnya">
+            <button type="button" class="circle-arrow-btn" id="progPrev" aria-label="Berita sebelumnya">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             </button>
-            <button type="button" class="circle-arrow-btn" id="progNext" aria-label="Kegiatan berikutnya">
+            <button type="button" class="circle-arrow-btn" id="progNext" aria-label="Berita berikutnya">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
             </button>
           </div>
@@ -3058,7 +3087,7 @@
 
   <div class="mobile-wa-bar" id="mobileWaBar">
     <a href="informasi.html#konsultasi" class="btn btn--primary btn--md">
-      <span>Konsultasi via WhatsApp</span>
+      <span>Daftar Anggota</span>
       <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
     </a>
   </div>
