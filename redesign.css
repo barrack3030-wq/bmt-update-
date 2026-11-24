@@ -971,7 +971,7 @@ section[id], [id^="produk-"] { scroll-margin-top: 96px; }
 }
 .about-sec .about-photo-frame.about-video-frame {
   width: 100%;
-  max-width: 620px;
+  max-width: 560px;
   margin: 0 auto;
   aspect-ratio: 16 / 9;
 }
