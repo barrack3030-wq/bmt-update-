@@ -2853,19 +2853,19 @@
             <h3 class="why-label">Pencapaian Kami</h3>
             <ul class="achievements">
               <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path pathLength="1" d="M16 7h6v6"/></svg>
                 <span>Aset Bertumbuh</span>
               </li>
               <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle pathLength="1" cx="9" cy="7" r="4"/><path pathLength="1" d="M22 21v-2a4 4 0 0 0-3-3.87"/><path pathLength="1" d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 <span>10.000+ Anggota</span>
               </li>
               <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="11.5" cy="14.5" r="2.5"/><path d="m13.3 16.3 1.7 1.7"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path pathLength="1" d="M14 2v6h6"/><circle pathLength="1" cx="11.5" cy="14.5" r="2.5"/><path pathLength="1" d="m13.3 16.3 1.7 1.7"/></svg>
                 <span>Transparansi</span>
               </li>
               <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle pathLength="1" cx="12" cy="8" r="6"/><path pathLength="1" d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
                 <span>Profesional</span>
               </li>
             </ul>
@@ -3897,6 +3897,20 @@
           }, 360);
         });
       }
+    })();
+  </script>
+  <script>
+    /* Ikon Pencapaian: tergambar saat masuk layar */
+    (function () {
+      var el = document.querySelector('.achievements');
+      if (!el) return;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || !('IntersectionObserver' in window)) { el.classList.add('is-in'); return; }
+      el.classList.add('anim-ready');
+      var io = new IntersectionObserver(function (en) {
+        if (en[0].isIntersecting) { el.classList.add('is-in'); io.disconnect(); }
+      }, { threshold: 0.35 });
+      io.observe(el);
     })();
   </script>
 </body>

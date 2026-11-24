@@ -145,7 +145,7 @@ h3 {
   justify-content: space-between;
   gap: 8px;
   width: min(100%, 940px);
-  padding: 5px 6px 5px 20px;
+  padding: 5px 5px 5px 22px;   /* jarak sama di atas/bawah/kanan → tombol konsentris dengan pil */
   background: var(--emerald);
   border-radius: 999px;
   box-shadow: 0 10px 26px -14px rgba(7, 38, 22, 0.5);
@@ -182,17 +182,20 @@ h3 {
 .nav-item.is-active > .nav-link::after {
   transform: scale(1);
 }
+.header-pill .header-actions { gap: 0; align-self: stretch; }
 .header-pill .header-actions .btn {
   min-width: 0;
-  height: 40px;
-  padding-inline: 20px;
+  height: 100%;                  /* mengisi tinggi pil → jarak 5px sama di atas, bawah, kanan */
+  padding-inline: 22px;
+  border: 0;
+  border-radius: 999px;          /* kapsul penuh, sama dengan pil menu */
+  overflow: hidden;              /* lapisan emas hover ikut terpotong lengkungan */
   background: #FFFFFF;
   color: var(--emerald);
-  border-color: #FFFFFF;
   box-shadow: none;
 }
 .header-pill .header-actions .btn::before { background: var(--gold); }
-.header-pill .header-actions .btn:hover { color: var(--emerald-ink); border-color: var(--gold); }
+.header-pill .header-actions .btn:hover { color: var(--emerald-ink); box-shadow: none; }
 
 .nav-dropdown {
   border: 1px solid var(--line-subtle);
@@ -223,8 +226,8 @@ h3 {
   background: transparent;
   color: #FFFFFF;
   min-height: clamp(540px, 74vh, 700px);
-  padding-top: clamp(64px, 7vw, 96px);
-  padding-bottom: clamp(190px, 17vw, 240px);
+  padding-top: clamp(112px, 11.5vw, 168px);   /* lebih dalam di lengkungan → judul tidak terpotong */
+  padding-bottom: clamp(172px, 14vw, 205px);
   overflow: visible;
 }
 .hero__slides,
@@ -255,14 +258,14 @@ h3 {
 .hero__title .line-inner {
   font-family: var(--font-heading);
   font-weight: 500;
-  font-size: clamp(1.9rem, 4.4vw, 3.5rem);
+  font-size: clamp(1.9rem, 3.8vw, 3.1rem);
   letter-spacing: -0.02em;
 }
 .hero__title .line-inner--script {
   font-family: 'Dancing Script', 'Segoe Script', cursive;
   font-style: normal;
   font-weight: 600;
-  font-size: clamp(2.8rem, 7vw, 5.4rem);
+  font-size: clamp(2.8rem, 6.2vw, 5rem);
   letter-spacing: 0;
   line-height: 1.05;
   color: #FFFFFF;
@@ -555,6 +558,86 @@ h3 {
 }
 .office-item.is-active {
   box-shadow: none;
+}
+
+
+/* 9. Latar berpola (geometri bintang-8 islami, sangat tipis) ------------------- */
+:root {
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72' fill='none' stroke='rgb(15,77,46)' stroke-opacity='0.105' stroke-width='1'%3E%3Cpath d='M14 14H58V58H14Z'/%3E%3Cpath d='M36 4L68 36L36 68L4 36Z'/%3E%3Ccircle cx='36' cy='36' r='5.5'/%3E%3Ccircle cx='0' cy='0' r='1.6' fill='rgb(198,164,91)' stroke='none' fill-opacity='0.55'/%3E%3Ccircle cx='72' cy='0' r='1.6' fill='rgb(198,164,91)' stroke='none' fill-opacity='0.55'/%3E%3Ccircle cx='0' cy='72' r='1.6' fill='rgb(198,164,91)' stroke='none' fill-opacity='0.55'/%3E%3Ccircle cx='72' cy='72' r='1.6' fill='rgb(198,164,91)' stroke='none' fill-opacity='0.55'/%3E%3C/svg%3E");
+}
+body {
+  background-color: var(--bg-white);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255, 254, 250, 0.9), rgba(255, 254, 250, 0) 70%),
+    var(--pattern);
+  background-size: 100% 100%, 72px 72px;
+  background-repeat: no-repeat, repeat;
+}
+.site-header { background: rgba(255, 254, 250, 0.9); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+/* Seksi krem ikut berpola */
+.testi-sec {
+  background-image: var(--pattern), linear-gradient(180deg, var(--bg-soft), var(--bg-soft));
+  background-size: 72px 72px, 100% 100%;
+}
+
+
+/* 10. Animasi ikon "Pencapaian Kami" ------------------------------------------ */
+.achievements svg {
+  box-sizing: content-box;
+  width: 40px; height: 40px;
+  padding: 14px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+  overflow: visible;
+  transition: background-color 0.35s var(--ease-lux), box-shadow 0.35s var(--ease-lux), transform 0.35s var(--ease-lux);
+}
+.achievements li { cursor: default; }
+.achievements li:hover svg {
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 0 0 1px var(--gold-on-dark), 0 0 0 6px rgba(255, 255, 255, 0.05);
+  transform: translateY(-4px);
+}
+
+/* Tahap 1: ikon "tergambar" saat masuk layar (hanya jika JS aktif) */
+.achievements.anim-ready svg * {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.achievements.anim-ready li { opacity: 0; transform: translateY(14px); }
+.achievements.anim-ready.is-in li {
+  opacity: 1; transform: none;
+  transition: opacity 0.6s var(--ease-lux), transform 0.6s var(--ease-lux);
+}
+.achievements.anim-ready.is-in svg * {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.3s var(--ease-lux);
+}
+.achievements.is-in li:nth-child(1), .achievements.is-in li:nth-child(1) svg * { transition-delay: 0.05s; }
+.achievements.is-in li:nth-child(2), .achievements.is-in li:nth-child(2) svg * { transition-delay: 0.25s; }
+.achievements.is-in li:nth-child(3), .achievements.is-in li:nth-child(3) svg * { transition-delay: 0.45s; }
+.achievements.is-in li:nth-child(4), .achievements.is-in li:nth-child(4) svg * { transition-delay: 0.65s; }
+
+/* Tahap 2: gerak halus berulang, berbeda tiap ikon */
+@keyframes ach-rise   { 0%,100% { transform: translate(0,0); } 50% { transform: translate(3px,-3px); } }
+@keyframes ach-pulse  { 0%,100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+@keyframes ach-scan   { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes ach-swing  { 0%,100% { transform: rotate(0); } 25% { transform: rotate(7deg); } 75% { transform: rotate(-7deg); } }
+@keyframes ach-ring   { 0% { box-shadow: inset 0 0 0 1px rgba(255,255,255,.22), 0 0 0 0 rgba(214,173,80,.42); }
+                         70%,100% { box-shadow: inset 0 0 0 1px rgba(255,255,255,.22), 0 0 0 14px rgba(214,173,80,0); } }
+.achievements.is-in svg { animation: ach-ring 3.2s ease-out 1.8s infinite; }
+.achievements.is-in li:nth-child(2) svg { animation-delay: 2.2s; }
+.achievements.is-in li:nth-child(3) svg { animation-delay: 2.6s; }
+.achievements.is-in li:nth-child(4) svg { animation-delay: 3s; }
+.achievements.is-in li:nth-child(1) svg > * { animation: ach-rise 2.8s ease-in-out 1.8s infinite; }
+.achievements.is-in li:nth-child(2) svg > * { animation: ach-pulse 3s ease-in-out 2.2s infinite; transform-box: fill-box; transform-origin: center; }
+.achievements.is-in li:nth-child(3) svg > * { animation: ach-scan 2.6s ease-in-out 2.4s infinite; }
+.achievements.is-in li:nth-child(4) svg > * { animation: ach-swing 3.4s ease-in-out 2.8s infinite; transform-box: fill-box; transform-origin: 50% 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .achievements.anim-ready li { opacity: 1; transform: none; }
+  .achievements.anim-ready svg * { stroke-dashoffset: 0; }
+  .achievements svg, .achievements svg * { animation: none !important; transition: none !important; }
 }
 
 
