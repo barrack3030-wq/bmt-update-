@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Informasi — Koperasi BMT Al-Muhajirin</title>
+  <meta name="description" content="Informasi, artikel edukasi, dan laporan kegiatan Koperasi BMT Al-Muhajirin Toili." />
+  <meta name="theme-color" content="#0F4D2E" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <style>
+    :root{--green:#0f4d2e;--deep:#083b24;--gold:#bd9847;--ink:#17251d;--muted:#657267;--paper:#f8f8f3;--line:#e3e8df}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Figtree,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit}.topbar{height:82px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center}
+    .wrap{width:min(1120px,calc(100% - 48px));margin:auto}.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo{display:block;width:190px;height:auto}.nav{display:flex;gap:28px;align-items:center;font-size:.93rem;font-weight:600}.nav a{text-decoration:none}.nav a:hover{color:var(--gold)}
+    .crumb{padding:34px 0 22px;color:var(--muted);font-size:.86rem}.crumb a{text-decoration:none}.crumb span{padding:0 9px;color:#a3aca4}
+    .article{max-width:850px;margin:0 auto;padding:8px 0 100px}.eyebrow{color:var(--green);font-size:.82rem;letter-spacing:.11em;text-transform:uppercase;font-weight:700}
+    h1{font-family:Newsreader,Georgia,serif;font-size:clamp(2.45rem,5vw,4.3rem);font-weight:500;line-height:1.06;letter-spacing:-.035em;margin:18px 0 22px}
+    .meta{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.92rem;margin-bottom:34px}
+    .hero-image{width:100%;aspect-ratio:16/8.5;object-fit:cover;border-radius:5px;display:block;background:#e8ece5}
+    .content{max-width:720px;margin:42px auto 0;font-size:1.12rem;line-height:1.9;color:#4f5d52}
+    .content p{margin:0 0 22px}.notice{margin-top:30px;padding:18px 20px;border-left:3px solid var(--gold);background:#f0f1e9;color:#59665a;font-size:.92rem;line-height:1.7}
+    .actions{max-width:720px;margin:48px auto 0;padding-top:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .back{display:inline-flex;align-items:center;gap:10px;color:var(--green);font-weight:700;text-decoration:none}.back:hover{color:var(--gold)}
+    .footer{background:var(--deep);color:#dbe5dc;padding:28px 0;font-size:.88rem}.footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    @media(max-width:640px){.topbar{height:70px}.logo{width:155px}.nav{gap:14px;font-size:.82rem}.wrap{width:min(100% - 32px,1120px)}.crumb{padding-top:24px}.article{padding-bottom:64px}h1{font-size:2.6rem}.content{font-size:1.02rem;margin-top:28px}.hero-image{aspect-ratio:4/3}.actions{margin-top:34px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a href="index.html" aria-label="Beranda BMT Al-Muhajirin"><img class="logo" src="images/logo-bmt.png" alt="BMT Al-Muhajirin" /></a>
+      <nav class="nav" aria-label="Navigasi utama"><a href="index.html">Beranda</a><a href="berita.html">Berita &amp; Artikel</a></nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="crumb"><a href="index.html">Beranda</a><span>/</span><a href="berita.html">Berita &amp; Artikel</a><span>/</span><span id="crumbType">Detail</span></div>
+    <article class="article">
+      <div class="eyebrow" id="kicker">Informasi BMT</div>
+      <h1 id="title">Memuat informasi...</h1>
+      <div class="meta"><span id="category">BMT Al-Muhajirin</span><span aria-hidden="true">·</span><span id="date">Informasi</span></div>
+      <img class="hero-image" id="cover" src="" alt="" />
+      <div class="content" id="content"></div>
+      <div class="notice" id="notice" hidden></div>
+      <div class="actions"><a class="back" id="backLink" href="berita.html#artikel">← Kembali ke Berita &amp; Artikel</a><a class="back" href="index.html">Kembali ke Beranda →</a></div>
+    </article>
+  </main>
+  <footer class="footer"><div class="wrap"><span>© 2026 Koperasi BMT Al-Muhajirin Toili.</span><span>Berjuang Bersama Ummat Keluar Dari Riba</span></div></footer>
+  <script>
+    (function(){
+      const articles={
+        art1:{type:'Artikel & Edukasi',category:'Edukasi Syariah',date:'Tanggal publikasi belum diisi',title:'Memahami Perbedaan Pembiayaan Syariah dan Utang Berbunga',image:'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=88',alt:'Ilustrasi pembelajaran dan informasi pembiayaan',body:['Dalam muamalah Islam, transaksi pembiayaan berlandaskan jual beli barang nyata atau kerja sama usaha yang jelas objek serta kesepakatannya.','Keuntungan atau nisbah tidak bertambah berlipat karena keterlambatan waktu, sehingga menghadirkan ketenangan batin bagi kedua belah pihak.','[ISI naskah artikel lengkap BMT Al Muhajirin]'],notice:'Naskah ini masih berupa materi awal. Lengkapi dengan penjelasan akad dan ketentuan resmi BMT sebelum dipublikasikan sebagai artikel final.'},
+        art2:{type:'Artikel & Edukasi',category:'Pengelolaan Usaha',date:'Tanggal publikasi belum diisi',title:'Cara Sederhana Memisahkan Kas Keluarga dan Modal Usaha Harian',image:'https://cdn1.katadata.co.id/media/images/thumb/2020/02/14/2020_02_14-14_06_04_0672f3592f621e6ac319e91273d84c88_960x640_thumb.jpg',alt:'Ilustrasi pengelolaan keuangan usaha',body:['Memisahkan pemasukan toko atau lapak dari belanja rumah tangga membantu pelaku usaha mikro melihat perkembangan modal secara jujur.','Menyisihkan sebagian hasil harian ke simpanan syariah menjaga cadangan usaha tetap sehat.','[ISI naskah artikel lengkap BMT Al Muhajirin]'],notice:'Naskah artikel lengkap dan tanggal publikasi masih perlu dilengkapi oleh pengelola BMT.'},
+        art3:{type:'Artikel & Edukasi',category:'Komunitas Toili',date:'Tanggal publikasi belum diisi',title:'Peran Koperasi Syariah Menguatkan Ketahanan Ekonomi Warga',image:'https://cdn.digitaldesa.com/uploads/profil/61.04.04.2006/berita/afaef0e4883db07aa45b52a01b717065.png',alt:'Ilustrasi kegiatan komunitas',body:['Koperasi syariah mempertemukan anggota yang menitipkan dana secara aman dengan pelaku usaha lokal yang membutuhkan permodalan adil.','Perputaran dana di lingkungan sendiri ikut menjaga daya beli dan kemandirian ekonomi masyarakat di Kabupaten Banggai.','[ISI naskah artikel lengkap BMT Al Muhajirin]'],notice:'Naskah artikel lengkap dan tanggal publikasi masih perlu dilengkapi oleh pengelola BMT.'}
+      };
+      const reports={
+        lap1:{type:'Laporan Kegiatan',category:'Pemberdayaan',date:'Tanggal kegiatan belum diisi',title:'Pendampingan Usaha Mikro Anggota',image:'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1600&q=88',alt:'Ilustrasi pertemuan dan pendampingan usaha',body:['Silaturahmi rutin dan pemantauan kebutuhan permodalan anggota secara kekeluargaan di lapangan.'],notice:'Foto pada kartu saat ini merupakan gambar ilustrasi. Tambahkan tanggal, lokasi, dokumentasi asli, dan ringkasan kegiatan yang telah diverifikasi sebelum laporan dipublikasikan.'},
+        lap2:{type:'Laporan Kegiatan',category:'Sosial Umat',date:'Tanggal kegiatan belum diisi',title:'Penyaluran Amanah ZISWAF & Santunan',image:'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1600&q=88',alt:'Ilustrasi kegiatan sosial',body:['Halaman ini disiapkan untuk memuat laporan penyaluran ZISWAF dan santunan oleh BMT Al-Muhajirin.'],notice:'Lengkapi laporan dengan tanggal, lokasi, jenis program, dokumentasi asli, dan informasi penerima yang layak dipublikasikan. Hindari menampilkan data pribadi penerima.'},
+        lap3:{type:'Laporan Kegiatan',category:'Tata Kelola',date:'Tanggal kegiatan belum diisi',title:'Edukasi Muamalah & Pertemuan Anggota',image:'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1600&q=88',alt:'Ilustrasi pertemuan anggota',body:['Halaman ini disiapkan untuk memuat informasi edukasi muamalah dan pertemuan anggota BMT Al-Muhajirin.'],notice:'Lengkapi laporan dengan agenda, tanggal, lokasi, ringkasan hasil pertemuan, serta dokumentasi kegiatan yang benar-benar berlangsung.'}
+      };
+      const params=new URLSearchParams(window.location.search);
+      const type=params.get('type');
+      const id=params.get('id');
+      const item=(type==='report'?reports:articles)[id];
+      if(!item){document.getElementById('title').textContent='Informasi tidak ditemukan';document.getElementById('content').innerHTML='<p>Halaman yang Anda cari tidak tersedia. Silakan kembali ke daftar Berita &amp; Artikel.</p>';document.getElementById('cover').hidden=true;return;}
+      document.title=item.title+' — BMT Al-Muhajirin';
+      document.getElementById('crumbType').textContent=item.type;
+      document.getElementById('kicker').textContent=item.type;
+      document.getElementById('title').textContent=item.title;
+      document.getElementById('category').textContent=item.category;
+      document.getElementById('date').textContent=item.date;
+      const cover=document.getElementById('cover');cover.src=item.image;cover.alt=item.alt;
+      document.getElementById('content').innerHTML=item.body.map(p=>'<p>'+p+'</p>').join('');
+      const notice=document.getElementById('notice');notice.textContent=item.notice;notice.hidden=!item.notice;
+      document.getElementById('backLink').href='berita.html#'+(type==='report'?'laporan':'artikel');
+    })();
+  </script>
+</body>
+</html>
