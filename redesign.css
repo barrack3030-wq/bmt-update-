@@ -991,3 +991,35 @@ section[id], [id^="produk-"] { scroll-margin-top: 96px; }
     padding: 0;
   }
 }
+
+
+/* 13. Islamic background from the BMT-01 shared assets ----------------------- */
+/* A soft ivory veil keeps the geometric artwork decorative rather than competing
+   with the content. Dark green hero, trust panel and footer remain untouched. */
+body {
+  background-color: var(--bg-white);
+  background-image:
+    linear-gradient(rgba(255, 254, 250, 0.58), rgba(255, 254, 250, 0.58)),
+    url("https://raw.githubusercontent.com/barrack3030-wq/BMT-01/main/public/images/logo/white-abstract-islamic-background-with-arabian-pattern-style-seamless-concept_57082-2430.avif");
+  background-size: 100% 100%, 620px 620px;
+  background-repeat: no-repeat, repeat;
+  background-position: center top, center top;
+  background-attachment: fixed, fixed;
+}
+
+main#main-content > section:not(.hero):not(.why-sec):not(.page-hero):not(.emerald-band) {
+  background-color: var(--bg-white);
+  background-image:
+    linear-gradient(rgba(255, 254, 250, 0.58), rgba(255, 254, 250, 0.58)),
+    url("https://raw.githubusercontent.com/barrack3030-wq/BMT-01/main/public/images/logo/white-abstract-islamic-background-with-arabian-pattern-style-seamless-concept_57082-2430.avif") !important;
+  background-size: 100% 100%, 620px 620px !important;
+  background-repeat: no-repeat, repeat !important;
+  background-position: center top, center top;
+}
+
+@media (max-width: 768px) {
+  body { background-attachment: scroll, scroll; }
+  main#main-content > section:not(.hero):not(.why-sec):not(.page-hero):not(.emerald-band) {
+    background-attachment: scroll, scroll;
+  }
+}
