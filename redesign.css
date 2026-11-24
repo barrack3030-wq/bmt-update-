@@ -235,7 +235,7 @@ h3 {
   pointer-events: none;
   transition: width .55s var(--ease-lux), margin .55s var(--ease-lux), opacity .4s ease .1s;
 }
-.pill-brand svg { width: 36px; height: 36px; flex-shrink: 0; border-radius: 10px; box-shadow: 0 0 0 1.5px rgba(255,255,255,.35); }
+.pill-brand img { width: 36px; height: 36px; flex-shrink: 0; border-radius: 50%; background: #FFFFFF; padding: 2px; box-shadow: 0 0 0 1.5px rgba(255,255,255,.35); }
 
 @media (min-width: 769px) {
   .site-header.is-scrolled {
@@ -830,6 +830,22 @@ section[id], [id^="produk-"] { scroll-margin-top: 96px; }
 @media (max-width: 768px) {
   .vm-grid { grid-template-columns: minmax(0, 1fr); }
   .page-cta__box { flex-direction: column; align-items: flex-start; }
+}
+
+
+/* 12. Logo resmi BMT Al-Muhajirin ---------------------------------------------- */
+.brand-logo__img { display: block; height: 60px; width: auto; max-width: none; }
+.drawer-logo { display: block; height: 44px; width: auto; }
+.brand-logo--plate {
+  display: inline-flex;
+  padding: 10px 18px;
+  background: #FFFFFF;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px -14px rgba(0, 0, 0, .5);
+}
+.brand-logo--plate .brand-logo__img { height: 50px; }
+@media (max-width: 768px) {
+  .brand-logo__img { height: 46px; }
 }
 
 
