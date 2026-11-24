@@ -2494,6 +2494,12 @@
 
   </style>
   <link rel="stylesheet" href="redesign.css" />
+  <style>
+    .article-page-link, .program-tile-link { display:block; color:inherit; text-decoration:none; cursor:pointer; }
+    .article-page-link:focus-visible, .program-tile-link:focus-visible { outline:3px solid var(--gold-text); outline-offset:5px; }
+    .program-tile-link .program-tile__body { pointer-events:none; }
+    .program-tile-link:hover img { transform:scale(1.045); }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
@@ -2697,7 +2703,7 @@
         </div>
 
         <div class="grid-12">
-          <article class="article-lead js-reveal-left open-detail-card" role="button" tabindex="0" data-detail-type="article" data-detail-id="art1" aria-label="Baca artikel Memahami Perbedaan Pembiayaan Syariah dan Utang Berbunga">
+          <a class="article-lead js-reveal-left article-page-link" href="detail-berita.html?type=article&amp;id=art1" aria-label="Baca artikel Memahami Perbedaan Pembiayaan Syariah dan Utang Berbunga">
             <div class="article-lead__img-wrap js-clip-reveal">
               <img width="580" height="380" loading="lazy" alt="Ilustrasi artikel mengenal pembiayaan syariah bebas riba [ISI]" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85" />
             </div>
@@ -2711,10 +2717,10 @@
             </div>
             <h3>Memahami Perbedaan Pembiayaan Syariah dan Utang Berbunga</h3>
             <p>Mengenal prinsip jual beli dan bagi hasil yang transparan sejak awal akad agar usaha berjalan lebih tenteram dan terukur.</p>
-          </article>
+          </a>
 
           <div class="articles-stack">
-            <article class="article-item js-reveal-right open-detail-card" role="button" tabindex="0" data-detail-type="article" data-detail-id="art2" aria-label="Baca artikel Cara Sederhana Memisahkan Kas Keluarga dan Modal Usaha Harian">
+            <a class="article-item js-reveal-right article-page-link" href="detail-berita.html?type=article&amp;id=art2" aria-label="Baca artikel Cara Sederhana Memisahkan Kas Keluarga dan Modal Usaha Harian">
               <div class="article-item__thumb js-clip-reveal">
                 <img width="240" height="180" loading="lazy" alt="Ilustrasi artikel pengelolaan kas usaha mikro [ISI]" src="https://cdn1.katadata.co.id/media/images/thumb/2020/02/14/2020_02_14-14_06_04_0672f3592f621e6ac319e91273d84c88_960x640_thumb.jpg" />
               </div>
@@ -2729,9 +2735,9 @@
                 </div>
                 <h3>Cara Sederhana Memisahkan Kas Keluarga dan Modal Usaha Harian</h3>
               </div>
-            </article>
+            </a>
 
-            <article class="article-item js-reveal-right open-detail-card" role="button" tabindex="0" data-detail-type="article" data-detail-id="art3" aria-label="Baca artikel Peran Koperasi Syariah Menguatkan Ketahanan Ekonomi Warga">
+            <a class="article-item js-reveal-right article-page-link" href="detail-berita.html?type=article&amp;id=art3" aria-label="Baca artikel Peran Koperasi Syariah Menguatkan Ketahanan Ekonomi Warga">
               <div class="article-item__thumb js-clip-reveal">
                 <img width="240" height="180" loading="lazy" alt="Ilustrasi artikel peran koperasi syariah di Toili [ISI]" src="https://cdn.digitaldesa.com/uploads/profil/61.04.04.2006/berita/afaef0e4883db07aa45b52a01b717065.png" />
               </div>
@@ -2746,7 +2752,7 @@
                 </div>
                 <h3>Peran Koperasi Syariah Menguatkan Ketahanan Ekonomi Warga</h3>
               </div>
-            </article>
+            </a>
           </div>
         </div>
       </div>
@@ -2757,30 +2763,30 @@
         <h2 class="section-title js-line-reveal">Laporan Kegiatan</h2>
 
         <div class="program-collage">
-          <article class="program-tile program-tile--lead">
+          <a class="program-tile program-tile-link program-tile--lead" href="detail-berita.html?type=report&amp;id=lap1" aria-label="Baca laporan Pendampingan Usaha Mikro Anggota">
             <img width="800" height="900" loading="lazy" alt="Dokumentasi pendampingan usaha mikro anggota [ISI]" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=85" />
             <div class="program-tile__body">
               <div class="program-tile__meta">Pemberdayaan &middot; [ISI] Tanggal</div>
               <h3>Pendampingan Usaha Mikro Anggota</h3>
               <p>Silaturahmi rutin dan pemantauan kebutuhan permodalan anggota secara kekeluargaan di lapangan.</p>
             </div>
-          </article>
+          </a>
 
-          <article class="program-tile">
+          <a class="program-tile program-tile-link" href="detail-berita.html?type=report&amp;id=lap2" aria-label="Baca laporan Penyaluran Amanah ZISWAF & Santunan">
             <img width="800" height="450" loading="lazy" alt="Dokumentasi program sosial dan ZISWAF Baitul Maal [ISI]" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85" />
             <div class="program-tile__body">
               <div class="program-tile__meta">Sosial Umat &middot; [ISI] Tanggal</div>
               <h3>Penyaluran Amanah ZISWAF &amp; Santunan</h3>
             </div>
-          </article>
+          </a>
 
-          <article class="program-tile">
+          <a class="program-tile program-tile-link" href="detail-berita.html?type=report&amp;id=lap3" aria-label="Baca laporan Edukasi Muamalah & Pertemuan Anggota">
             <img width="800" height="450" loading="lazy" alt="Dokumentasi Rapat Anggota Tahunan dan edukasi syariah [ISI]" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85" />
             <div class="program-tile__body">
               <div class="program-tile__meta">Tata Kelola &middot; [ISI] Tanggal</div>
               <h3>Edukasi Muamalah &amp; Pertemuan Anggota</h3>
             </div>
-          </article>
+          </a>
         </div>
       </div>
     </section>
@@ -2908,22 +2914,6 @@
       <span>Daftar Anggota</span>
       <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
     </a>
-  </div>
-
-  <!-- Detail Modal -->
-  <div class="modal-backdrop" id="detailModal" aria-hidden="true">
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="modal-head">
-        <div>
-          <div id="modalKicker" class="kicker" style="margin-bottom:6px;"></div>
-          <h2 id="modalTitle" style="font-size:1.5rem;"></h2>
-        </div>
-        <button type="button" class="modal-close" id="modalCloseBtn" aria-label="Tutup jendela detail">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
-      </div>
-      <div id="modalBody" style="color:var(--muted); font-size:0.96875rem; display:flex; flex-direction:column; gap:12px;"></div>
-    </div>
   </div>
 
   <script>
@@ -3503,111 +3493,9 @@
         });
       });
 
-      // 9. Detail Modal (Produk & Artikel)
-      var detailData = {
-        product: {
-          simpanan: {
-            kicker: 'Produk Simpanan Syariah',
-            title: 'Simpanan Amanah & Bebas Riba',
-            body: [
-              'Dana anggota dikelola berdasarkan prinsip syariah (seperti akad titipan Wadiah atau bagi hasil Mudharabah) tanpa sistem bunga.',
-              'Jenis simpanan dapat mencakup simpanan harian sukarela, simpanan pendidikan/qurban, dan simpanan berjangka [ISI daftar produk resmi BMT].',
-              'Hubungi petugas kami melalui formulir konsultasi untuk informasi setoran awal dan syarat keanggotaan.'
-            ]
-          },
-          pembiayaan: {
-            kicker: 'Produk Pembiayaan Syariah',
-            title: 'Pembiayaan Modal Kerja & Pengadaan Barang',
-            body: [
-              'Mendukung permodalan usaha perdagangan, pertanian, maupun pengadaan barang produktif berbasis akad syariah yang jelas sejak awal.',
-              'Besaran margin atau nisbah bagi hasil disepakati bersama saat akad di kantor tanpa denda berbunga [ISI ketentuan produk resmi].',
-              'Gunakan kalkulator simulasi untuk gambaran awal sebelum berdiskusi bersama tim kami.'
-            ]
-          },
-          lainnya: {
-            kicker: 'Layanan Anggota & Sosial',
-            title: 'Baitul Maal & Layanan Lapangan',
-            body: [
-              'Selain layanan keuangan komersial (Tamwil), BMT Al Muhajirin menjalankan fungsi sosial (Maal) dalam penyaluran ZISWAF kepada mustahik [ISI program resmi].',
-              'Tersedia kemudahan layanan lapangan bagi anggota di wilayah kerja Toili, Luwuk, dan Bunta [ISI cakupan layanan].'
-            ]
-          }
-        },
-        article: {
-          art1: {
-            kicker: 'Edukasi Syariah · [ISI] Tanggal',
-            title: 'Memahami Perbedaan Pembiayaan Syariah dan Utang Berbunga',
-            body: [
-              'Dalam muamalah Islam, transaksi pembiayaan berlandaskan jual beli barang nyata atau kerja sama usaha yang jelas objek serta kesepakatannya.',
-              'Keuntungan atau nisbah tidak bertambah berlipat karena keterlambatan waktu, sehingga menghadirkan ketenangan batin bagi kedua belah pihak.',
-              '[ISI naskah artikel lengkap BMT Al Muhajirin]'
-            ]
-          },
-          art2: {
-            kicker: 'Pengelolaan Usaha · [ISI] Tanggal',
-            title: 'Cara Sederhana Memisahkan Kas Keluarga dan Modal Usaha Harian',
-            body: [
-              'Memisahkan pemasukan toko atau lapak dari belanja rumah tangga membantu pelaku usaha mikro melihat perkembangan modal secara jujur.',
-              'Menyisihkan sebagian hasil harian ke simpanan syariah menjaga cadangan usaha tetap sehat.',
-              '[ISI naskah artikel lengkap BMT Al Muhajirin]'
-            ]
-          },
-          art3: {
-            kicker: 'Komunitas Toili · [ISI] Tanggal',
-            title: 'Peran Koperasi Syariah Menguatkan Ketahanan Ekonomi Warga',
-            body: [
-              'Koperasi syariah mempertemukan anggota yang menitipkan dana secara aman dengan pelaku usaha lokal yang membutuhkan permodalan adil.',
-              'Perputaran dana di lingkungan sendiri ikut menjaga daya beli dan kemandirian ekonomi masyarakat di Kabupaten Banggai.',
-              '[ISI naskah artikel lengkap BMT Al Muhajirin]'
-            ]
-          }
-        }
-      };
-
-      var modal = document.getElementById('detailModal');
-      var modalKicker = document.getElementById('modalKicker');
-      var modalTitle = document.getElementById('modalTitle');
-      var modalBody = document.getElementById('modalBody');
-      var modalCloseBtn = document.getElementById('modalCloseBtn');
-      var lastTrigger = null;
-
-      function openDetailFromCard(card) {
-        var type = card.getAttribute('data-detail-type');
-        var id = card.getAttribute('data-detail-id');
-        var item = detailData[type] && detailData[type][id];
-        if (!item || !modal) return;
-        lastTrigger = card;
-        modalKicker.textContent = item.kicker;
-        modalTitle.textContent = item.title;
-        modalBody.innerHTML = item.body.map(function (p) { return '<p>' + p + '</p>'; }).join('');
-        modal.classList.add('is-open');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-        modalCloseBtn.focus();
-      }
-      function closeModal() {
-        if (!modal) return;
-        modal.classList.remove('is-open');
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-        if (lastTrigger) lastTrigger.focus();
-      }
-      document.querySelectorAll('.open-detail-card').forEach(function (card) {
-        card.addEventListener('click', function () { openDetailFromCard(card); });
-        card.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openDetailFromCard(card);
-          }
-        });
-      });
-      if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
-      if (modal) modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+      // Escape closes the mobile navigation drawer.
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-          if (modal && modal.classList.contains('is-open')) closeModal();
-          if (drawer && drawer.classList.contains('is-open')) setDrawer(false);
-        }
+        if (e.key === 'Escape' && drawer && drawer.classList.contains('is-open')) setDrawer(false);
       });
 
       // 10. Office Switcher
