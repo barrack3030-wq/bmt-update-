@@ -2542,6 +2542,9 @@
         </a>
 
         <div class="header-pill">
+          <a href="index.html#beranda" class="pill-brand" aria-label="BMT Al Muhajirin">
+            <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#FFFFFF"/><path d="M24 9L36 18V37H12V18L24 9Z" stroke="#C6A45B" stroke-width="1.75"/><path d="M18.5 37V25.5C18.5 22.46 20.96 20 24 20C27.04 20 29.5 22.46 29.5 25.5V37" stroke="#0F4D2E" stroke-width="1.75"/><circle cx="24" cy="14.5" r="2" fill="#C6A45B"/></svg>
+          </a>
         <nav class="main-nav" aria-label="Navigasi Utama">
           <ul class="nav-list">
 
@@ -3377,7 +3380,8 @@
         // Lenis Smooth Scroll
         if (typeof window.Lenis === 'function') {
           lenisInstance = new window.Lenis({
-            duration: 1.15,
+            duration: 1.35,
+            wheelMultiplier: 0.85,
             easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
             smoothWheel: true
           });
@@ -3423,9 +3427,9 @@
           var gsap = window.gsap;
           gsap.registerPlugin(window.ScrollTrigger);
           var isMobile = window.innerWidth <= 768;
-          var durBase = isMobile ? 0.8 : 1.05;
+          var durBase = isMobile ? 1.0 : 1.35;
 
-          var heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+          var heroTl = gsap.timeline({ defaults: { ease: 'expo.out' } });
           heroTl.from('.js-hero-line', {
             yPercent: 115,
             duration: durBase,
@@ -3443,7 +3447,7 @@
           if (wavePath && wavePath.getTotalLength) {
             var len = wavePath.getTotalLength();
             gsap.set(wavePath, { strokeDasharray: len, strokeDashoffset: len });
-            heroTl.to(wavePath, { strokeDashoffset: 0, duration: 1.05, ease: 'power3.out' }, 0.60);
+            heroTl.to(wavePath, { strokeDashoffset: 0, duration: 1.05, ease: 'expo.out' }, 0.60);
           }
 
           if (!isMobile) {
@@ -3474,7 +3478,7 @@
             y: 28,
             opacity: 0,
             duration: durBase,
-            ease: 'power3.out',
+            ease: 'expo.out',
             scrollTrigger: { trigger: '#tentang', start: 'top 78%', once: true }
           });
 
@@ -3484,7 +3488,7 @@
               y: isMobile ? 20 : 0,
               opacity: 0,
               duration: durBase,
-              ease: 'power3.out',
+              ease: 'expo.out',
               scrollTrigger: { trigger: el, start: 'top 82%', once: true }
             });
           });
@@ -3494,16 +3498,18 @@
               y: isMobile ? 20 : 0,
               opacity: 0,
               duration: durBase,
-              ease: 'power3.out',
+              ease: 'expo.out',
               scrollTrigger: { trigger: el, start: 'top 82%', once: true }
             });
           });
           gsap.utils.toArray('.js-reveal-fade').forEach(function (el) {
             gsap.from(el, {
-              y: 20,
+              y: 36,
               opacity: 0,
-              duration: 0.9,
-              ease: 'power3.out',
+              filter: 'blur(6px)',
+              clearProps: 'filter',
+              duration: 1.25,
+              ease: 'expo.out',
               scrollTrigger: { trigger: el, start: 'top 85%', once: true }
             });
           });
@@ -3515,7 +3521,7 @@
                 clipPath: 'inset(0% 0% 0% 0%)',
                 opacity: 1,
                 duration: durBase,
-                ease: 'power3.out',
+                ease: 'expo.out',
                 scrollTrigger: { trigger: el, start: 'top 84%', once: true }
               }
             );
@@ -3531,7 +3537,7 @@
               opacity: 0,
               duration: 0.95,
               stagger: 0.1,
-              ease: 'power3.out',
+              ease: 'expo.out',
               scrollTrigger: { trigger: parent, start: 'top 82%', once: true }
             });
           });
@@ -3540,7 +3546,7 @@
             scaleX: 0,
             duration: 1.0,
             stagger: 0.15,
-            ease: 'power3.out',
+            ease: 'expo.out',
             scrollTrigger: { trigger: '#whyPanel', start: 'top 78%', once: true }
           });
 
@@ -3583,7 +3589,7 @@
                   yPercent: 115,
                   duration: durBase,
                   stagger: 0.08,
-                  ease: 'power3.out',
+                  ease: 'expo.out',
                   scrollTrigger: { trigger: el, start: 'top 86%', once: true }
                 });
               }
