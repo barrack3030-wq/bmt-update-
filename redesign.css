@@ -924,32 +924,40 @@ section[id], [id^="produk-"] { scroll-margin-top: 96px; }
 /* Homepage editorial entry to the dedicated news and articles page */
 .articles-home__head {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 28px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
   margin-bottom: 34px;
+  text-align: center;
+}
+.articles-home__head > div {
+  width: 100%;
 }
 .articles-home__head .section-title {
   margin-bottom: 10px;
+  text-align: center;
 }
 .articles-home__intro {
   max-width: 620px;
+  margin-inline: auto;
   color: var(--muted);
   font-size: .98rem;
   line-height: 1.7;
+  text-align: center;
 }
 .articles-home__all {
   flex: 0 0 auto;
-  margin-bottom: 4px;
+  margin: 0 auto;
 }
 @media (max-width: 700px) {
   .articles-home__head {
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     gap: 18px;
   }
   .articles-home__all {
-    width: 100%;
+    width: auto;
     justify-content: center;
   }
 }
