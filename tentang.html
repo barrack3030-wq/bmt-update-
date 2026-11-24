@@ -2492,7 +2492,24 @@
     .program-slide:hover img, .article-lead:hover img, .article-item:hover img { transform:scale(1.045); }
     @media (max-width:768px) { .section-pad { padding-block:68px; } .hero__scrim { background:linear-gradient(0deg,rgba(5,30,19,.82),rgba(5,30,19,.24)); } }
 
-  </style>
+  
+
+    /* About section: embedded YouTube video replaces the static photo */
+    .about-video-frame {
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      background: #071d14;
+    }
+    .about-video-frame iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      border: 0;
+      aspect-ratio: 16 / 9;
+    }
+</style>
   <link rel="stylesheet" href="redesign.css" />
 </head>
 <body>
@@ -2694,15 +2711,15 @@
         <div class="grid-12">
           <div class="about-media-col js-reveal-left">
             <div class="about-backdrop js-about-backdrop" aria-hidden="true"></div>
-            <div class="about-photo-frame js-clip-reveal">
-              <img
-                class="js-about-img"
-                width="520"
-                height="546"
+            <div class="about-photo-frame about-video-frame js-clip-reveal">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/GeI3cN23bWc"
+                title="Video tentang Koperasi BMT Al-Muhajirin"
                 loading="lazy"
-                alt="Placeholder foto interaksi hangat bersama anggota Koperasi BMT Al Muhajirin di Toili [ISI]"
-                src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=85"
-              />
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
             </div>
           </div>
 
