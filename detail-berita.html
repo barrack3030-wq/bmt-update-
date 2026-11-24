@@ -17,7 +17,22 @@
     .wrap{width:min(1120px,calc(100% - 48px));margin:auto}.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
     .logo{display:block;width:190px;height:auto}.nav{display:flex;gap:28px;align-items:center;font-size:.93rem;font-weight:600}.nav a{text-decoration:none}.nav a:hover{color:var(--gold)}
     .crumb{padding:34px 0 22px;color:var(--muted);font-size:.86rem}.crumb a{text-decoration:none}.crumb span{padding:0 9px;color:#a3aca4}
-    .article{max-width:850px;margin:0 auto;padding:8px 0 100px}.eyebrow{color:var(--green);font-size:.82rem;letter-spacing:.11em;text-transform:uppercase;font-weight:700}
+    .detail-layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:54px;align-items:start;padding:8px 0 100px}
+    .article{min-width:0;margin:0;padding:0}.eyebrow{color:var(--green);font-size:.82rem;letter-spacing:.11em;text-transform:uppercase;font-weight:700}
+    .recommendations{position:sticky;top:28px;padding-top:4px}
+    .recommendation-group{padding:20px 0 22px;border-bottom:1px solid var(--line)}
+    .recommendation-group:first-child{padding-top:0}
+    .recommendation-heading{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green);font-weight:700;margin:0 0 14px}
+    .recommendation-list{display:grid;gap:0}
+    .recommendation-link{display:block;padding:13px 0;border-top:1px solid rgba(227,232,223,.8);text-decoration:none}
+    .recommendation-link:first-child{border-top:0;padding-top:0}
+    .recommendation-link small{display:block;color:var(--muted);font-size:.75rem;margin-bottom:5px}
+    .recommendation-link strong{display:block;font-family:Newsreader,Georgia,serif;font-size:1.22rem;font-weight:500;line-height:1.2;transition:color .2s ease}
+    .recommendation-link:hover strong{color:var(--green)}
+    .recommendation-link:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+    .recommendation-empty{color:var(--muted);font-size:.88rem;line-height:1.6}
+    @media(max-width:900px){.detail-layout{grid-template-columns:minmax(0,1fr);gap:36px;padding-bottom:72px}.recommendations{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.recommendation-group{border-bottom:0;padding:0}.article{max-width:850px}}
+    @media(max-width:560px){.recommendations{grid-template-columns:1fr;gap:12px}.recommendation-group{padding:16px 0;border-bottom:1px solid var(--line)}}
     h1{font-family:Newsreader,Georgia,serif;font-size:clamp(2.45rem,5vw,4.3rem);font-weight:500;line-height:1.06;letter-spacing:-.035em;margin:18px 0 22px}
     .meta{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.92rem;margin-bottom:34px}
     .hero-image{width:100%;aspect-ratio:16/8.5;object-fit:cover;border-radius:5px;display:block;background:#e8ece5}
@@ -38,6 +53,7 @@
   </header>
   <main class="wrap">
     <div class="crumb"><a href="index.html">Beranda</a><span>/</span><a href="berita.html">Berita &amp; Artikel</a><span>/</span><span id="crumbType">Detail</span></div>
+    <div class="detail-layout">
     <article class="article">
       <div class="eyebrow" id="kicker">Informasi BMT</div>
       <h1 id="title">Memuat informasi...</h1>
@@ -47,6 +63,17 @@
       <div class="notice" id="notice" hidden></div>
       <div class="actions"><a class="back" id="backLink" href="berita.html#artikel">← Kembali ke Berita &amp; Artikel</a><a class="back" href="index.html">Kembali ke Beranda →</a></div>
     </article>
+    <aside class="recommendations" aria-label="Rekomendasi bacaan">
+      <section class="recommendation-group" aria-labelledby="moreArticlesTitle">
+        <h2 class="recommendation-heading" id="moreArticlesTitle">Baca Artikel Lainnya</h2>
+        <div class="recommendation-list" id="moreArticles"></div>
+      </section>
+      <section class="recommendation-group" aria-labelledby="moreReportsTitle">
+        <h2 class="recommendation-heading" id="moreReportsTitle">Baca Laporan Kegiatan Lainnya</h2>
+        <div class="recommendation-list" id="moreReports"></div>
+      </section>
+    </aside>
+    </div>
   </main>
   <footer class="footer"><div class="wrap"><span>© 2026 Koperasi BMT Al-Muhajirin Toili.</span><span>Berjuang Bersama Ummat Keluar Dari Riba</span></div></footer>
   <script>
@@ -65,6 +92,14 @@
       const type=params.get('type');
       const id=params.get('id');
       const item=(type==='report'?reports:articles)[id];
+      function renderRecommendations(data, currentId, currentType, targetId, targetType){
+        const target=document.getElementById(targetId);
+        const entries=Object.entries(data).filter(([key])=>!(currentType===targetType && key===currentId));
+        if(!entries.length){target.innerHTML='<p class="recommendation-empty">Belum ada bacaan lainnya.</p>';return;}
+        target.innerHTML=entries.map(([key,entry])=>'<a class="recommendation-link" href="detail-berita.html?type='+targetType+'&amp;id='+encodeURIComponent(key)+'"><small>'+entry.category+'</small><strong>'+entry.title+'</strong></a>').join('');
+      }
+      renderRecommendations(articles,id,type,'moreArticles','article');
+      renderRecommendations(reports,id,type,'moreReports','report');
       if(!item){document.getElementById('title').textContent='Informasi tidak ditemukan';document.getElementById('content').innerHTML='<p>Halaman yang Anda cari tidak tersedia. Silakan kembali ke daftar Berita &amp; Artikel.</p>';document.getElementById('cover').hidden=true;return;}
       document.title=item.title+' — BMT Al-Muhajirin';
       document.getElementById('crumbType').textContent=item.type;
