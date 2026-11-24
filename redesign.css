@@ -881,3 +881,22 @@ section[id], [id^="produk-"] { scroll-margin-top: 96px; }
   .program-collage { grid-template-columns: minmax(0, 1fr); }
   .value-pillar__num { font-size: 2.5rem; }
 }
+
+
+/* Footer: logo putih tanpa bidang/kapsul putih */
+.site-footer .brand-logo--plate {
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+.site-footer .brand-logo--plate .brand-logo__img {
+  height: 66px;
+  width: auto;
+  filter: grayscale(1) brightness(0) invert(1);
+}
+@media (max-width: 768px) {
+  .site-footer .brand-logo--plate .brand-logo__img {
+    height: 54px;
+  }
+}
