@@ -919,3 +919,37 @@ section[id], [id^="produk-"] { scroll-margin-top: 96px; }
     transform: translateY(0) scaleY(1);
   }
 }
+
+
+/* Homepage editorial entry to the dedicated news and articles page */
+.articles-home__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 34px;
+}
+.articles-home__head .section-title {
+  margin-bottom: 10px;
+}
+.articles-home__intro {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: .98rem;
+  line-height: 1.7;
+}
+.articles-home__all {
+  flex: 0 0 auto;
+  margin-bottom: 4px;
+}
+@media (max-width: 700px) {
+  .articles-home__head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .articles-home__all {
+    width: 100%;
+    justify-content: center;
+  }
+}
