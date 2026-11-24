@@ -1523,6 +1523,30 @@
       border-left: 2px solid var(--gold);
     }
 
+    .calc-consult-btn {
+      align-self: flex-start;
+      background: #FFFFFF;
+      color: var(--emerald);
+      border: 1px solid rgba(255,255,255,.8);
+      box-shadow: 0 8px 22px rgba(0,0,0,.12);
+      text-decoration: none;
+    }
+    .calc-consult-btn:hover {
+      background: var(--gold-on-dark);
+      color: var(--emerald-ink);
+      border-color: var(--gold-on-dark);
+    }
+    .calc-consult-btn .arrow-icon {
+      width: 18px;
+      height: 18px;
+    }
+    @media (max-width: 900px) {
+      .calc-consult-btn {
+        align-self: stretch;
+        justify-content: center;
+      }
+    }
+
     /* 8. MENGAPA MEMILIH KAMI (Light Soft-Green Architectural Canvas) */
     .why-sec {
       position: relative;
@@ -2762,6 +2786,10 @@
               </div>
             </div>
 
+            <a class="btn btn--md calc-consult-btn" href="kontak.html#konsultasi">
+              <span>Konsultasi Pinjaman</span>
+              <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
             <div class="calc-note">
               <strong>Catatan:</strong> Angka di atas hanyalah <em>simulasi perkiraan, bukan penawaran resmi</em>. Ketentuan margin/nisbah dan akad resmi disepakati langsung di BMT Al Muhajirin.
             </div>
