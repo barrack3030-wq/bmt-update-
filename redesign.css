@@ -900,3 +900,22 @@ section[id], [id^="produk-"] { scroll-margin-top: 96px; }
     height: 54px;
   }
 }
+
+
+/* Dropdown desktop: rapatkan panel ke trigger agar hover tidak terputus */
+@media (min-width: 769px) {
+  .site-header .nav-item.has-dropdown > .nav-dropdown {
+    top: 100% !important;
+    margin-top: 0;
+    transform: translateY(0) scaleY(1);
+    transform-origin: top center;
+  }
+  .site-header .nav-item.has-dropdown:not(:hover):not(:focus-within):not(.is-open) > .nav-dropdown {
+    transform: translateY(4px) scaleY(.98);
+  }
+  .site-header .nav-item.has-dropdown:hover > .nav-dropdown,
+  .site-header .nav-item.has-dropdown:focus-within > .nav-dropdown,
+  .site-header .nav-item.has-dropdown.is-open > .nav-dropdown {
+    transform: translateY(0) scaleY(1);
+  }
+}
