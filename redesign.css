@@ -953,3 +953,33 @@ section[id], [id^="produk-"] { scroll-margin-top: 96px; }
     justify-content: center;
   }
 }
+
+
+/* About section refinement: centered video, no decorative green block */
+.about-sec .grid-12 {
+  align-items: center;
+}
+.about-sec .about-media-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  padding: 0;
+}
+.about-sec .about-backdrop {
+  display: none !important;
+}
+.about-sec .about-photo-frame.about-video-frame {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+}
+.about-sec .about-copy-col {
+  justify-content: center;
+}
+@media (max-width: 900px) {
+  .about-sec .about-media-col {
+    padding: 0;
+  }
+}
