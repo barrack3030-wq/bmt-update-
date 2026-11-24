@@ -13,8 +13,8 @@
   <!-- Fonts: Newsreader (Judul) & Figtree (Isi) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Figtree:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Figtree:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" />
 
   <!-- GSAP, ScrollTrigger & Lenis (async/defer with graceful fallback) -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -2597,15 +2597,13 @@
           </span>
         </a>
 
+        <div class="header-pill">
         <nav class="main-nav" aria-label="Navigasi Utama">
           <ul class="nav-list">
-            <li class="nav-item is-active">
-              <a href="#beranda" class="nav-link" data-cursor="expand">Beranda</a>
-            </li>
 
             <li class="nav-item has-dropdown">
               <a href="informasi.html#tentang" class="nav-link" aria-haspopup="true" aria-expanded="false" data-cursor="expand">
-                <span>Tentang</span>
+                <span>Tentang Kami</span>
                 <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </a>
               <ul class="nav-dropdown" aria-label="Submenu Tentang">
@@ -2618,7 +2616,7 @@
 
             <li class="nav-item has-dropdown">
               <a href="informasi.html#produk" class="nav-link" aria-haspopup="true" aria-expanded="false" data-cursor="expand">
-                <span>Produk</span>
+                <span>Produk &amp; Layanan</span>
                 <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </a>
               <ul class="nav-dropdown" aria-label="Submenu Produk dan Layanan">
@@ -2634,7 +2632,7 @@
 
             <li class="nav-item has-dropdown">
               <a href="informasi.html#artikel" class="nav-link" aria-haspopup="true" aria-expanded="false" data-cursor="expand">
-                <span>Artikel</span>
+                <span>Berita</span>
                 <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
               </a>
               <ul class="nav-dropdown" aria-label="Submenu Artikel dan Kegiatan">
@@ -2666,6 +2664,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
         </div>
+        </div><!-- /header-pill -->
       </div>
     </div>
   </header>
@@ -2789,38 +2788,21 @@
       <div class="hero__scrim" aria-hidden="true"></div>
       <div class="grain-layer" aria-hidden="true"></div>
 
-      <div class="container">
-        <div class="grid-12 hero__inner">
+      <div class="container hero__container">
+        <div class="hero__inner">
           <div class="hero__content">
-            <span class="kicker kicker--light js-hero-fade">Koperasi Syariah · Toili, Banggai</span>
-            <h1 class="hero__title" id="heroTitle" aria-label="Ekonomi Umat Tumbuh Bersama Prinsip Syariah">
-              <span class="line-mask"><span class="line-inner js-hero-line">Ekonomi Umat</span></span>
-              <span class="line-mask"><span class="line-inner line-inner--gold js-hero-line">Tumbuh Bersama</span></span>
-              <span class="line-mask"><span class="line-inner js-hero-line">Prinsip Syariah</span></span>
+            <h1 class="hero__title" id="heroTitle" aria-label="Berjuang Bersama Ummat Keluar dari Riba">
+              <span class="line-mask"><span class="line-inner js-hero-line">Berjuang Bersama Ummat</span></span>
+              <span class="line-mask"><span class="line-inner line-inner--script js-hero-line">Keluar dari Riba</span></span>
             </h1>
             <p class="hero__sub js-hero-fade">
               Lembaga keuangan syariah dari Toili yang hadir dengan ketenangan, amanah, dan pelayanan modern untuk mendampingi kesejahteraan anggota tanpa riba.
             </p>
             <div class="hero__actions js-hero-fade">
-              <a href="informasi.html#kalkulator" class="btn btn--primary btn--lg">
+              <a href="informasi.html#kalkulator" class="btn btn--primary btn--md">
                 <span>Hitung Simulasi Pembiayaan</span>
                 <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a>
-            </div>
-
-            <div class="hero__trust-line js-hero-fade">
-              <span class="hero__trust-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                <span>Akad Syariah Jelas</span>
-              </span>
-              <span class="hero__trust-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>Toili · Luwuk · Bunta</span>
-              </span>
-              <span class="hero__trust-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
-                <span>Badan Hukum Koperasi: [ISI]</span>
-              </span>
             </div>
           </div>
 
@@ -2849,68 +2831,62 @@
     </section>
 
 <section class="section-pad why-sec" id="mengapa">
-      <div class="why-backdrop" aria-hidden="true">
-        <img
-          width="1440"
-          height="760"
-          loading="lazy"
-          alt="Placeholder foto suasana pelayanan kantor Koperasi BMT Al Muhajirin [ISI]"
-          src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=85"
-        />
-      </div>
-
       <div class="container">
-        <div class="grid-12">
-          <div class="why-panel js-reveal-fade" id="whyPanel">
-            <span class="kicker">Mengapa Memilih Kami</span>
-            <h2 class="js-line-reveal">Ketenangan Bermuamalah di Tengah Masyarakat</h2>
+        <h2 class="section-title section-title--light js-line-reveal">Mengapa Memilih Kami?</h2>
 
-            <div class="tabs-bar" role="tablist" aria-label="Profil dan Komitmen BMT Al Muhajirin">
-              <div class="tab-indicator" id="tabIndicator" aria-hidden="true"></div>
-              <button type="button" class="tab-btn" role="tab" id="tab-tentang" aria-selected="true" aria-controls="panel-tentang">Tentang</button>
-              <button type="button" class="tab-btn" role="tab" id="tab-misi" aria-selected="false" aria-controls="panel-misi">Misi</button>
+        <div class="why-grid">
+          <div class="why-copy js-reveal-fade" id="whyPanel">
+            <p class="why-quote">&ldquo;BMT Al-Muhajirin hadir sebagai mitra keuangan syariah yang berkomitmen mendukung pertumbuhan ekonomi umat melalui layanan simpanan dan pembiayaan yang berlandaskan prinsip syariah, kebersamaan, dan kepercayaan.&rdquo;</p>
+
+            <h3 class="why-label">Visi &amp; Misi</h3>
+            <div class="tabs-bar" role="tablist" aria-label="Visi dan Misi BMT Al Muhajirin">
+              <button type="button" class="tab-btn" role="tab" id="tab-misi" aria-selected="true" aria-controls="panel-misi">Misi</button>
               <button type="button" class="tab-btn" role="tab" id="tab-visi" aria-selected="false" aria-controls="panel-visi">Visi</button>
             </div>
-
-            <div class="tab-panel is-active" id="panel-tentang" role="tabpanel" aria-labelledby="tab-tentang">
-              <p>Koperasi BMT Al Muhajirin berakar di Toili, Kabupaten Banggai, dengan fokus melayani masyarakat melalui pengelolaan dana syariah yang menumbuhkan semangat tolong-menolong.</p>
-            </div>
-
-            <div class="tab-panel" id="panel-misi" role="tabpanel" aria-labelledby="tab-misi">
+            <div class="tab-panel is-active" id="panel-misi" role="tabpanel" aria-labelledby="tab-misi">
               <p>Menyelenggarakan layanan simpanan dan pembiayaan bebas riba, memasyarakatkan muamalah syariah yang bersih, serta mendampingi perkembangan usaha mikro anggota.</p>
             </div>
-
             <div class="tab-panel" id="panel-visi" role="tabpanel" aria-labelledby="tab-visi">
               <p>Menjadi lembaga keuangan syariah yang terpercaya di Kabupaten Banggai dalam membangun kemandirian ekonomi umat yang penuh berkah.</p>
             </div>
 
-            <div class="principle-bars" style="margin-bottom:0;">
-              <div>
-                <div class="principle-bar__head">
-                  <span>Kepatuhan Prinsip Syariah</span>
-                  <span style="color:var(--emerald);">Landasan Utama</span>
-                </div>
-                <div class="principle-bar__track">
-                  <div class="principle-bar__fill js-bar-fill" style="--fill: 1;"></div>
-                </div>
-              </div>
-              <div>
-                <div class="principle-bar__head">
-                  <span>Pelayanan Kekeluargaan &amp; Pendampingan</span>
-                  <span style="color:var(--emerald);">Fokus Anggota</span>
-                </div>
-                <div class="principle-bar__track">
-                  <div class="principle-bar__fill js-bar-fill" style="--fill: 0.92;"></div>
-                </div>
-              </div>
-            </div>
-            <div class="why-product-cta">
-              <a href="informasi.html#produk" class="btn btn--primary btn--md"><span>Produk Layanan</span><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            </div>
+            <h3 class="why-label">Pencapaian Kami</h3>
+            <ul class="achievements">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></svg>
+                <span>Aset Bertumbuh</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>10.000+ Anggota</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="11.5" cy="14.5" r="2.5"/><path d="m13.3 16.3 1.7 1.7"/></svg>
+                <span>Transparansi</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                <span>Profesional</span>
+              </li>
+            </ul>
+
+            <a href="informasi.html#produk" class="btn-slant"><span>Produk Kami</span></a>
           </div>
 
-          <aside class="why-trust-column" aria-label="Penghargaan dan mitra BMT Al Muhajirin">
-            <div class="trust-block trust-awards">
+          <div class="why-collage">
+            <figure class="why-collage__tall"><img loading="lazy" width="600" height="800" alt="Pendampingan pelaku usaha mikro dan pedagang [ISI]" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80" /></figure>
+            <figure><img loading="lazy" width="480" height="400" alt="Diskusi anggota dan pengurus koperasi [ISI]" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=700&q=80" /></figure>
+            <figure><img loading="lazy" width="480" height="400" alt="Kebersamaan dan kepercayaan antaranggota [ISI]" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=80" /></figure>
+            <figure class="why-collage__wide"><img loading="lazy" width="900" height="400" alt="Suasana pelayanan kantor Koperasi BMT Al Muhajirin [ISI]" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1100&q=80" /></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="section-pad trust-sec" id="pengakuan" aria-label="Penghargaan dan mitra BMT Al Muhajirin">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-block trust-awards">
               <div class="trust-block__heading">
                 <span class="kicker">Pengakuan &amp; Apresiasi</span>
                 <h3>Penghargaan</h3>
@@ -2943,7 +2919,69 @@
                 <div class="partner-logo-placeholder"><span>Logo Mitra 04</span></div>
               </div>
             </div>
-          </aside>
+        </div>
+      </div>
+    </section>
+
+<section class="section-pad program-sec" id="program">
+      <div class="container">
+        <h2 class="section-title js-line-reveal">Program dan Kegiatan</h2>
+
+        <div class="program-collage">
+          <article class="program-tile program-tile--lead">
+            <img width="800" height="900" loading="lazy" alt="Dokumentasi pendampingan usaha mikro anggota [ISI]" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=85" />
+            <div class="program-tile__body">
+              <div class="program-tile__meta">Pemberdayaan &middot; [ISI] Tanggal</div>
+              <h3>Pendampingan Usaha Mikro Anggota</h3>
+              <p>Silaturahmi rutin dan pemantauan kebutuhan permodalan anggota secara kekeluargaan di lapangan.</p>
+            </div>
+          </article>
+
+          <article class="program-tile">
+            <img width="800" height="450" loading="lazy" alt="Dokumentasi program sosial dan ZISWAF Baitul Maal [ISI]" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85" />
+            <div class="program-tile__body">
+              <div class="program-tile__meta">Sosial Umat &middot; [ISI] Tanggal</div>
+              <h3>Penyaluran Amanah ZISWAF &amp; Santunan</h3>
+            </div>
+          </article>
+
+          <article class="program-tile">
+            <img width="800" height="450" loading="lazy" alt="Dokumentasi Rapat Anggota Tahunan dan edukasi syariah [ISI]" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85" />
+            <div class="program-tile__body">
+              <div class="program-tile__meta">Tata Kelola &middot; [ISI] Tanggal</div>
+              <h3>Edukasi Muamalah &amp; Pertemuan Anggota</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+<section class="section-pad articles-home" id="artikel">
+      <div class="container">
+        <h2 class="section-title js-line-reveal">Artikel</h2>
+
+        <div class="home-articles">
+          <a class="home-article" href="informasi.html#artikel" aria-label="Baca artikel Memahami Perbedaan Pembiayaan Syariah dan Utang Berbunga">
+            <img width="600" height="450" loading="lazy" alt="Ilustrasi artikel pembiayaan syariah bebas riba [ISI]" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85" />
+            <div class="home-article__body">
+              <div class="home-article__meta">[ISI] Tanggal &middot; Edukasi Syariah</div>
+              <h3>Memahami Perbedaan Pembiayaan Syariah dan Utang Berbunga</h3>
+            </div>
+          </a>
+          <a class="home-article" href="informasi.html#artikel" aria-label="Baca artikel Cara Sederhana Memisahkan Kas Keluarga dan Modal Usaha Harian">
+            <img width="600" height="450" loading="lazy" alt="Ilustrasi artikel pengelolaan kas usaha mikro [ISI]" src="https://cdn1.katadata.co.id/media/images/thumb/2020/02/14/2020_02_14-14_06_04_0672f3592f621e6ac319e91273d84c88_960x640_thumb.jpg" />
+            <div class="home-article__body">
+              <div class="home-article__meta">[ISI] Tanggal &middot; Pengelolaan Usaha</div>
+              <h3>Cara Sederhana Memisahkan Kas Keluarga dan Modal Usaha Harian</h3>
+            </div>
+          </a>
+          <a class="home-article" href="informasi.html#artikel" aria-label="Baca artikel Peran Koperasi Syariah Menguatkan Ketahanan Ekonomi Warga">
+            <img width="600" height="450" loading="lazy" alt="Ilustrasi artikel peran koperasi syariah di Toili [ISI]" src="https://cdn.digitaldesa.com/uploads/profil/61.04.04.2006/berita/afaef0e4883db07aa45b52a01b717065.png" />
+            <div class="home-article__body">
+              <div class="home-article__meta">[ISI] Tanggal &middot; Komunitas Toili</div>
+              <h3>Peran Koperasi Syariah Menguatkan Ketahanan Ekonomi Warga</h3>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -2997,56 +3035,6 @@
             <span>Kami ingin mendengar cerita Anda. Testimoni nyata hanya akan dipublikasikan setelah dikonfirmasi dan mendapat persetujuan.</span>
           </div>
           <a class="btn btn--primary" href="informasi.html#konsultasi"><span>Bagikan Cerita Anda</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </div>
-    </section>
-
-<section class="section-pad program-sec blend-to-soft" id="program">
-      <div class="container">
-        <div class="program-head">
-          <div>
-            <span class="kicker js-reveal-fade">Berita &amp; Program</span>
-            <h2 class="js-line-reveal">Kabar Kegiatan dan Program Kami</h2>
-          </div>
-          <div class="carousel-controls">
-            <button type="button" class="circle-arrow-btn" id="progPrev" aria-label="Berita sebelumnya">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-            </button>
-            <button type="button" class="circle-arrow-btn" id="progNext" aria-label="Berita berikutnya">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="carousel-viewport">
-          <div class="carousel-track" id="programTrack">
-            <article class="program-slide">
-              <div class="program-slide__media js-clip-reveal">
-                <img width="600" height="375" loading="lazy" alt="Dokumentasi pendampingan usaha mikro anggota [ISI]" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=85" />
-              </div>
-              <div class="program-slide__meta">Pemberdayaan · [ISI] Tanggal</div>
-              <h3>Pendampingan Usaha Mikro Anggota</h3>
-              <p>Silaturahmi rutin dan pemantauan kebutuhan permodalan anggota secara kekeluargaan di lapangan.</p>
-            </article>
-
-            <article class="program-slide">
-              <div class="program-slide__media js-clip-reveal">
-                <img width="600" height="375" loading="lazy" alt="Dokumentasi program sosial dan ZISWAF Baitul Maal [ISI]" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85" />
-              </div>
-              <div class="program-slide__meta">Sosial Umat · [ISI] Tanggal</div>
-              <h3>Penyaluran Amanah ZISWAF &amp; Santunan</h3>
-              <p>Penghimpunan serta penyaluran dana sosial kemasyarakatan kepada warga yang membutuhkan di sekitar Toili.</p>
-            </article>
-
-            <article class="program-slide">
-              <div class="program-slide__media js-clip-reveal">
-                <img width="600" height="375" loading="lazy" alt="Dokumentasi Rapat Anggota Tahunan dan edukasi syariah [ISI]" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85" />
-              </div>
-              <div class="program-slide__meta">Tata Kelola · [ISI] Tanggal</div>
-              <h3>Edukasi Muamalah &amp; Pertemuan Anggota</h3>
-              <p>Forum keterbukaan perkembangan koperasi serta penguatan literasi keuangan bebas riba bagi anggota.</p>
-            </article>
-          </div>
         </div>
       </div>
     </section>
