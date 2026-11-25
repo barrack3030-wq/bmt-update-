@@ -1023,3 +1023,29 @@ main#main-content > section:not(.hero):not(.why-sec):not(.page-hero):not(.emeral
     background-attachment: scroll, scroll;
   }
 }
+
+
+/* Laporan Keuangan (halaman Berita & Artikel) ------------------------------ */
+.lapkeu-sec { background: var(--bg-soft); }
+.lapkeu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+.lapkeu-card {
+  background: var(--bg-white);
+  border: 1px solid var(--line-subtle);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color .25s ease, transform .25s ease;
+}
+.lapkeu-card:hover { border-color: var(--line-strong); transform: translateY(-3px); }
+.lapkeu-card__meta { font-size: var(--text-small); color: var(--gold-text); font-weight: 600; }
+.lapkeu-card h3 { font-family: var(--font-heading); font-size: var(--text-h3); color: var(--charcoal); margin: 0; }
+.lapkeu-card p { color: var(--muted); margin: 0; flex: 1; }
+.lapkeu-card__link { font-weight: 600; color: var(--emerald); text-decoration: none; }
+.lapkeu-card__link:hover { color: var(--emerald-ink); text-decoration: underline; }
