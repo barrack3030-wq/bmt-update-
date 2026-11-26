@@ -371,8 +371,10 @@ h3 {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: clamp(28px, 4vw, 56px);
-  align-items: start;
+  align-items: stretch;
 }
+/* Kolom kanan: kolase mengisi tinggi kolom, tombol di bawah foto */
+.why-media { display: flex; flex-direction: column; gap: 24px; }
 .why-quote {
   font-family: var(--font-heading);
   font-style: italic;
@@ -451,6 +453,10 @@ h3 {
 }
 .achievements svg { width: 44px; height: 44px; color: #FFFFFF; }
 
+/* Rapatkan panel: tanpa ruang kosong di bawah konten */
+#mengapa.why-sec { padding-block: clamp(40px, 4vw, 56px); }
+.why-copy .achievements { margin-bottom: 0; }
+
 /* Tombol jajaran genjang "Produk Kami" */
 .btn-slant {
   display: inline-block;
@@ -471,19 +477,21 @@ h3 {
 .why-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   gap: 12px;
 }
 
 /* Kolase foto */
 .why-collage {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 220px 190px;
+  grid-template-rows: minmax(220px, 1.15fr) minmax(190px, 1fr);
   gap: 10px;
 }
-.why-collage figure { margin: 0; overflow: hidden; border-radius: 6px; }
-.why-collage img { width: 100%; height: 100%; object-fit: cover; will-change: transform; transition: filter 0.6s var(--ease-lux); }
+.why-collage figure { position: relative; margin: 0; overflow: hidden; border-radius: 6px; }
+.why-collage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; will-change: transform; transition: filter 0.6s var(--ease-lux); }
 .why-collage figure:hover img { filter: saturate(1.1) brightness(1.05); }
 .why-collage__tall { grid-column: 1; grid-row: 1 / 3; }
 .why-collage__wide { grid-column: 2 / 4; grid-row: 2; }
@@ -860,7 +868,7 @@ section[id], [id^="produk-"] { scroll-margin-top: 96px; }
 /* 8. Layar kecil -------------------------------------------------------------- */
 @media (max-width: 1024px) {
   .why-grid { grid-template-columns: 1fr; }
-  .why-collage { grid-template-rows: 200px 170px; }
+  .why-collage { flex: none; grid-template-rows: 200px 170px; }
   .header-pill { padding-left: 14px; }
   .header-pill .nav-link { padding-inline: 9px; font-size: 0.875rem; }
 }
