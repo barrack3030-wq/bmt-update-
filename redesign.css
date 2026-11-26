@@ -467,6 +467,14 @@ h3 {
 .btn-slant > span { display: inline-block; transform: skewX(18deg); }
 .btn-slant:hover { background: var(--gold-on-dark); transform: skewX(-18deg) translateX(4px); }
 
+/* Tombol Produk Kami dan Laporan Keuangan berdampingan */
+.why-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
 /* Kolase foto */
 .why-collage {
   display: grid;
