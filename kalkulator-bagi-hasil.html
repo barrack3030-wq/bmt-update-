@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalkulator Bagi Hasil Simpanan — BMT Al-Muhajirin</title>
+  <meta name="description" content="Simulasi estimasi bagi hasil simpanan BMT Al-Muhajirin berdasarkan kisaran ilustratif dan nisbah anggota pada produk simpanan." />
+  <meta property="og:title" content="Kalkulator Bagi Hasil Simpanan — BMT Al-Muhajirin" />
+  <meta property="og:description" content="Hitung perkiraan bagian bagi hasil simpanan anggota berdasarkan nisbah produk dan asumsi hasil usaha." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="apple-touch-icon" href="images/logo-mark.png" />
+  <meta name="theme-color" content="#0F4D2E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" />
+  <style>
+    :root {
+      --green: #0F4D2E;
+      --green-deep: #082F1D;
+      --green-ink: #072616;
+      --green-pale: #E9F5EB;
+      --gold: #D6AD50;
+      --gold-ink: #8C6919;
+      --text: #17231C;
+      --muted: #59665E;
+      --line: rgba(15,77,46,.14);
+      --white: #FFFFFF;
+      --soft: #F6F8F6;
+      --shadow: 0 18px 48px rgba(8,47,29,.10);
+      --serif: 'Newsreader', Georgia, serif;
+      --sans: 'Figtree', Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--soft); color: var(--text); font-family: var(--sans); }
+    a { color: inherit; }
+    .shell { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+    .site-header { background: var(--green); color: var(--white); border-bottom: 1px solid rgba(214,173,80,.32); }
+    .header-inner { min-height: 86px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
+    .brand img { width: 174px; height: auto; display: block; }
+    .nav { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 600; }
+    .nav a { color: rgba(255,255,255,.88); text-decoration: none; transition: color .2s ease; }
+    .nav a:hover, .nav a[aria-current="page"] { color: #F1D58D; }
+    .nav .nav-cta { color: var(--green); background: var(--white); border-radius: 999px; padding: 12px 18px; }
+    .hero { position: relative; isolation: isolate; overflow: hidden; color: var(--white); background: linear-gradient(120deg, var(--green) 0%, var(--green-deep) 100%); padding: 76px 0 86px; }
+    .hero::before { content: ""; position: absolute; z-index: -1; width: 560px; height: 560px; border: 1px solid rgba(214,173,80,.19); border-radius: 50%; right: -100px; top: -310px; box-shadow: 0 0 0 48px rgba(214,173,80,.035), 0 0 0 96px rgba(214,173,80,.025); }
+    .breadcrumb { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; color: rgba(255,255,255,.68); font-size: 13px; }
+    .breadcrumb a { text-decoration: none; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: #F1D58D; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 800; }
+    .eyebrow::before { content: ""; width: 24px; height: 1px; background: var(--gold); }
+    h1 { font: 500 clamp(2.6rem, 6vw, 4.6rem)/.98 var(--serif); letter-spacing: -.035em; max-width: 760px; margin: 18px 0 18px; }
+    .hero p { max-width: 720px; margin: 0; color: rgba(255,255,255,.78); font-size: 17px; line-height: 1.7; }
+    .main { padding: 58px 0 76px; }
+    .intro { max-width: 760px; text-align: center; margin: 0 auto 32px; }
+    .intro .eyebrow { color: var(--gold-ink); }
+    .intro h2 { color: var(--green-ink); font: 600 clamp(1.8rem, 4vw, 2.65rem)/1.12 var(--serif); margin: 12px 0; }
+    .intro p { color: var(--muted); line-height: 1.7; margin: 0; }
+    .calculator { background: var(--white); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; display: grid; grid-template-columns: minmax(0,1.08fr) minmax(320px,.92fr); }
+    .fields { padding: 38px; display: grid; gap: 28px; }
+    .field label, .field-title { display: block; font-size: 14px; font-weight: 700; color: var(--green-ink); margin-bottom: 10px; }
+    .field-head { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin-bottom: 10px; }
+    .field-head label { margin: 0; }
+    .field-value { color: var(--green); font: 700 1.2rem var(--serif); white-space: nowrap; }
+    input[type="number"], select { width: 100%; min-height: 50px; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font: 600 15px var(--sans); color: var(--text); background: #FBFCFB; }
+    input:focus, select:focus { outline: 3px solid rgba(214,173,80,.24); border-color: var(--gold); }
+    input[type="range"] { width: 100%; accent-color: var(--green); cursor: pointer; }
+    .range-ends { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; margin-top: 7px; }
+    .hint { font-size: 12px; line-height: 1.55; color: var(--muted); margin: 8px 0 0; }
+    .rate-panel { padding: 14px 16px; background: var(--green-pale); border: 1px solid var(--line); border-radius: 12px; }
+    .rate-panel strong { display: block; font-size: 15px; color: var(--green); }
+    .rate-panel span { display: block; color: var(--muted); margin-top: 4px; font-size: 12px; }
+    .results { color: var(--white); background: linear-gradient(150deg, var(--green) 0%, var(--green-deep) 100%); padding: 40px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; }
+    .result-eyebrow { color: #F1D58D; font-size: 11px; letter-spacing: .14em; font-weight: 800; text-transform: uppercase; }
+    .result-number { font: 700 clamp(2rem, 4vw, 3rem)/1.08 var(--serif); margin-top: 12px; overflow-wrap: anywhere; }
+    .result-caption { color: rgba(255,255,255,.72); font-size: 13px; margin-top: 8px; }
+    .result-list { border-top: 1px solid rgba(255,255,255,.17); border-bottom: 1px solid rgba(255,255,255,.17); padding: 20px 0; display: grid; gap: 13px; }
+    .result-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; color: rgba(255,255,255,.76); font-size: 13px; }
+    .result-row strong { text-align: right; color: var(--white); }
+    .result-total { color: #F1D58D !important; font-size: 15px; }
+    .note { border-left: 2px solid var(--gold); padding-left: 14px; color: rgba(255,255,255,.76); font-size: 12px; line-height: 1.65; }
+    .nisbah-card { margin-top: 28px; background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: 28px; }
+    .nisbah-card h3 { font: 600 1.55rem var(--serif); color: var(--green-ink); margin: 0 0 9px; }
+    .nisbah-card p { color: var(--muted); font-size: 13px; line-height: 1.65; margin: 0 0 18px; }
+    .nisbah-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+    .nisbah-item { padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: #FCFDFC; }
+    .nisbah-item span { display: block; color: var(--muted); font-size: 12px; }
+    .nisbah-item strong { display: block; color: var(--green); font: 700 1.4rem var(--serif); margin-top: 5px; }
+    .disclaimer { margin-top: 22px; padding: 18px 20px; border: 1px solid rgba(140,105,25,.24); border-radius: 12px; background: #FFFCF3; color: #5D4A1D; font-size: 13px; line-height: 1.7; }
+    .page-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 24px; margin-top: 30px; }
+    .page-links a { color: var(--green); text-decoration: none; font-size: 14px; font-weight: 700; }
+    .site-footer { background: #082F1D; color: rgba(255,255,255,.74); padding: 30px 0; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; font-size: 12px; line-height: 1.6; }
+    .footer-inner strong { color: white; }
+    .footer-inner a { color: #F1D58D; text-decoration: none; }
+    @media (max-width: 760px) {
+      .header-inner { min-height: 72px; }
+      .brand img { width: 142px; }
+      .nav { gap: 14px; font-size: 12px; }
+      .nav a:not(.nav-cta) { display: none; }
+      .nav .nav-cta { padding: 10px 13px; }
+      .hero { padding: 56px 0 64px; }
+      .main { padding: 42px 0 58px; }
+      .calculator { grid-template-columns: 1fr; }
+      .fields, .results { padding: 26px 22px; }
+      .nisbah-grid { grid-template-columns: repeat(2,1fr); }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 390px) {
+      .shell { width: min(100% - 28px, 1160px); }
+      .nisbah-grid { grid-template-columns: 1fr 1fr; }
+      .field-head { align-items: flex-start; flex-direction: column; gap: 5px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="BMT Al-Muhajirin - Beranda">
+        <img src="images/logo-bmt.png" alt="BMT Al-Muhajirin" width="720" height="247" />
+      </a>
+      <nav class="nav" aria-label="Navigasi utama">
+        <a href="produk.html">Produk Simpanan</a>
+        <a href="kalkulator.html">Kalkulator Pembiayaan</a>
+        <a class="nav-cta" href="kontak.html#konsultasi">Konsultasi BMT</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="shell">
+      <div class="breadcrumb"><a href="index.html">Beranda</a><span>/</span><a href="produk.html">Produk Simpanan</a><span>/</span><span aria-current="page">Kalkulator Bagi Hasil</span></div>
+      <span class="eyebrow">Simulasi Khusus Nasabah Penyimpan Dana</span>
+      <h1>Hitung Estimasi Bagi Hasil Simpanan</h1>
+      <p>Lihat gambaran perkiraan bagian hasil yang dapat diterima anggota berdasarkan saldo simpanan, pilihan produk, nisbah anggota, dan asumsi hasil usaha BMT.</p>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="shell">
+      <div class="intro">
+        <span class="eyebrow">Perhitungan Ilustratif</span>
+        <h2>Rencanakan simpanan dengan informasi yang lebih jelas</h2>
+        <p>Masukkan nominal simpanan dan pilih produk. Anda dapat menyesuaikan asumsi hasil usaha bulanan pada rentang 0,2%–1% untuk melihat perubahan estimasi.</p>
+      </div>
+
+      <section class="calculator" aria-label="Kalkulator estimasi bagi hasil simpanan">
+        <div class="fields">
+          <div class="field">
+            <label for="depositAmount">Nominal Simpanan (Rp)</label>
+            <input id="depositAmount" type="number" inputmode="numeric" min="100000" max="1000000000" step="100000" value="10000000" />
+            <p class="hint">Masukkan jumlah dana yang ingin disimpan. Simulasi menerima nominal Rp100.000 hingga Rp1.000.000.000.</p>
+          </div>
+
+          <div class="field">
+            <label for="savingProduct">Pilih Produk Simpanan</label>
+            <select id="savingProduct">
+              <option value="1|35">Deposito Amanah — 1 Bulan (Anggota 35%)</option>
+              <option value="3|40">Deposito Amanah — 3 Bulan (Anggota 40%)</option>
+              <option value="6|45">Deposito Amanah — 6 Bulan (Anggota 45%)</option>
+              <option value="12|50" selected>Deposito Amanah — 12 Bulan (Anggota 50%)</option>
+              <option value="24|55">Deposito Amanah — 24 Bulan (Anggota 55%)</option>
+              <option value="0|25">Simpanan Sukarela (Anggota 25%)</option>
+            </select>
+            <p class="hint" id="productHint">Nisbah adalah porsi pembagian hasil untuk anggota, bukan tingkat keuntungan tetap.</p>
+          </div>
+
+          <div class="field">
+            <div class="field-head">
+              <label for="estimateRate">Asumsi Hasil Usaha per Bulan</label>
+              <span class="field-value" id="rateValue">0,5%</span>
+            </div>
+            <div class="rate-panel">
+              <strong>Rentang estimasi: 0,2%–1% per bulan</strong>
+              <span>Sesuaikan asumsi untuk melihat contoh hasil pada kondisi pendapatan BMT yang berbeda.</span>
+            </div>
+            <input id="estimateRate" type="range" min="0.2" max="1" step="0.1" value="0.5" />
+            <div class="range-ends"><span>0,2% · Rendah</span><span>1% · Tinggi</span></div>
+          </div>
+
+          <div class="field" id="voluntaryPeriodField" hidden>
+            <div class="field-head">
+              <label for="voluntaryMonths">Periode Ilustrasi Simpanan Sukarela</label>
+              <span class="field-value" id="voluntaryMonthsValue">1 Bulan</span>
+            </div>
+            <input id="voluntaryMonths" type="range" min="1" max="24" step="1" value="1" />
+            <div class="range-ends"><span>1 Bulan</span><span>24 Bulan</span></div>
+            <p class="hint">Periode ini hanya untuk ilustrasi akumulasi, bukan penetapan jangka waktu wajib Simpanan Sukarela.</p>
+          </div>
+        </div>
+
+        <div class="results" aria-live="polite">
+          <div>
+            <div class="result-eyebrow">Estimasi Bagian Bagi Hasil Anggota / Bulan</div>
+            <div class="result-number" id="monthlyShare">Rp 25.000</div>
+            <div class="result-caption" id="monthlyCaption">Perkiraan untuk Deposito Amanah 12 Bulan</div>
+          </div>
+          <div class="result-list">
+            <div class="result-row"><span>Nominal Simpanan</span><strong id="resultPrincipal">Rp 10.000.000</strong></div>
+            <div class="result-row"><span>Asumsi hasil usaha</span><strong id="resultRate">0,5%</strong></div>
+            <div class="result-row"><span>Perkiraan hasil usaha</span><strong id="grossResult">Rp 50.000</strong></div>
+            <div class="result-row"><span>Nisbah Anggota</span><strong id="memberRatio">50%</strong></div>
+            <div class="result-row"><span>Bagian BMT</span><strong id="bmtResult">Rp 25.000</strong></div>
+            <div class="result-row result-total"><span>Estimasi anggota selama periode</span><strong id="periodShare">Rp 300.000</strong></div>
+          </div>
+          <div class="note">
+            Estimasi ini merupakan simulasi sederhana. Hasil usaha aktual dapat berubah mengikuti pendapatan yang dapat dibagihasilkan, saldo yang diperhitungkan, periode pembukuan, dan ketentuan akad.
+          </div>
+        </div>
+      </section>
+
+      <section class="nisbah-card" aria-labelledby="nisbahTitle">
+        <h3 id="nisbahTitle">Nisbah Simpanan Anggota</h3>
+        <p>Berikut porsi pembagian hasil anggota berdasarkan informasi produk simpanan BMT Al-Muhajirin. Nisbah menunjukkan persentase pembagian hasil antara anggota dan BMT, bukan persentase keuntungan dari saldo simpanan.</p>
+        <div class="nisbah-grid">
+          <div class="nisbah-item"><span>Deposito 1 Bulan</span><strong>Anggota 35%</strong></div>
+          <div class="nisbah-item"><span>Deposito 3 Bulan</span><strong>Anggota 40%</strong></div>
+          <div class="nisbah-item"><span>Deposito 6 Bulan</span><strong>Anggota 45%</strong></div>
+          <div class="nisbah-item"><span>Deposito 12 Bulan</span><strong>Anggota 50%</strong></div>
+          <div class="nisbah-item"><span>Deposito 24 Bulan</span><strong>Anggota 55%</strong></div>
+          <div class="nisbah-item"><span>Simpanan Sukarela</span><strong>Anggota 25%</strong></div>
+        </div>
+      </section>
+
+      <div class="disclaimer">
+        <strong>Catatan penting:</strong> Kisaran 0,2%–1% per bulan pada kalkulator ini adalah asumsi ilustratif untuk membantu nasabah memahami kemungkinan hasil, bukan tingkat imbal hasil tetap, janji keuntungan, atau jaminan pembayaran. Bagi hasil aktual bergantung pada pendapatan usaha BMT yang terealisasi dan perhitungan sesuai akad serta ketentuan resmi yang berlaku. Nilai simulasi dapat berbeda dari hasil pembagian sebenarnya.
+      </div>
+
+      <div class="page-links">
+        <a href="produk.html#produk-simpanan">Pelajari Produk Simpanan</a>
+        <a href="kalkulator.html">Kalkulator Pembiayaan</a>
+        <a href="kontak.html#konsultasi">Konsultasikan dengan BMT</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div><strong>Koperasi BMT Al-Muhajirin</strong><br />Kantor Pusat: Toili, Kabupaten Banggai, Sulawesi Tengah.</div>
+      <div><a href="mailto:bmtmuhajirin99@gmail.com">bmtmuhajirin99@gmail.com</a><br />Berjuang Bersama Ummat Keluar Dari Riba</div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+      var amountInput = document.getElementById('depositAmount');
+      var productSelect = document.getElementById('savingProduct');
+      var estimateRate = document.getElementById('estimateRate');
+      var rateValue = document.getElementById('rateValue');
+      var voluntaryPeriodField = document.getElementById('voluntaryPeriodField');
+      var voluntaryMonths = document.getElementById('voluntaryMonths');
+      var voluntaryMonthsValue = document.getElementById('voluntaryMonthsValue');
+
+      var el = {
+        monthlyShare: document.getElementById('monthlyShare'),
+        monthlyCaption: document.getElementById('monthlyCaption'),
+        resultPrincipal: document.getElementById('resultPrincipal'),
+        resultRate: document.getElementById('resultRate'),
+        grossResult: document.getElementById('grossResult'),
+        memberRatio: document.getElementById('memberRatio'),
+        bmtResult: document.getElementById('bmtResult'),
+        periodShare: document.getElementById('periodShare')
+      };
+
+      function rupiah(value) {
+        return 'Rp ' + Math.round(value).toLocaleString('id-ID');
+      }
+      function percent(value) {
+        return value.toLocaleString('id-ID', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + '%';
+      }
+      function update() {
+        var principal = Number(amountInput.value);
+        if (!Number.isFinite(principal)) principal = 10000000;
+        principal = Math.max(100000, Math.min(1000000000, principal));
+        amountInput.value = String(Math.round(principal));
+
+        var selected = productSelect.options[productSelect.selectedIndex];
+        var parts = selected.value.split('|');
+        var fixedMonths = Number(parts[0]);
+        var memberNisbah = Number(parts[1]);
+        var rate = Math.max(0.2, Math.min(1, Number(estimateRate.value) || 0.5));
+        var isVoluntary = fixedMonths === 0;
+        var months = isVoluntary ? Number(voluntaryMonths.value) : fixedMonths;
+
+        voluntaryPeriodField.hidden = !isVoluntary;
+        voluntaryMonthsValue.textContent = months + ' Bulan';
+        rateValue.textContent = percent(rate);
+
+        var estimatedBusinessResult = principal * (rate / 100);
+        var memberMonthly = estimatedBusinessResult * (memberNisbah / 100);
+        var bmtMonthly = estimatedBusinessResult - memberMonthly;
+        var periodMember = memberMonthly * months;
+
+        el.monthlyShare.textContent = rupiah(memberMonthly);
+        el.monthlyCaption.textContent = isVoluntary
+          ? 'Perkiraan untuk Simpanan Sukarela'
+          : 'Perkiraan untuk Deposito Amanah ' + fixedMonths + ' Bulan';
+        el.resultPrincipal.textContent = rupiah(principal);
+        el.resultRate.textContent = percent(rate);
+        el.grossResult.textContent = rupiah(estimatedBusinessResult);
+        el.memberRatio.textContent = memberNisbah + '%';
+        el.bmtResult.textContent = rupiah(bmtMonthly);
+        el.periodShare.textContent = rupiah(periodMember);
+      }
+
+      [amountInput, productSelect, estimateRate, voluntaryMonths].forEach(function (input) {
+        input.addEventListener('input', update);
+        input.addEventListener('change', update);
+      });
+      update();
+    })();
+  </script>
+</body>
+</html>
