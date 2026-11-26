@@ -714,11 +714,11 @@ section[id], [id^="produk-"] { scroll-margin-top: 96px; }
 .page-hero {
   position: relative;
   margin: 10px clamp(12px, 2vw, 28px) 0;
-  padding: clamp(56px, 7vw, 96px) 0 clamp(60px, 7.5vw, 104px);
+  padding: clamp(20px, 2.4vw, 30px) 0 clamp(22px, 2.6vw, 32px);
   background: linear-gradient(145deg, var(--emerald) 0%, var(--emerald-deep) 100%);
   color: #FFFFFF;
   text-align: center;
-  border-radius: clamp(28px, 4vw, 48px);
+  border-radius: clamp(18px, 2vw, 24px);
   overflow: hidden;
   isolation: isolate;
 }
@@ -738,9 +738,9 @@ section[id], [id^="produk-"] { scroll-margin-top: 96px; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 22px;
-  padding: 7px 16px;
-  font-size: 0.8125rem;
+  margin-bottom: 10px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: .04em;
   background: rgba(255, 255, 255, .1);
@@ -753,17 +753,17 @@ section[id], [id^="produk-"] { scroll-margin-top: 96px; }
 .page-hero__title {
   font-family: var(--font-heading);
   font-weight: 500;
-  font-size: clamp(2.4rem, 5.6vw, 4.4rem);
-  line-height: 1.04;
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  line-height: 1.15;
   letter-spacing: -0.026em;
   color: #FFFFFF;
-  margin: 0 0 18px;
+  margin: 0 0 6px;
 }
 .page-hero__sub {
-  max-width: 54ch;
+  max-width: 72ch;
   margin: 0 auto;
-  font-size: var(--text-lead);
-  line-height: 1.65;
+  font-size: 0.9375rem;
+  line-height: 1.55;
   color: rgba(255, 255, 255, .86);
 }
 @keyframes page-rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
@@ -773,6 +773,9 @@ section[id], [id^="produk-"] { scroll-margin-top: 96px; }
 @media (prefers-reduced-motion: reduce) {
   .page-hero .breadcrumb, .page-hero__title, .page-hero__sub { animation: none; }
 }
+
+/* Konten pertama langsung menyusul banner */
+main#main-content > .page-hero + section { padding-top: clamp(32px, 4vw, 48px); }
 
 /* Visi & Misi (halaman Tentang Kami) */
 .vm-sec { padding-block: clamp(64px, 7vw, 104px); }
@@ -1042,9 +1045,6 @@ main#main-content > section:not(.hero):not(.why-sec):not(.page-hero):not(.emeral
 
 
 /* Laporan Keuangan (halaman Berita & Artikel) ------------------------------ */
-/* Halaman Laporan Keuangan: hero ringkas agar dokumen langsung terlihat */
-.page-hero.page-hero--ringkas { min-height: 0; padding-block: 36px 40px; }
-main#main-content > .page-hero--ringkas + .lapkeu-sec { padding-block: 40px 64px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 .lapkeu-sec { background: var(--bg-soft); }
 .lapkeu-grid {
