@@ -1529,6 +1529,33 @@
     .calc-breakdown__row strong {
       color: #FFFFFF;
     }
+
+    .savings-calc-promo {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 28px;
+      margin-top: 48px;
+      padding: 32px 36px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-card);
+      background: linear-gradient(115deg, #F3F8F3 0%, #FFFFFF 72%);
+      box-shadow: var(--shadow-soft);
+    }
+    .savings-calc-promo .kicker { color: var(--gold-text); }
+    .savings-calc-promo h3 {
+      margin: 8px 0 8px;
+      color: var(--emerald-ink);
+      font-family: var(--font-heading);
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
+    }
+    .savings-calc-promo p { margin: 0; color: var(--muted); line-height: 1.65; max-width: 680px; }
+    .savings-calc-promo .btn { white-space: nowrap; text-decoration: none; }
+    @media (max-width: 700px) {
+      .savings-calc-promo { grid-template-columns: 1fr; padding: 26px 22px; }
+      .savings-calc-promo .btn { width: 100%; justify-content: center; }
+    }
+
     .calc-note {
       font-size: 0.8125rem;
       line-height: 1.55;
@@ -2813,6 +2840,22 @@
               <strong>Catatan:</strong> Simulasi menggunakan margin tetap 2% per bulan dengan metode flat, dihitung dari pokok pembiayaan awal. Angka ini merupakan perkiraan dan bukan penawaran atau ketentuan akad resmi.
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad calc-sec" aria-labelledby="savingsCalcPromoTitle">
+      <div class="container">
+        <div class="savings-calc-promo">
+          <div>
+            <span class="kicker">Untuk Anggota Penyimpan Dana</span>
+            <h3 id="savingsCalcPromoTitle">Ingin menghitung estimasi bagi hasil simpanan?</h3>
+            <p>Gunakan kalkulator khusus simpanan untuk melihat gambaran pembagian hasil berdasarkan kisaran estimasi dan nisbah produk simpanan BMT Al-Muhajirin.</p>
+          </div>
+          <a class="btn btn--primary btn--md" href="kalkulator-bagi-hasil.html">
+            <span>Kalkulator Bagi Hasil</span>
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </div>
       </div>
     </section>
