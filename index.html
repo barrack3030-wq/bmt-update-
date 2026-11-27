@@ -19,10 +19,33 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Figtree:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Figtree:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" />
 
-  <!-- GSAP, ScrollTrigger & Lenis (async/defer with graceful fallback) -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- GSAP, ScrollTrigger & Lenis: hanya diunduh di desktop (smartphone tanpa animasi) -->
+  <script>
+    (function () {
+      window.BMT_STILL = window.matchMedia('(max-width: 768px), (pointer: coarse) and (max-height: 500px)').matches ||
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var queue = [], pending = 1, done = false;
+      function settle() {
+        if (--pending || done) return;
+        done = true;
+        queue.forEach(function (fn) { fn(); });
+      }
+      window.bmtMotionReady = function (fn) { if (done) fn(); else queue.push(fn); };
+      document.addEventListener('DOMContentLoaded', settle);
+      if (window.BMT_STILL) return;
+      [
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js',
+        'https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js'
+      ].forEach(function (src) {
+        var s = document.createElement('script');
+        s.src = src; s.async = false; s.crossOrigin = 'anonymous'; s.referrerPolicy = 'no-referrer';
+        s.onload = s.onerror = settle;
+        pending++;
+        document.head.appendChild(s);
+      });
+    })();
+  </script>
 
   <style>
     :root {
@@ -2550,6 +2573,7 @@
     @media (max-width: 620px) { #mengapa { padding-block: 58px; } #mengapa .why-panel { padding: 28px 22px; } #mengapa .why-trust-column { grid-template-columns: 1fr; } #mengapa .trust-block { padding: 22px; } }
   </style>
   <link rel="stylesheet" href="redesign.css" />
+  <link rel="stylesheet" href="mobile-lite.css" media="(max-width: 768px), (pointer: coarse) and (max-height: 500px)" />
 </head>
 <body>
   <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
@@ -2587,10 +2611,10 @@
 
       <div class="header-main-row">
         <!-- Ganti SVG mark jika mengimpor berkas logo PNG/SVG resmi dari situs lama -->
-        <a href="#beranda" class="brand-logo" aria-label="Beranda Koperasi BMT Al Muhajirin" data-cursor="expand"><img class="brand-logo__img" src="images/logo-bmt.png" alt="BMT Al-Muhajirin — Berjuang Bersama Ummat Keluar Dari Riba" width="720" height="247" decoding="async"></a>
+        <a href="#beranda" class="brand-logo" aria-label="Beranda Koperasi BMT Al Muhajirin" data-cursor="expand"><img class="brand-logo__img" src="images/logo-bmt.webp" alt="BMT Al-Muhajirin — Berjuang Bersama Ummat Keluar Dari Riba" width="720" height="247" decoding="async"></a>
 
         <div class="header-pill">
-          <a href="#beranda" class="pill-brand" aria-label="BMT Al Muhajirin"><img src="images/logo-mark.png" alt="" width="36" height="36" decoding="async"></a>
+          <a href="#beranda" class="pill-brand" aria-label="BMT Al Muhajirin"><img src="images/logo-mark.webp" alt="" width="36" height="36" decoding="async"></a>
         <nav class="main-nav" aria-label="Navigasi Utama">
           <ul class="nav-list">
 
@@ -2666,7 +2690,7 @@
     <div class="mobile-drawer__backdrop" id="menuBackdrop"></div>
     <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="Menu Navigasi">
       <div class="mobile-drawer__head">
-        <img class="drawer-logo" src="images/logo-bmt.png" alt="BMT Al-Muhajirin" width="720" height="247" decoding="async">
+        <img class="drawer-logo" src="images/logo-bmt.webp" alt="BMT Al-Muhajirin" width="720" height="247" decoding="async">
         <button type="button" class="modal-close" id="menuCloseBtn" aria-label="Tutup menu">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
@@ -2975,7 +2999,7 @@
 
         <div class="program-collage">
           <article class="program-tile program-tile--lead">
-            <img width="800" height="900" loading="lazy" alt="Dokumentasi pendampingan usaha mikro anggota [ISI]" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=85" />
+            <img width="800" height="900" loading="lazy" alt="Dokumentasi pendampingan usaha mikro anggota [ISI]" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=85" srcset="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=720&q=70 720w, https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=85 1200w" sizes="(max-width: 768px) 70vw, 1200px" />
             <div class="program-tile__body">
               <div class="program-tile__meta">Pemberdayaan &middot; [ISI] Tanggal</div>
               <h3>Pendampingan Usaha Mikro Anggota</h3>
@@ -2984,7 +3008,7 @@
           </article>
 
           <article class="program-tile">
-            <img width="800" height="450" loading="lazy" alt="Dokumentasi program sosial dan ZISWAF Baitul Maal [ISI]" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85" />
+            <img width="800" height="450" loading="lazy" alt="Dokumentasi program sosial dan ZISWAF Baitul Maal [ISI]" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85" srcset="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=720&q=70 720w, https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85 800w" sizes="(max-width: 768px) 70vw, 800px" />
             <div class="program-tile__body">
               <div class="program-tile__meta">Sosial Umat &middot; [ISI] Tanggal</div>
               <h3>Penyaluran Amanah ZISWAF &amp; Santunan</h3>
@@ -2992,7 +3016,7 @@
           </article>
 
           <article class="program-tile">
-            <img width="800" height="450" loading="lazy" alt="Dokumentasi Rapat Anggota Tahunan dan edukasi syariah [ISI]" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85" />
+            <img width="800" height="450" loading="lazy" alt="Dokumentasi Rapat Anggota Tahunan dan edukasi syariah [ISI]" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85" srcset="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=720&q=70 720w, https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85 800w" sizes="(max-width: 768px) 70vw, 800px" />
             <div class="program-tile__body">
               <div class="program-tile__meta">Tata Kelola &middot; [ISI] Tanggal</div>
               <h3>Edukasi Muamalah &amp; Pertemuan Anggota</h3>
@@ -3017,7 +3041,7 @@
 
         <div class="home-articles">
           <a class="home-article" href="berita.html#artikel" aria-label="Baca artikel Memahami Perbedaan Pembiayaan Syariah dan Utang Berbunga">
-            <img width="600" height="450" loading="lazy" alt="Ilustrasi artikel pembiayaan syariah bebas riba [ISI]" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85" />
+            <img width="600" height="450" loading="lazy" alt="Ilustrasi artikel pembiayaan syariah bebas riba [ISI]" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85" srcset="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=720&q=70 720w, https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85 900w" sizes="(max-width: 768px) 70vw, 900px" />
             <div class="home-article__body">
               <div class="home-article__meta">[ISI] Tanggal &middot; Edukasi Syariah</div>
               <h3>Memahami Perbedaan Pembiayaan Syariah dan Utang Berbunga</h3>
@@ -3056,7 +3080,7 @@
 
         <div class="testi-demo-grid testi-demo-grid--three">
           <article class="testi-demo-card testi-demo-card--photo">
-            <img class="testi-customer-photo" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Foto ilustrasi seorang anggota pria" loading="lazy" width="640" height="760" />
+            <img class="testi-customer-photo" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=640&amp;q=85" srcset="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=480&amp;q=70 480w, https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=640&amp;q=85 640w" sizes="(max-width: 768px) 70vw, 640px" alt="Foto ilustrasi seorang anggota pria" loading="lazy" width="640" height="760" />
             <div class="testi-demo-card__content">
               <span class="testi-demo-card__category">SIMPANAN SYARIAH</span>
               <div class="testi-demo-card__quote" aria-hidden="true">“</div>
@@ -3065,7 +3089,7 @@
             </div>
           </article>
           <article class="testi-demo-card testi-demo-card--photo">
-            <img class="testi-customer-photo" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Foto ilustrasi seorang anggota perempuan" loading="lazy" width="640" height="760" />
+            <img class="testi-customer-photo" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=640&amp;q=85" srcset="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=480&amp;q=70 480w, https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=640&amp;q=85 640w" sizes="(max-width: 768px) 70vw, 640px" alt="Foto ilustrasi seorang anggota perempuan" loading="lazy" width="640" height="760" />
             <div class="testi-demo-card__content">
               <span class="testi-demo-card__category">PEMBIAYAAN USAHA</span>
               <div class="testi-demo-card__quote" aria-hidden="true">“</div>
@@ -3074,7 +3098,7 @@
             </div>
           </article>
           <article class="testi-demo-card testi-demo-card--photo">
-            <img class="testi-customer-photo" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&amp;fit=crop&amp;w=640&amp;q=85" alt="Foto ilustrasi seorang anggota pria" loading="lazy" width="640" height="760" />
+            <img class="testi-customer-photo" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&amp;fit=crop&amp;w=640&amp;q=85" srcset="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&amp;fit=crop&amp;w=480&amp;q=70 480w, https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&amp;fit=crop&amp;w=640&amp;q=85 640w" sizes="(max-width: 768px) 70vw, 640px" alt="Foto ilustrasi seorang anggota pria" loading="lazy" width="640" height="760" />
             <div class="testi-demo-card__content">
               <span class="testi-demo-card__category">PENDAMPINGAN USAHA</span>
               <div class="testi-demo-card__quote" aria-hidden="true">“</div>
@@ -3101,7 +3125,7 @@
     <div class="container">
       <div class="grid-12">
         <div class="footer-brand js-stagger-item">
-          <a href="#beranda" class="brand-logo brand-logo--plate" aria-label="BMT Al Muhajirin"><img class="brand-logo__img" src="images/logo-bmt.png" alt="BMT Al-Muhajirin — Berjuang Bersama Ummat Keluar Dari Riba" width="720" height="247" decoding="async" loading="lazy"></a>
+          <a href="#beranda" class="brand-logo brand-logo--plate" aria-label="BMT Al Muhajirin"><img class="brand-logo__img" src="images/logo-bmt.webp" alt="BMT Al-Muhajirin — Berjuang Bersama Ummat Keluar Dari Riba" width="720" height="247" decoding="async" loading="lazy"></a>
           <p>
             Kantor Pusat: Toili, Kabupaten Banggai, Sulawesi Tengah.<br />
             Badan Hukum: No. 518/11.BH/DISKOP.<br />Tanggal Badan Hukum: 28 Oktober 2003.
@@ -3193,7 +3217,7 @@
 
       // Nomor WhatsApp Resmi BMT [ISI] — format internasional tanpa +, mis. 62812xxxxxxxx
       var WA_NUMBER = '[ISI]';
-      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var prefersReduced = window.BMT_STILL; // smartphone atau reduced motion
 
       // 1. Hero 4-Slide Background Slider
 
@@ -3537,7 +3561,7 @@
         }
       }
 
-      window.addEventListener('DOMContentLoaded', initHeroAndSmoothScroll);
+      window.bmtMotionReady(initHeroAndSmoothScroll);
       if (backToTop && prefersReduced) {
         backToTop.addEventListener('click', function () {
           window.scrollTo({ top: 0, behavior: 'auto' });
@@ -3958,7 +3982,7 @@
       var el = document.querySelector('.achievements');
       if (!el) return;
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce || !('IntersectionObserver' in window)) { el.classList.add('is-in'); return; }
+      if (reduce || window.BMT_STILL || !('IntersectionObserver' in window)) { el.classList.add('is-in'); return; }
       el.classList.add('anim-ready');
       var io = new IntersectionObserver(function (en) {
         if (en[0].isIntersecting) { el.classList.add('is-in'); io.disconnect(); }
@@ -3969,8 +3993,8 @@
   <script>
     /* Gerak scroll premium: reveal berlapis, parallax gambar, hero memudar, panel membesar */
     (function initPremiumMotion() {
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      window.addEventListener('DOMContentLoaded', function () {
+      if (window.BMT_STILL) return;
+      window.bmtMotionReady(function () {
         var gsap = window.gsap, ST = window.ScrollTrigger;
         if (!gsap || !ST) return;
         gsap.registerPlugin(ST);
