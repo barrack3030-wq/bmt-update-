@@ -20,10 +20,33 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Figtree:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Figtree:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" />
 
-  <!-- GSAP, ScrollTrigger & Lenis (async/defer with graceful fallback) -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- GSAP, ScrollTrigger & Lenis: hanya diunduh di desktop (smartphone tanpa animasi) -->
+  <script>
+    (function () {
+      window.BMT_STILL = window.matchMedia('(max-width: 768px), (pointer: coarse) and (max-height: 500px)').matches ||
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var queue = [], pending = 1, done = false;
+      function settle() {
+        if (--pending || done) return;
+        done = true;
+        queue.forEach(function (fn) { fn(); });
+      }
+      window.bmtMotionReady = function (fn) { if (done) fn(); else queue.push(fn); };
+      document.addEventListener('DOMContentLoaded', settle);
+      if (window.BMT_STILL) return;
+      [
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js',
+        'https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js'
+      ].forEach(function (src) {
+        var s = document.createElement('script');
+        s.src = src; s.async = false; s.crossOrigin = 'anonymous'; s.referrerPolicy = 'no-referrer';
+        s.onload = s.onerror = settle;
+        pending++;
+        document.head.appendChild(s);
+      });
+    })();
+  </script>
 
   <style>
     :root {
@@ -2511,6 +2534,7 @@
     }
 </style>
   <link rel="stylesheet" href="redesign.css" />
+  <link rel="stylesheet" href="mobile-lite.css" media="(max-width: 768px), (pointer: coarse) and (max-height: 500px)" />
 </head>
 <body>
   <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
@@ -2548,10 +2572,10 @@
 
       <div class="header-main-row">
         <!-- Ganti SVG mark jika mengimpor berkas logo PNG/SVG resmi dari situs lama -->
-        <a href="index.html" class="brand-logo" aria-label="Beranda Koperasi BMT Al Muhajirin" data-cursor="expand"><img class="brand-logo__img" src="images/logo-bmt.png" alt="BMT Al-Muhajirin — Berjuang Bersama Ummat Keluar Dari Riba" width="720" height="247" decoding="async"></a>
+        <a href="index.html" class="brand-logo" aria-label="Beranda Koperasi BMT Al Muhajirin" data-cursor="expand"><img class="brand-logo__img" src="images/logo-bmt.webp" alt="BMT Al-Muhajirin — Berjuang Bersama Ummat Keluar Dari Riba" width="720" height="247" decoding="async"></a>
 
         <div class="header-pill">
-          <a href="index.html" class="pill-brand" aria-label="BMT Al Muhajirin"><img src="images/logo-mark.png" alt="" width="36" height="36" decoding="async"></a>
+          <a href="index.html" class="pill-brand" aria-label="BMT Al Muhajirin"><img src="images/logo-mark.webp" alt="" width="36" height="36" decoding="async"></a>
         <nav class="main-nav" aria-label="Navigasi Utama">
           <ul class="nav-list">
 
@@ -2627,7 +2651,7 @@
     <div class="mobile-drawer__backdrop" id="menuBackdrop"></div>
     <div class="mobile-drawer__panel" role="dialog" aria-modal="true" aria-label="Menu Navigasi">
       <div class="mobile-drawer__head">
-        <img class="drawer-logo" src="images/logo-bmt.png" alt="BMT Al-Muhajirin" width="720" height="247" decoding="async">
+        <img class="drawer-logo" src="images/logo-bmt.webp" alt="BMT Al-Muhajirin" width="720" height="247" decoding="async">
         <button type="button" class="modal-close" id="menuCloseBtn" aria-label="Tutup menu">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
         </button>
@@ -2807,7 +2831,7 @@
 
         <div class="team-grid">
           <article class="team-card js-stagger-item js-clip-reveal" tabindex="0">
-            <img width="300" height="400" loading="lazy" alt="Placeholder foto pengurus 1 [ISI]" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=85" />
+            <img width="300" height="400" loading="lazy" alt="Placeholder foto pengurus 1 [ISI]" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=85" srcset="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=720&q=70 720w, https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=85 1400w" sizes="(max-width: 768px) 70vw, 1400px" />
             <div class="team-card__overlay">
               <span class="team-photo-note">Foto ilustrasi</span>
               <div class="team-card__name">[ISI] Nama Pengurus 1</div>
@@ -2825,7 +2849,7 @@
           </article>
 
           <article class="team-card js-stagger-item js-clip-reveal" tabindex="0">
-            <img width="300" height="400" loading="lazy" alt="Placeholder foto pengawas 1 [ISI]" src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=85" />
+            <img width="300" height="400" loading="lazy" alt="Placeholder foto pengawas 1 [ISI]" src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=85" srcset="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=720&q=70 720w, https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=85 1200w" sizes="(max-width: 768px) 70vw, 1200px" />
             <div class="team-card__overlay">
               <span class="team-photo-note">Foto ilustrasi</span>
               <div class="team-card__name">[ISI] Nama Pengawas 1</div>
@@ -2834,7 +2858,7 @@
           </article>
 
           <article class="team-card js-stagger-item js-clip-reveal" tabindex="0">
-            <img width="300" height="400" loading="lazy" alt="Placeholder foto dewan pengawas syariah [ISI]" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85" />
+            <img width="300" height="400" loading="lazy" alt="Placeholder foto dewan pengawas syariah [ISI]" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85" srcset="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=480&q=70 480w, https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=720&q=70 720w, https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85 1200w" sizes="(max-width: 768px) 70vw, 1200px" />
             <div class="team-card__overlay">
               <span class="team-photo-note">Foto ilustrasi</span>
               <div class="team-card__name">[ISI] Nama Pengawas Syariah</div>
@@ -2852,7 +2876,7 @@
     <div class="container">
       <div class="grid-12">
         <div class="footer-brand js-stagger-item">
-          <a href="index.html" class="brand-logo brand-logo--plate" aria-label="BMT Al Muhajirin"><img class="brand-logo__img" src="images/logo-bmt.png" alt="BMT Al-Muhajirin — Berjuang Bersama Ummat Keluar Dari Riba" width="720" height="247" decoding="async" loading="lazy"></a>
+          <a href="index.html" class="brand-logo brand-logo--plate" aria-label="BMT Al Muhajirin"><img class="brand-logo__img" src="images/logo-bmt.webp" alt="BMT Al-Muhajirin — Berjuang Bersama Ummat Keluar Dari Riba" width="720" height="247" decoding="async" loading="lazy"></a>
           <p>
             Kantor Pusat: Toili, Kabupaten Banggai, Sulawesi Tengah.<br />
             Badan Hukum: No. 518/11.BH/DISKOP.<br />Tanggal Badan Hukum: 28 Oktober 2003.
@@ -2944,7 +2968,7 @@
 
       // Nomor WhatsApp Resmi BMT [ISI] — format internasional tanpa +, mis. 62812xxxxxxxx
       var WA_NUMBER = '[ISI]';
-      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var prefersReduced = window.BMT_STILL; // smartphone atau reduced motion
 
       // 1. Hero 4-Slide Background Slider
 
@@ -3287,7 +3311,7 @@
         }
       }
 
-      window.addEventListener('DOMContentLoaded', initHeroAndSmoothScroll);
+      window.bmtMotionReady(initHeroAndSmoothScroll);
       if (backToTop && prefersReduced) {
         backToTop.addEventListener('click', function () {
           window.scrollTo({ top: 0, behavior: 'auto' });
