@@ -66,6 +66,11 @@
     input[type="number"], select { width: 100%; min-height: 50px; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font: 600 15px var(--sans); color: var(--text); background: #FBFCFB; }
     input:focus, select:focus { outline: 3px solid rgba(214,173,80,.24); border-color: var(--gold); }
     input[type="range"] { width: 100%; accent-color: var(--green); cursor: pointer; }
+    input.range-slider { -webkit-appearance: none; appearance: none; display: block; height: 8px; margin: 14px 0; border-radius: 999px; background: linear-gradient(to right, var(--green) var(--pct, 9%), #E4EBE5 var(--pct, 9%)); }
+    .range-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 30px; height: 30px; border-radius: 50%; background: #fff; border: 3px solid var(--green); box-shadow: 0 2px 8px rgba(15,77,46,.25); }
+    .range-slider::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: #fff; border: 3px solid var(--green); }
+    .range-slider:focus-visible { outline: 3px solid var(--gold); outline-offset: 6px; }
+    #depositAmount { margin-top: 12px; }
     .range-ends { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; margin-top: 7px; }
     .hint { font-size: 12px; line-height: 1.55; color: var(--muted); margin: 8px 0 0; }
     .rate-panel { padding: 14px 16px; background: var(--green-pale); border: 1px solid var(--line); border-radius: 12px; }
@@ -148,9 +153,14 @@
       <section class="calculator" aria-label="Kalkulator estimasi bagi hasil simpanan">
         <div class="fields">
           <div class="field">
-            <label for="depositAmount">Nominal Simpanan (Rp)</label>
-            <input id="depositAmount" type="number" inputmode="numeric" min="100000" max="1000000000" step="100000" value="10000000" />
-            <p class="hint">Masukkan jumlah dana yang ingin disimpan. Simulasi menerima nominal Rp100.000 hingga Rp1.000.000.000.</p>
+            <div class="field-head">
+              <label for="depositRange">Nominal Simpanan</label>
+              <span class="field-value" id="depositDisplay">Rp 10.000.000</span>
+            </div>
+            <input type="range" id="depositRange" class="range-slider" min="1000000" max="100000000" step="500000" value="10000000" />
+            <div class="range-ends"><span>Rp 1 Juta</span><span>Rp 50 Juta</span><span>Rp 100 Juta</span></div>
+            <input id="depositAmount" type="number" inputmode="numeric" min="1000000" max="100000000" step="500000" value="10000000" aria-label="Masukkan nominal simpanan dalam Rupiah" />
+            <p class="hint">Geser untuk memilih Rp1 juta sampai Rp100 juta, atau ketik nominalnya.</p>
           </div>
 
           <div class="field">
@@ -246,6 +256,8 @@
     (function () {
       'use strict';
       var amountInput = document.getElementById('depositAmount');
+      var amountRange = document.getElementById('depositRange');
+      var amountDisplay = document.getElementById('depositDisplay');
       var productSelect = document.getElementById('savingProduct');
       var estimateRate = document.getElementById('estimateRate');
       var rateValue = document.getElementById('rateValue');
@@ -271,10 +283,9 @@
         return value.toLocaleString('id-ID', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + '%';
       }
       function update() {
-        var principal = Number(amountInput.value);
-        if (!Number.isFinite(principal)) principal = 10000000;
-        principal = Math.max(100000, Math.min(1000000000, principal));
-        amountInput.value = String(Math.round(principal));
+        var principal = Number(amountRange.dataset.amount || amountRange.value);
+        amountDisplay.textContent = rupiah(principal);
+        amountRange.style.setProperty('--pct', ((principal - 1000000) / 99000000 * 100).toFixed(2) + '%');
 
         var selected = productSelect.options[productSelect.selectedIndex];
         var parts = selected.value.split('|');
@@ -305,10 +316,24 @@
         el.periodShare.textContent = rupiah(periodMember);
       }
 
-      [amountInput, productSelect, estimateRate, voluntaryMonths].forEach(function (input) {
+      amountRange.addEventListener('input', function () {
+        delete amountRange.dataset.amount;
+        amountInput.value = amountRange.value;
+        update();
+      });
+      amountInput.addEventListener('change', function () {
+        var v = Math.round(Number(amountInput.value)) || 10000000;
+        v = Math.max(1000000, Math.min(100000000, v));
+        amountInput.value = v;
+        amountRange.value = v;
+        amountRange.dataset.amount = v; /* nominal ketikan dipakai persis, tidak dibulatkan slider */
+        update();
+      });
+      [productSelect, estimateRate, voluntaryMonths].forEach(function (input) {
         input.addEventListener('input', update);
         input.addEventListener('change', update);
       });
+      amountInput.value = amountRange.value;
       update();
     })();
   </script>
